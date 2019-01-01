@@ -1,0 +1,141 @@
+# This document is a schema for the GTA3script configuration files.
+#
+# Use it to validate (and to gasp the structure of) the configuration files.
+#
+# This schema is written in RELAX NG. A quick reference can be found at
+# https://relaxng.org/compact-tutorial-20030326.html
+#
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+grammar {
+    start = 
+        ## A GTA3script configuration file consists of commands, alternators
+        ## and constants in any given order.
+        element GTA3Script {
+            attribute Version { string "2.0" }
+            & Commands* 
+            & Alternators* 
+            & Constants*
+        }
+
+    Commands = element Commands {
+        element Command {
+            ## The name of the command in the translation environment.
+            ##
+            ## If a command definition of same name already exists, it is
+            ## completly replaced with this definition.
+            attribute Name { string },
+
+            element Params {
+                element Param {
+                    ## The type of the parameter
+                    ## (as specified in gta3script-specs).
+                    attribute Type { 
+                        string "INT"
+                        | string "FLOAT"
+                        | string "VAR_INT"
+                        | string "VAR_FLOAT"
+                        | string "VAR_TEXT_LABEL"
+                        | string "VAR_TEXT_LABEL16"
+                        | string "LVAR_INT"
+                        | string "LVAR_FLOAT"
+                        | string "LVAR_TEXT_LABEL"
+                        | string "LVAR_TEXT_LABEL16"
+                        | string "VAR_INT_OPT"
+                        | string "VAR_FLOAT_OPT"
+                        | string "VAR_TEXT_LABEL_OPT"
+                        | string "VAR_TEXT_LABEL16_OPT"
+                        | string "LVAR_INT_OPT"
+                        | string "LVAR_FLOAT_OPT"
+                        | string "LVAR_TEXT_LABEL_OPT"
+                        | string "LVAR_TEXT_LABEL16_OPT"
+                        | string "INPUT_INT"
+                        | string "INPUT_FLOAT"
+                        | string "INPUT_OPT"
+                        | string "OUTPUT_INT"
+                        | string "OUTPUT_FLOAT"
+                        | string "OUTPUT_TEXT_LABEL"
+                        | string "OUTPUT_TEXT_LABEL16"
+                        | string "LABEL"
+                        | string "TEXT_LABEL"
+                        | string "TEXT_LABEL16"
+                        | string "TEXT_LABEL32"
+                    },
+
+                    ## The enumeration associated with this parameter.
+                    attribute Enum { string }?,
+
+                    ## The entity type associated with this parameter.
+                    attribute Entity { string }?
+
+                    # TODO Variadic
+                }*
+            }?
+        }*
+        ## Associates a command to an identifier.
+        & element CommandId {
+            ## Name of the command to associate an id to.
+            ##
+            ## If an command of same name has been already associated with an
+            ## id, its association is replaced with the one that follows.
+            attribute Name { string },
+
+            ## The id of the command.
+            ##
+            ## Multiple command names may be associated with a single id.
+            ##
+            ## If this id is not specified, the `Handled` attribute must 
+            ## be false.
+            attribute ID { xsd:unsignedShort | hex16 }?,
+
+            ## Whether this command is supported by the execution environment.
+            [a:defaultValue = "true"] 
+            attribute Handled { xsd:boolean }?
+        }*
+    }
+
+    Alternators = element Alternators {
+        element Alternator {
+            ## The name of the alternator.
+            ##
+            ## If an alternator of same name already exists, it is kept and
+            ## the alternative commands that follow are added to it.
+            attribute Name { string },
+
+            element Alternative {
+                ## The name of alternative command.
+                attribute Name { string }
+            }*
+
+        }*
+    }
+
+    Constants = element Constants {
+        element Enum {
+            ## The name of the enumeration.
+            ##
+            ## If no name is given, the constants are added to the global
+            ## string constants enumeration.
+            ##
+            ## If an enumeration of same name already exists, that enumeration
+            ## is preserved and the string constants that follow are added to it.
+            attribute Name { string }?,
+
+            element Constant {
+                ## The name of this string constant.
+                ##
+                ## If a string constant of same name already exists in this enumeration, 
+                ## it is replaced by this value.
+                attribute Name { string },
+
+                ## The value of this string constant.
+                ##
+                ## If no value is given, the value of this constant is equal
+                ## the successor of the value in the previous constant.
+                attribute Value { xsd:int | hex32 }?
+            }*
+        }*
+    }
+
+    hex16 = xsd:string { pattern = "0x[0-9a-fA-F]{1,4}" }
+    hex32 = xsd:string { pattern = "0x[0-9a-fA-F]{1,8}" }
+}
