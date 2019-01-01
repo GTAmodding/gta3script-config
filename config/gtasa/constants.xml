@@ -6,17 +6,17 @@
   Enums marked with (+) do have more constant values, but they weren't guessed and aren't
   present in the enumeration.
 -->
-<GTA3Script>
+<GTA3Script Version="2.0">
   <Constants>
-    <Enum Name="BOOL" Global="true">
+    <Enum>
       <Constant Name="FALSE"/>
       <Constant Name="TRUE"/>
     </Enum>
-    <Enum Name="ONOFF" Global="true">
+    <Enum>
       <Constant Name="OFF"/>
       <Constant Name="ON"/>
     </Enum>
-    <Enum Name="DAYNIGHT" Global="true">
+    <Enum>
       <Constant Name="NIGHT"/>
       <Constant Name="DAY"/>
     </Enum>

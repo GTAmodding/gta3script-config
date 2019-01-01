@@ -1,157 +1,197 @@
-<?xml version='1.0' encoding='utf-8'?>
-<GTA3Script>
+<?xml version='1.0' encoding='UTF-8'?>
+<GTA3Script Version="2.0">
   <Commands>
-    <Command ID="0x5a9" Name="IS_MISSION_SKIP" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-      </Args>
+    <Command Name="IS_MISSION_SKIP">
+      <Params>
+        <Param Type="OUTPUT_INT"/>
+      </Params>
     </Command>
-    <Command ID="0x5aa" Name="SET_IN_AMMUNATION" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-      </Args>
+    <Command Name="SET_IN_AMMUNATION">
+      <Params>
+        <Param Type="INPUT_INT"/>
+      </Params>
     </Command>
-    <Command ID="0x5ab" Name="DO_SAVE_GAME" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-      </Args>
+    <Command Name="DO_SAVE_GAME">
+      <Params>
+        <Param Type="INPUT_INT"/>
+      </Params>
     </Command>
-    <Command ID="0x5ac" Name="IS_RETRY" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-      </Args>
+    <Command Name="IS_RETRY">
+      <Params>
+        <Param Type="OUTPUT_INT"/>
+      </Params>
     </Command>
-    <Command ID="0x5ad" Name="DUMMY" Supported="true"/>
-    <Command ID="0x5ae" Name="MARK_CUTSCENE_START" Supported="true"/>
-    <Command ID="0x5af" Name="MARK_CUTSCENE_END" Supported="true"/>
-    <Command ID="0x5b0" Name="CUTSCENE_SCROLL" Supported="true"/>
-    <Command ID="0x5b1" Name="SET_LVAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="DUMMY"/>
+    <Command Name="MARK_CUTSCENE_START"/>
+    <Command Name="MARK_CUTSCENE_END"/>
+    <Command Name="CUTSCENE_SCROLL"/>
+    <Command Name="SET_LVAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL">
+      <Params>
+        <Param Type="LVAR_TEXT_LABEL"/>
+        <Param Type="LVAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5b2" Name="SET_VAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="SET_VAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL">
+      <Params>
+        <Param Type="VAR_TEXT_LABEL"/>
+        <Param Type="LVAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5b3" Name="SET_LVAR_TEXT_LABEL_TO_VAR_TEXT_LABEL" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="SET_LVAR_TEXT_LABEL_TO_VAR_TEXT_LABEL">
+      <Params>
+        <Param Type="LVAR_TEXT_LABEL"/>
+        <Param Type="VAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5b6" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="Buffer" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="true" AllowGlobalVar="false" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="VAR_TEXT_LABEL">
+      <Params>
+        <Param Type="VAR_TEXT_LABEL"/>
+        <Param Type="VAR_TEXT_LABEL_OPT"/>
+      </Params>
     </Command>
-    <Command ID="0x5b7" Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="true" AllowGlobalVar="false" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="LVAR_TEXT_LABEL">
+      <Params>
+        <Param Type="LVAR_TEXT_LABEL"/>
+        <Param Type="LVAR_TEXT_LABEL_OPT"/>
+      </Params>
     </Command>
-    <Command ID="0x5b8" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_VAR" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL">
+      <Params>
+        <Param Type="VAR_TEXT_LABEL"/>
+        <Param Type="TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5b9" Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL_LVAR" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="Character/ped" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL">
+      <Params>
+        <Param Type="LVAR_TEXT_LABEL"/>
+        <Param Type="TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5ba" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_LVAR" Supported="true">
-      <Args>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="false" Desc="Character/ped" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-        <Arg AllowConst="false" AllowGlobalVar="false" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="TEXT_LABEL"/>
-      </Args>
+    <Command Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_VAR">
+      <Params>
+        <Param Type="VAR_TEXT_LABEL"/>
+        <Param Type="VAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5bb" Name="DO_2D_LINES_INTERSECT" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL_LVAR">
+      <Params>
+        <Param Type="LVAR_TEXT_LABEL"/>
+        <Param Type="LVAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5bc" Name="GET_2D_LINES_INTERSECT_POINT" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="true" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="false" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="true" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_LVAR">
+      <Params>
+        <Param Type="VAR_TEXT_LABEL"/>
+        <Param Type="LVAR_TEXT_LABEL"/>
+      </Params>
     </Command>
-    <Command ID="0x5bd" Name="IS_2D_POINT_IN_TRIANGLE" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="DO_2D_LINES_INTERSECT">
+      <Params>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x5be" Name="IS_2D_POINT_IN_RECTANGLE_ON_LEFT_SIDE_OF_LINE" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="GET_2D_LINES_INTERSECT_POINT">
+      <Params>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="OUTPUT_FLOAT"/>
+        <Param Type="OUTPUT_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x5bf" Name="IS_2D_POINT_ON_LEFT_SIDE_OF_2D_LINE" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="IS_2D_POINT_IN_TRIANGLE">
+      <Params>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x5c0" Name="CHAR_LOOK_AT_OBJECT_ALWAYS" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-      </Args>
+    <Command Name="IS_2D_POINT_IN_RECTANGLE_ON_LEFT_SIDE_OF_LINE">
+      <Params>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x5c1" Name="APPLY_COLLISION_ON_OBJECT" Supported="true">
-      <Args>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="INT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-        <Arg AllowConst="true" AllowGlobalVar="true" AllowLocalVar="true" Desc="" Optional="false" Out="false" Ref="false" Type="FLOAT"/>
-      </Args>
+    <Command Name="IS_2D_POINT_ON_LEFT_SIDE_OF_2D_LINE">
+      <Params>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x5c2" Name="SAVE_STRING_TO_DEBUG_FILE" Supported="true">
-      <Args>
-        <Arg Type="TEXT_LABEL32" Desc="Buffer" AllowGlobalVar="false" AllowLocalVar="false"/>
-        <Arg Type="TEXT_LABEL32" Desc="Buffer" AllowGlobalVar="false" AllowLocalVar="false"/>
-        <Arg Type="TEXT_LABEL32" Desc="Buffer" AllowGlobalVar="false" AllowLocalVar="false"/>
-        <Arg Type="TEXT_LABEL32" Desc="Buffer" AllowGlobalVar="false" AllowLocalVar="false"/>
-      </Args>
+    <Command Name="CHAR_LOOK_AT_OBJECT_ALWAYS">
+      <Params>
+        <Param Type="INPUT_INT"/>
+        <Param Type="INPUT_INT"/>
+      </Params>
     </Command>
+    <Command Name="APPLY_COLLISION_ON_OBJECT">
+      <Params>
+        <Param Type="INPUT_INT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+        <Param Type="INPUT_FLOAT"/>
+      </Params>
+    </Command>
+    <Command Name="SAVE_STRING_TO_DEBUG_FILE">
+      <Params>
+        <Param Type="TEXT_LABEL32"/>
+        <Param Type="TEXT_LABEL32"/>
+        <Param Type="TEXT_LABEL32"/>
+        <Param Type="TEXT_LABEL32"/>
+      </Params>
+    </Command>
+  </Commands>
+  <Commands>
+    <CommandId ID="1449" Name="IS_MISSION_SKIP"/>
+    <CommandId ID="1450" Name="SET_IN_AMMUNATION"/>
+    <CommandId ID="1451" Name="DO_SAVE_GAME"/>
+    <CommandId ID="1452" Name="IS_RETRY"/>
+    <CommandId ID="1453" Name="DUMMY"/>
+    <CommandId ID="1454" Name="MARK_CUTSCENE_START"/>
+    <CommandId ID="1455" Name="MARK_CUTSCENE_END"/>
+    <CommandId ID="1456" Name="CUTSCENE_SCROLL"/>
+    <CommandId ID="1457" Name="SET_LVAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL"/>
+    <CommandId ID="1458" Name="SET_VAR_TEXT_LABEL_TO_LVAR_TEXT_LABEL"/>
+    <CommandId ID="1459" Name="SET_LVAR_TEXT_LABEL_TO_VAR_TEXT_LABEL"/>
+    <CommandId ID="1460" Name="VAR_TEXT_LABEL"/>
+    <CommandId ID="1461" Name="LVAR_TEXT_LABEL"/>
+    <CommandId ID="1462" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="1463" Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="1464" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_VAR"/>
+    <CommandId ID="1465" Name="IS_TEXT_LABEL_LVAR_EQUAL_TO_TEXT_LABEL_LVAR"/>
+    <CommandId ID="1466" Name="IS_TEXT_LABEL_VAR_EQUAL_TO_TEXT_LABEL_LVAR"/>
+    <CommandId ID="1467" Name="DO_2D_LINES_INTERSECT"/>
+    <CommandId ID="1468" Name="GET_2D_LINES_INTERSECT_POINT"/>
+    <CommandId ID="1469" Name="IS_2D_POINT_IN_TRIANGLE"/>
+    <CommandId ID="1470" Name="IS_2D_POINT_IN_RECTANGLE_ON_LEFT_SIDE_OF_LINE"/>
+    <CommandId ID="1471" Name="IS_2D_POINT_ON_LEFT_SIDE_OF_2D_LINE"/>
+    <CommandId ID="1472" Name="CHAR_LOOK_AT_OBJECT_ALWAYS"/>
+    <CommandId ID="1473" Name="APPLY_COLLISION_ON_OBJECT"/>
+    <CommandId ID="1474" Name="SAVE_STRING_TO_DEBUG_FILE"/>
   </Commands>
 </GTA3Script>

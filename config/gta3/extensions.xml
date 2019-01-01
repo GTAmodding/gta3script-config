@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<GTA3Script>
+<GTA3Script Version="2.0">
   <Alternators>
     <Alternator Name="IS_THING_EQUAL_TO_THING">
       <Alternative Name="IS_INT_LVAR_EQUAL_TO_INT_VAR"/>
@@ -11,23 +11,21 @@
     </Alternator>
   </Alternators>
   <Commands>
-    <Command ID="0xcd" Name="REPEAT" Internal="true">
-      <Args>
-        <Arg Type="INT" AllowGlobalVar="false" AllowLocalVar="false"/>
-        <Arg Type="INT" AllowConst="false" AllowLocalVar="true"/>
-      </Args>
+    <Command Name="IS_INT_LVAR_EQUAL_TO_INT_VAR">
+      <Params>
+        <Param Type="LVAR_INT"/>
+        <Param Type="VAR_INT"/>
+      </Params>
     </Command>
-    <Command ID="0x3a" Name="IS_INT_LVAR_EQUAL_TO_INT_VAR" Hash="0xcb7d4693" Extension="true">
-      <Args>
-        <Arg Type="INT" AllowConst="false" AllowGlobalVar="false"/>
-        <Arg Type="INT" AllowConst="false" AllowLocalVar="false"/>
-      </Args>
+    <Command Name="IS_FLOAT_LVAR_EQUAL_TO_FLOAT_VAR">
+      <Params>
+        <Param Type="LVAR_FLOAT"/>
+        <Param Type="VAR_FLOAT"/>
+      </Params>
     </Command>
-    <Command ID="0x44" Name="IS_FLOAT_LVAR_EQUAL_TO_FLOAT_VAR" Hash="0x75abd260" Extension="true">
-      <Args>
-        <Arg Type="FLOAT" AllowConst="false" AllowGlobalVar="false"/>
-        <Arg Type="FLOAT" AllowConst="false" AllowLocalVar="false"/>
-      </Args>
-    </Command>
+  </Commands>
+  <Commands>
+    <CommandId ID="58" Name="IS_INT_LVAR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="68" Name="IS_FLOAT_LVAR_EQUAL_TO_FLOAT_VAR"/>
   </Commands>
 </GTA3Script>

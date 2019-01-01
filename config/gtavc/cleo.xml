@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<GTA3Script>
+<GTA3Script Version="2.0">
+<!--
   <Constants>
     <Enum Name="WIN32_VK">
       <Constant Name="VK_LBUTTON" Value="1"/>
@@ -913,4 +914,5 @@
       </Args>
     </Command>
   </Commands>
+-->
 </GTA3Script>

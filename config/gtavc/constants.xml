@@ -1,17 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<GTA3Script>
+<GTA3Script Version="2.0">
   <Constants>
-    <Enum Name="BOOL" Global="true">
+    <Enum>
       <Constant Name="FALSE"/>
       <Constant Name="TRUE"/>
     </Enum>
-    <Enum Name="ONOFF" Global="true">
+    <Enum>
       <Constant Name="OFF"/>
       <Constant Name="ON"/>
     </Enum>
-    <Enum Name="DAYNIGHT" Global="true">
+    <Enum>
       <Constant Name="NIGHT"/>
       <Constant Name="DAY"/>
+    </Enum>
+    <Enum>
+      <Constant Name="KILLFRENZY_INITIALLY"/>
+      <Constant Name="KILLFRENZY_ONGOING"/>
+      <Constant Name="KILLFRENZY_PASSED"/>
+      <Constant Name="KILLFRENZY_FAILED"/>
     </Enum>
     <Enum Name="TIMER">
       <Constant Name="TIMER_UP"/>
@@ -318,12 +324,6 @@
       <Constant Name="DRIVINGMODE_AVOIDCARS"/>
       <Constant Name="DRIVINGMODE_PLOUGHTHROUGH"/>
       <Constant Name="DRIVINGMODE_STOPFORCARS_IGNORELIGHTS"/>
-    </Enum>
-    <Enum Name="KILLFRENZY" Global="true">
-      <Constant Name="KILLFRENZY_INITIALLY"/>
-      <Constant Name="KILLFRENZY_ONGOING"/>
-      <Constant Name="KILLFRENZY_PASSED"/>
-      <Constant Name="KILLFRENZY_FAILED"/>
     </Enum>
     <Enum Name="MISSION">
       <Constant Name="MISSION_NONE"/>

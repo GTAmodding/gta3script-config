@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<GTA3Script>
+<GTA3Script Version="2.0">
   <Constants>
-    <Enum Name="BOOL" Global="true">
+    <Enum>
       <Constant Name="FALSE"/>
       <Constant Name="TRUE"/>
     </Enum>
-    <Enum Name="ONOFF" Global="true">
+    <Enum>
       <Constant Name="OFF"/>
       <Constant Name="ON"/>
     </Enum>
-    <Enum Name="DAYNIGHT" Global="true">
+    <Enum>
       <Constant Name="NIGHT"/>
       <Constant Name="DAY"/>
     </Enum>

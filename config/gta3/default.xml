@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--  This file is a fallback used only if the data directory of the game is not specified. -->
-<GTA3Script>
+<GTA3Script Version="2.0">
   <Constants>
     <Enum Name="DEFAULTMODEL">
       <Constant Name="NULL" Value="0"/>
