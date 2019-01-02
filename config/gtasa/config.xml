@@ -1,0 +1,2650 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GTA3Script Version="2.0">
+  <Import Name="alternators.xml"/>
+  <Import Name="commands.xml"/>
+  <Import Name="constants.xml"/>
+  <Import Name="sounds.xml"/>
+  <Commands>
+    <CommandId ID="0" Name="NOP"/>
+    <CommandId ID="1" Name="WAIT"/>
+    <CommandId ID="2" Name="GOTO"/>
+    <CommandId ID="3" Name="SHAKE_CAM"/>
+    <CommandId ID="4" Name="SET_VAR_INT"/>
+    <CommandId ID="5" Name="SET_VAR_FLOAT"/>
+    <CommandId ID="6" Name="SET_LVAR_INT"/>
+    <CommandId ID="7" Name="SET_LVAR_FLOAT"/>
+    <CommandId ID="8" Name="ADD_VAL_TO_INT_VAR"/>
+    <CommandId ID="9" Name="ADD_VAL_TO_FLOAT_VAR"/>
+    <CommandId ID="10" Name="ADD_VAL_TO_INT_LVAR"/>
+    <CommandId ID="11" Name="ADD_VAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="12" Name="SUB_VAL_FROM_INT_VAR"/>
+    <CommandId ID="13" Name="SUB_VAL_FROM_FLOAT_VAR"/>
+    <CommandId ID="14" Name="SUB_VAL_FROM_INT_LVAR"/>
+    <CommandId ID="15" Name="SUB_VAL_FROM_FLOAT_LVAR"/>
+    <CommandId ID="16" Name="MULT_INT_VAR_BY_VAL"/>
+    <CommandId ID="17" Name="MULT_FLOAT_VAR_BY_VAL"/>
+    <CommandId ID="18" Name="MULT_INT_LVAR_BY_VAL"/>
+    <CommandId ID="19" Name="MULT_FLOAT_LVAR_BY_VAL"/>
+    <CommandId ID="20" Name="DIV_INT_VAR_BY_VAL"/>
+    <CommandId ID="21" Name="DIV_FLOAT_VAR_BY_VAL"/>
+    <CommandId ID="22" Name="DIV_INT_LVAR_BY_VAL"/>
+    <CommandId ID="23" Name="DIV_FLOAT_LVAR_BY_VAL"/>
+    <CommandId ID="24" Name="IS_INT_VAR_GREATER_THAN_NUMBER"/>
+    <CommandId ID="25" Name="IS_INT_LVAR_GREATER_THAN_NUMBER"/>
+    <CommandId ID="26" Name="IS_NUMBER_GREATER_THAN_INT_VAR"/>
+    <CommandId ID="27" Name="IS_NUMBER_GREATER_THAN_INT_LVAR"/>
+    <CommandId ID="28" Name="IS_INT_VAR_GREATER_THAN_INT_VAR"/>
+    <CommandId ID="29" Name="IS_INT_LVAR_GREATER_THAN_INT_LVAR"/>
+    <CommandId ID="30" Name="IS_INT_VAR_GREATER_THAN_INT_LVAR"/>
+    <CommandId ID="31" Name="IS_INT_LVAR_GREATER_THAN_INT_VAR"/>
+    <CommandId ID="32" Name="IS_FLOAT_VAR_GREATER_THAN_NUMBER"/>
+    <CommandId ID="33" Name="IS_FLOAT_LVAR_GREATER_THAN_NUMBER"/>
+    <CommandId ID="34" Name="IS_NUMBER_GREATER_THAN_FLOAT_VAR"/>
+    <CommandId ID="35" Name="IS_NUMBER_GREATER_THAN_FLOAT_LVAR"/>
+    <CommandId ID="36" Name="IS_FLOAT_VAR_GREATER_THAN_FLOAT_VAR"/>
+    <CommandId ID="37" Name="IS_FLOAT_LVAR_GREATER_THAN_FLOAT_LVAR"/>
+    <CommandId ID="38" Name="IS_FLOAT_VAR_GREATER_THAN_FLOAT_LVAR"/>
+    <CommandId ID="39" Name="IS_FLOAT_LVAR_GREATER_THAN_FLOAT_VAR"/>
+    <CommandId ID="40" Name="IS_INT_VAR_GREATER_OR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="41" Name="IS_INT_LVAR_GREATER_OR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="42" Name="IS_NUMBER_GREATER_OR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="43" Name="IS_NUMBER_GREATER_OR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="44" Name="IS_INT_VAR_GREATER_OR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="45" Name="IS_INT_LVAR_GREATER_OR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="46" Name="IS_INT_VAR_GREATER_OR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="47" Name="IS_INT_LVAR_GREATER_OR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="48" Name="IS_FLOAT_VAR_GREATER_OR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="49" Name="IS_FLOAT_LVAR_GREATER_OR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="50" Name="IS_NUMBER_GREATER_OR_EQUAL_TO_FLOAT_VAR"/>
+    <CommandId ID="51" Name="IS_NUMBER_GREATER_OR_EQUAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="52" Name="IS_FLOAT_VAR_GREATER_OR_EQUAL_TO_FLOAT_VAR"/>
+    <CommandId ID="53" Name="IS_FLOAT_LVAR_GREATER_OR_EQUAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="54" Name="IS_FLOAT_VAR_GREATER_OR_EQUAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="55" Name="IS_FLOAT_LVAR_GREATER_OR_EQUAL_TO_FLOAT_VAR"/>
+    <CommandId ID="56" Name="IS_INT_VAR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="57" Name="IS_INT_LVAR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="58" Name="IS_INT_VAR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="59" Name="IS_INT_LVAR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="60" Name="IS_INT_VAR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="61" Name="IS_INT_VAR_NOT_EQUAL_TO_NUMBER" Handled="false"/>
+    <CommandId ID="62" Name="IS_INT_LVAR_NOT_EQUAL_TO_NUMBER" Handled="false"/>
+    <CommandId ID="63" Name="IS_INT_VAR_NOT_EQUAL_TO_INT_VAR" Handled="false"/>
+    <CommandId ID="64" Name="IS_INT_LVAR_NOT_EQUAL_TO_INT_LVAR" Handled="false"/>
+    <CommandId ID="65" Name="IS_INT_VAR_NOT_EQUAL_TO_INT_LVAR" Handled="false"/>
+    <CommandId ID="66" Name="IS_FLOAT_VAR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="67" Name="IS_FLOAT_LVAR_EQUAL_TO_NUMBER"/>
+    <CommandId ID="68" Name="IS_FLOAT_VAR_EQUAL_TO_FLOAT_VAR"/>
+    <CommandId ID="69" Name="IS_FLOAT_LVAR_EQUAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="70" Name="IS_FLOAT_VAR_EQUAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="71" Name="IS_FLOAT_VAR_NOT_EQUAL_TO_NUMBER" Handled="false"/>
+    <CommandId ID="72" Name="IS_FLOAT_LVAR_NOT_EQUAL_TO_NUMBER" Handled="false"/>
+    <CommandId ID="73" Name="IS_FLOAT_VAR_NOT_EQUAL_TO_FLOAT_VAR" Handled="false"/>
+    <CommandId ID="74" Name="IS_FLOAT_LVAR_NOT_EQUAL_TO_FLOAT_LVAR" Handled="false"/>
+    <CommandId ID="75" Name="IS_FLOAT_VAR_NOT_EQUAL_TO_FLOAT_LVAR" Handled="false"/>
+    <CommandId ID="76" Name="GOTO_IF_TRUE" Handled="false"/>
+    <CommandId ID="77" Name="GOTO_IF_FALSE"/>
+    <CommandId ID="78" Name="TERMINATE_THIS_SCRIPT"/>
+    <CommandId ID="79" Name="START_NEW_SCRIPT"/>
+    <CommandId ID="80" Name="GOSUB"/>
+    <CommandId ID="81" Name="RETURN"/>
+    <CommandId ID="82" Name="LINE"/>
+    <CommandId ID="83" Name="CREATE_PLAYER"/>
+    <CommandId ID="84" Name="GET_PLAYER_COORDINATES" Handled="false"/>
+    <CommandId ID="85" Name="SET_PLAYER_COORDINATES" Handled="false"/>
+    <CommandId ID="86" Name="IS_PLAYER_IN_AREA_2D" Handled="false"/>
+    <CommandId ID="87" Name="IS_PLAYER_IN_AREA_3D" Handled="false"/>
+    <CommandId ID="88" Name="ADD_INT_VAR_TO_INT_VAR"/>
+    <CommandId ID="89" Name="ADD_FLOAT_VAR_TO_FLOAT_VAR"/>
+    <CommandId ID="90" Name="ADD_INT_LVAR_TO_INT_LVAR"/>
+    <CommandId ID="91" Name="ADD_FLOAT_LVAR_TO_FLOAT_LVAR"/>
+    <CommandId ID="92" Name="ADD_INT_VAR_TO_INT_LVAR"/>
+    <CommandId ID="93" Name="ADD_FLOAT_VAR_TO_FLOAT_LVAR"/>
+    <CommandId ID="94" Name="ADD_INT_LVAR_TO_INT_VAR"/>
+    <CommandId ID="95" Name="ADD_FLOAT_LVAR_TO_FLOAT_VAR"/>
+    <CommandId ID="96" Name="SUB_INT_VAR_FROM_INT_VAR"/>
+    <CommandId ID="97" Name="SUB_FLOAT_VAR_FROM_FLOAT_VAR"/>
+    <CommandId ID="98" Name="SUB_INT_LVAR_FROM_INT_LVAR"/>
+    <CommandId ID="99" Name="SUB_FLOAT_LVAR_FROM_FLOAT_LVAR"/>
+    <CommandId ID="100" Name="SUB_INT_VAR_FROM_INT_LVAR"/>
+    <CommandId ID="101" Name="SUB_FLOAT_VAR_FROM_FLOAT_LVAR"/>
+    <CommandId ID="102" Name="SUB_INT_LVAR_FROM_INT_VAR"/>
+    <CommandId ID="103" Name="SUB_FLOAT_LVAR_FROM_FLOAT_VAR"/>
+    <CommandId ID="104" Name="MULT_INT_VAR_BY_INT_VAR"/>
+    <CommandId ID="105" Name="MULT_FLOAT_VAR_BY_FLOAT_VAR"/>
+    <CommandId ID="106" Name="MULT_INT_LVAR_BY_INT_LVAR"/>
+    <CommandId ID="107" Name="MULT_FLOAT_LVAR_BY_FLOAT_LVAR"/>
+    <CommandId ID="108" Name="MULT_INT_VAR_BY_INT_LVAR"/>
+    <CommandId ID="109" Name="MULT_FLOAT_VAR_BY_FLOAT_LVAR"/>
+    <CommandId ID="110" Name="MULT_INT_LVAR_BY_INT_VAR"/>
+    <CommandId ID="111" Name="MULT_FLOAT_LVAR_BY_FLOAT_VAR"/>
+    <CommandId ID="112" Name="DIV_INT_VAR_BY_INT_VAR"/>
+    <CommandId ID="113" Name="DIV_FLOAT_VAR_BY_FLOAT_VAR"/>
+    <CommandId ID="114" Name="DIV_INT_LVAR_BY_INT_LVAR"/>
+    <CommandId ID="115" Name="DIV_FLOAT_LVAR_BY_FLOAT_LVAR"/>
+    <CommandId ID="116" Name="DIV_INT_VAR_BY_INT_LVAR"/>
+    <CommandId ID="117" Name="DIV_FLOAT_VAR_BY_FLOAT_LVAR"/>
+    <CommandId ID="118" Name="DIV_INT_LVAR_BY_INT_VAR"/>
+    <CommandId ID="119" Name="DIV_FLOAT_LVAR_BY_FLOAT_VAR"/>
+    <CommandId ID="120" Name="ADD_TIMED_VAL_TO_FLOAT_VAR"/>
+    <CommandId ID="121" Name="ADD_TIMED_VAL_TO_FLOAT_LVAR"/>
+    <CommandId ID="122" Name="ADD_TIMED_FLOAT_VAR_TO_FLOAT_VAR"/>
+    <CommandId ID="123" Name="ADD_TIMED_FLOAT_LVAR_TO_FLOAT_LVAR"/>
+    <CommandId ID="124" Name="ADD_TIMED_FLOAT_VAR_TO_FLOAT_LVAR"/>
+    <CommandId ID="125" Name="ADD_TIMED_FLOAT_LVAR_TO_FLOAT_VAR"/>
+    <CommandId ID="126" Name="SUB_TIMED_VAL_FROM_FLOAT_VAR"/>
+    <CommandId ID="127" Name="SUB_TIMED_VAL_FROM_FLOAT_LVAR"/>
+    <CommandId ID="128" Name="SUB_TIMED_FLOAT_VAR_FROM_FLOAT_VAR"/>
+    <CommandId ID="129" Name="SUB_TIMED_FLOAT_LVAR_FROM_FLOAT_LVAR"/>
+    <CommandId ID="130" Name="SUB_TIMED_FLOAT_VAR_FROM_FLOAT_LVAR"/>
+    <CommandId ID="131" Name="SUB_TIMED_FLOAT_LVAR_FROM_FLOAT_VAR"/>
+    <CommandId ID="132" Name="SET_VAR_INT_TO_VAR_INT"/>
+    <CommandId ID="133" Name="SET_LVAR_INT_TO_LVAR_INT"/>
+    <CommandId ID="134" Name="SET_VAR_FLOAT_TO_VAR_FLOAT"/>
+    <CommandId ID="135" Name="SET_LVAR_FLOAT_TO_LVAR_FLOAT"/>
+    <CommandId ID="136" Name="SET_VAR_FLOAT_TO_LVAR_FLOAT"/>
+    <CommandId ID="137" Name="SET_LVAR_FLOAT_TO_VAR_FLOAT"/>
+    <CommandId ID="138" Name="SET_VAR_INT_TO_LVAR_INT"/>
+    <CommandId ID="139" Name="SET_LVAR_INT_TO_VAR_INT"/>
+    <CommandId ID="140" Name="CSET_VAR_INT_TO_VAR_FLOAT"/>
+    <CommandId ID="141" Name="CSET_VAR_FLOAT_TO_VAR_INT"/>
+    <CommandId ID="142" Name="CSET_LVAR_INT_TO_VAR_FLOAT"/>
+    <CommandId ID="143" Name="CSET_LVAR_FLOAT_TO_VAR_INT"/>
+    <CommandId ID="144" Name="CSET_VAR_INT_TO_LVAR_FLOAT"/>
+    <CommandId ID="145" Name="CSET_VAR_FLOAT_TO_LVAR_INT"/>
+    <CommandId ID="146" Name="CSET_LVAR_INT_TO_LVAR_FLOAT"/>
+    <CommandId ID="147" Name="CSET_LVAR_FLOAT_TO_LVAR_INT"/>
+    <CommandId ID="148" Name="ABS_VAR_INT"/>
+    <CommandId ID="149" Name="ABS_LVAR_INT"/>
+    <CommandId ID="150" Name="ABS_VAR_FLOAT"/>
+    <CommandId ID="151" Name="ABS_LVAR_FLOAT"/>
+    <CommandId ID="152" Name="GENERATE_RANDOM_FLOAT"/>
+    <CommandId ID="153" Name="GENERATE_RANDOM_INT"/>
+    <CommandId ID="154" Name="CREATE_CHAR"/>
+    <CommandId ID="155" Name="DELETE_CHAR"/>
+    <CommandId ID="156" Name="CHAR_WANDER_DIR" Handled="false"/>
+    <CommandId ID="157" Name="CHAR_WANDER_RANGE" Handled="false"/>
+    <CommandId ID="158" Name="CHAR_FOLLOW_PATH" Handled="false"/>
+    <CommandId ID="159" Name="CHAR_SET_IDLE" Handled="false"/>
+    <CommandId ID="160" Name="GET_CHAR_COORDINATES"/>
+    <CommandId ID="161" Name="SET_CHAR_COORDINATES"/>
+    <CommandId ID="162" Name="IS_CHAR_STILL_ALIVE" Handled="false"/>
+    <CommandId ID="163" Name="IS_CHAR_IN_AREA_2D"/>
+    <CommandId ID="164" Name="IS_CHAR_IN_AREA_3D"/>
+    <CommandId ID="165" Name="CREATE_CAR"/>
+    <CommandId ID="166" Name="DELETE_CAR"/>
+    <CommandId ID="167" Name="CAR_GOTO_COORDINATES"/>
+    <CommandId ID="168" Name="CAR_WANDER_RANDOMLY"/>
+    <CommandId ID="169" Name="CAR_SET_IDLE"/>
+    <CommandId ID="170" Name="GET_CAR_COORDINATES"/>
+    <CommandId ID="171" Name="SET_CAR_COORDINATES"/>
+    <CommandId ID="172" Name="IS_CAR_STILL_ALIVE" Handled="false"/>
+    <CommandId ID="173" Name="SET_CAR_CRUISE_SPEED"/>
+    <CommandId ID="174" Name="SET_CAR_DRIVING_STYLE"/>
+    <CommandId ID="175" Name="SET_CAR_MISSION"/>
+    <CommandId ID="176" Name="IS_CAR_IN_AREA_2D"/>
+    <CommandId ID="177" Name="IS_CAR_IN_AREA_3D"/>
+    <CommandId ID="178" Name="SPECIAL_0" Handled="false"/>
+    <CommandId ID="179" Name="SPECIAL_1" Handled="false"/>
+    <CommandId ID="180" Name="SPECIAL_2" Handled="false"/>
+    <CommandId ID="181" Name="SPECIAL_3" Handled="false"/>
+    <CommandId ID="182" Name="SPECIAL_4" Handled="false"/>
+    <CommandId ID="183" Name="SPECIAL_5" Handled="false"/>
+    <CommandId ID="184" Name="SPECIAL_6" Handled="false"/>
+    <CommandId ID="185" Name="SPECIAL_7" Handled="false"/>
+    <CommandId ID="186" Name="PRINT_BIG"/>
+    <CommandId ID="187" Name="PRINT"/>
+    <CommandId ID="188" Name="PRINT_NOW"/>
+    <CommandId ID="189" Name="PRINT_SOON" Handled="false"/>
+    <CommandId ID="190" Name="CLEAR_PRINTS"/>
+    <CommandId ID="191" Name="GET_TIME_OF_DAY"/>
+    <CommandId ID="192" Name="SET_TIME_OF_DAY"/>
+    <CommandId ID="193" Name="GET_MINUTES_TO_TIME_OF_DAY"/>
+    <CommandId ID="194" Name="IS_POINT_ON_SCREEN"/>
+    <CommandId ID="195" Name="DEBUG_ON" Handled="false"/>
+    <CommandId ID="196" Name="DEBUG_OFF" Handled="false"/>
+    <CommandId ID="197" Name="RETURN_TRUE" Handled="false"/>
+    <CommandId ID="198" Name="RETURN_FALSE" Handled="false"/>
+    <CommandId ID="199" Name="VAR_INT"/>
+    <CommandId ID="200" Name="VAR_FLOAT"/>
+    <CommandId ID="201" Name="LVAR_INT"/>
+    <CommandId ID="202" Name="LVAR_FLOAT"/>
+    <CommandId ID="203" Name="{"/>
+    <CommandId ID="204" Name="}"/>
+    <CommandId ID="205" Name="REPEAT"/>
+    <CommandId ID="206" Name="ENDREPEAT"/>
+    <CommandId ID="207" Name="IF"/>
+    <CommandId ID="208" Name="IFNOT"/>
+    <CommandId ID="209" Name="ELSE"/>
+    <CommandId ID="210" Name="ENDIF"/>
+    <CommandId ID="211" Name="WHILE"/>
+    <CommandId ID="212" Name="WHILENOT"/>
+    <CommandId ID="213" Name="ENDWHILE"/>
+    <CommandId ID="214" Name="ANDOR"/>
+    <CommandId ID="215" Name="LAUNCH_MISSION"/>
+    <CommandId ID="216" Name="MISSION_HAS_FINISHED"/>
+    <CommandId ID="217" Name="STORE_CAR_CHAR_IS_IN"/>
+    <CommandId ID="218" Name="STORE_CAR_PLAYER_IS_IN" Handled="false"/>
+    <CommandId ID="219" Name="IS_CHAR_IN_CAR"/>
+    <CommandId ID="220" Name="IS_PLAYER_IN_CAR" Handled="false"/>
+    <CommandId ID="221" Name="IS_CHAR_IN_MODEL"/>
+    <CommandId ID="222" Name="IS_PLAYER_IN_MODEL" Handled="false"/>
+    <CommandId ID="223" Name="IS_CHAR_IN_ANY_CAR"/>
+    <CommandId ID="224" Name="IS_PLAYER_IN_ANY_CAR" Handled="false"/>
+    <CommandId ID="225" Name="IS_BUTTON_PRESSED"/>
+    <CommandId ID="226" Name="GET_PAD_STATE"/>
+    <CommandId ID="227" Name="LOCATE_PLAYER_ANY_MEANS_2D" Handled="false"/>
+    <CommandId ID="228" Name="LOCATE_PLAYER_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="229" Name="LOCATE_PLAYER_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="230" Name="LOCATE_STOPPED_PLAYER_ANY_MEANS_2D" Handled="false"/>
+    <CommandId ID="231" Name="LOCATE_STOPPED_PLAYER_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="232" Name="LOCATE_STOPPED_PLAYER_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="233" Name="LOCATE_PLAYER_ANY_MEANS_CHAR_2D" Handled="false"/>
+    <CommandId ID="234" Name="LOCATE_PLAYER_ON_FOOT_CHAR_2D" Handled="false"/>
+    <CommandId ID="235" Name="LOCATE_PLAYER_IN_CAR_CHAR_2D" Handled="false"/>
+    <CommandId ID="236" Name="LOCATE_CHAR_ANY_MEANS_2D"/>
+    <CommandId ID="237" Name="LOCATE_CHAR_ON_FOOT_2D"/>
+    <CommandId ID="238" Name="LOCATE_CHAR_IN_CAR_2D"/>
+    <CommandId ID="239" Name="LOCATE_STOPPED_CHAR_ANY_MEANS_2D"/>
+    <CommandId ID="240" Name="LOCATE_STOPPED_CHAR_ON_FOOT_2D"/>
+    <CommandId ID="241" Name="LOCATE_STOPPED_CHAR_IN_CAR_2D"/>
+    <CommandId ID="242" Name="LOCATE_CHAR_ANY_MEANS_CHAR_2D"/>
+    <CommandId ID="243" Name="LOCATE_CHAR_ON_FOOT_CHAR_2D"/>
+    <CommandId ID="244" Name="LOCATE_CHAR_IN_CAR_CHAR_2D"/>
+    <CommandId ID="245" Name="LOCATE_PLAYER_ANY_MEANS_3D" Handled="false"/>
+    <CommandId ID="246" Name="LOCATE_PLAYER_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="247" Name="LOCATE_PLAYER_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="248" Name="LOCATE_STOPPED_PLAYER_ANY_MEANS_3D" Handled="false"/>
+    <CommandId ID="249" Name="LOCATE_STOPPED_PLAYER_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="250" Name="LOCATE_STOPPED_PLAYER_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="251" Name="LOCATE_PLAYER_ANY_MEANS_CHAR_3D" Handled="false"/>
+    <CommandId ID="252" Name="LOCATE_PLAYER_ON_FOOT_CHAR_3D" Handled="false"/>
+    <CommandId ID="253" Name="LOCATE_PLAYER_IN_CAR_CHAR_3D" Handled="false"/>
+    <CommandId ID="254" Name="LOCATE_CHAR_ANY_MEANS_3D"/>
+    <CommandId ID="255" Name="LOCATE_CHAR_ON_FOOT_3D"/>
+    <CommandId ID="256" Name="LOCATE_CHAR_IN_CAR_3D"/>
+    <CommandId ID="257" Name="LOCATE_STOPPED_CHAR_ANY_MEANS_3D"/>
+    <CommandId ID="258" Name="LOCATE_STOPPED_CHAR_ON_FOOT_3D"/>
+    <CommandId ID="259" Name="LOCATE_STOPPED_CHAR_IN_CAR_3D"/>
+    <CommandId ID="260" Name="LOCATE_CHAR_ANY_MEANS_CHAR_3D"/>
+    <CommandId ID="261" Name="LOCATE_CHAR_ON_FOOT_CHAR_3D"/>
+    <CommandId ID="262" Name="LOCATE_CHAR_IN_CAR_CHAR_3D"/>
+    <CommandId ID="263" Name="CREATE_OBJECT"/>
+    <CommandId ID="264" Name="DELETE_OBJECT"/>
+    <CommandId ID="265" Name="ADD_SCORE"/>
+    <CommandId ID="266" Name="IS_SCORE_GREATER"/>
+    <CommandId ID="267" Name="STORE_SCORE"/>
+    <CommandId ID="268" Name="GIVE_REMOTE_CONTROLLED_CAR_TO_PLAYER" Handled="false"/>
+    <CommandId ID="269" Name="ALTER_WANTED_LEVEL"/>
+    <CommandId ID="270" Name="ALTER_WANTED_LEVEL_NO_DROP"/>
+    <CommandId ID="271" Name="IS_WANTED_LEVEL_GREATER"/>
+    <CommandId ID="272" Name="CLEAR_WANTED_LEVEL"/>
+    <CommandId ID="273" Name="SET_DEATHARREST_STATE"/>
+    <CommandId ID="274" Name="HAS_DEATHARREST_BEEN_EXECUTED"/>
+    <CommandId ID="275" Name="ADD_AMMO_TO_PLAYER" Handled="false"/>
+    <CommandId ID="276" Name="ADD_AMMO_TO_CHAR"/>
+    <CommandId ID="277" Name="ADD_AMMO_TO_CAR" Handled="false"/>
+    <CommandId ID="278" Name="IS_PLAYER_STILL_ALIVE" Handled="false"/>
+    <CommandId ID="279" Name="IS_PLAYER_DEAD"/>
+    <CommandId ID="280" Name="IS_CHAR_DEAD"/>
+    <CommandId ID="281" Name="IS_CAR_DEAD"/>
+    <CommandId ID="282" Name="SET_CHAR_THREAT_SEARCH" Handled="false"/>
+    <CommandId ID="283" Name="SET_CHAR_THREAT_REACTION" Handled="false"/>
+    <CommandId ID="284" Name="SET_CHAR_OBJ_NO_OBJ" Handled="false"/>
+    <CommandId ID="285" Name="ORDER_DRIVER_OUT_OF_CAR" Handled="false"/>
+    <CommandId ID="286" Name="ORDER_CHAR_TO_DRIVE_CAR" Handled="false"/>
+    <CommandId ID="287" Name="ADD_PATROL_POINT" Handled="false"/>
+    <CommandId ID="288" Name="IS_PLAYER_IN_GANGZONE" Handled="false"/>
+    <CommandId ID="289" Name="IS_PLAYER_IN_ZONE" Handled="false"/>
+    <CommandId ID="290" Name="IS_PLAYER_PRESSING_HORN"/>
+    <CommandId ID="291" Name="HAS_CHAR_SPOTTED_PLAYER" Handled="false"/>
+    <CommandId ID="292" Name="ORDER_CHAR_TO_BACKDOOR" Handled="false"/>
+    <CommandId ID="293" Name="ADD_CHAR_TO_GANG" Handled="false"/>
+    <CommandId ID="294" Name="IS_CHAR_OBJECTIVE_PASSED" Handled="false"/>
+    <CommandId ID="295" Name="SET_CHAR_DRIVE_AGGRESSION" Handled="false"/>
+    <CommandId ID="296" Name="SET_CHAR_MAX_DRIVESPEED" Handled="false"/>
+    <CommandId ID="297" Name="CREATE_CHAR_INSIDE_CAR"/>
+    <CommandId ID="298" Name="WARP_PLAYER_FROM_CAR_TO_COORD" Handled="false"/>
+    <CommandId ID="299" Name="MAKE_CHAR_DO_NOTHING" Handled="false"/>
+    <CommandId ID="300" Name="SET_CHAR_INVINCIBLE" Handled="false"/>
+    <CommandId ID="301" Name="SET_PLAYER_INVINCIBLE" Handled="false"/>
+    <CommandId ID="302" Name="SET_CHAR_GRAPHIC_TYPE" Handled="false"/>
+    <CommandId ID="303" Name="SET_PLAYER_GRAPHIC_TYPE" Handled="false"/>
+    <CommandId ID="304" Name="HAS_PLAYER_BEEN_ARRESTED" Handled="false"/>
+    <CommandId ID="305" Name="STOP_CHAR_DRIVING" Handled="false"/>
+    <CommandId ID="306" Name="KILL_CHAR" Handled="false"/>
+    <CommandId ID="307" Name="SET_FAVOURITE_CAR_MODEL_FOR_CHAR" Handled="false"/>
+    <CommandId ID="308" Name="SET_CHAR_OCCUPATION" Handled="false"/>
+    <CommandId ID="309" Name="CHANGE_CAR_LOCK" Handled="false"/>
+    <CommandId ID="310" Name="SHAKE_CAM_WITH_POINT" Handled="false"/>
+    <CommandId ID="311" Name="IS_CAR_MODEL"/>
+    <CommandId ID="312" Name="IS_CAR_REMAP" Handled="false"/>
+    <CommandId ID="313" Name="HAS_CAR_JUST_SUNK" Handled="false"/>
+    <CommandId ID="314" Name="SET_CAR_NO_COLLIDE" Handled="false"/>
+    <CommandId ID="315" Name="IS_CAR_DEAD_IN_AREA_2D" Handled="false"/>
+    <CommandId ID="316" Name="IS_CAR_DEAD_IN_AREA_3D" Handled="false"/>
+    <CommandId ID="317" Name="IS_TRAILER_ATTACHED" Handled="false"/>
+    <CommandId ID="318" Name="IS_CAR_ON_TRAILER" Handled="false"/>
+    <CommandId ID="319" Name="HAS_CAR_GOT_WEAPON" Handled="false"/>
+    <CommandId ID="320" Name="PARK" Handled="false"/>
+    <CommandId ID="321" Name="HAS_PARK_FINISHED" Handled="false"/>
+    <CommandId ID="322" Name="KILL_ALL_PASSENGERS" Handled="false"/>
+    <CommandId ID="323" Name="SET_CAR_BULLETPROOF" Handled="false"/>
+    <CommandId ID="324" Name="SET_CAR_FLAMEPROOF" Handled="false"/>
+    <CommandId ID="325" Name="SET_CAR_ROCKETPROOF" Handled="false"/>
+    <CommandId ID="326" Name="IS_CARBOMB_ACTIVE" Handled="false"/>
+    <CommandId ID="327" Name="GIVE_CAR_ALARM" Handled="false"/>
+    <CommandId ID="328" Name="PUT_CAR_ON_TRAILER" Handled="false"/>
+    <CommandId ID="329" Name="IS_CAR_CRUSHED" Handled="false"/>
+    <CommandId ID="330" Name="CREATE_GANG_CAR" Handled="false"/>
+    <CommandId ID="331" Name="CREATE_CAR_GENERATOR"/>
+    <CommandId ID="332" Name="SWITCH_CAR_GENERATOR"/>
+    <CommandId ID="333" Name="ADD_PAGER_MESSAGE" Handled="false"/>
+    <CommandId ID="334" Name="DISPLAY_ONSCREEN_TIMER"/>
+    <CommandId ID="335" Name="CLEAR_ONSCREEN_TIMER"/>
+    <CommandId ID="336" Name="DISPLAY_ONSCREEN_COUNTER" Handled="false"/>
+    <CommandId ID="337" Name="CLEAR_ONSCREEN_COUNTER"/>
+    <CommandId ID="338" Name="SET_ZONE_CAR_INFO" Handled="false"/>
+    <CommandId ID="339" Name="IS_CHAR_IN_GANG_ZONE" Handled="false"/>
+    <CommandId ID="340" Name="IS_CHAR_IN_ZONE"/>
+    <CommandId ID="341" Name="SET_CAR_DENSITY" Handled="false"/>
+    <CommandId ID="342" Name="SET_PED_DENSITY" Handled="false"/>
+    <CommandId ID="343" Name="POINT_CAMERA_AT_PLAYER" Handled="false"/>
+    <CommandId ID="344" Name="POINT_CAMERA_AT_CAR"/>
+    <CommandId ID="345" Name="POINT_CAMERA_AT_CHAR"/>
+    <CommandId ID="346" Name="RESTORE_CAMERA"/>
+    <CommandId ID="347" Name="SHAKE_PAD"/>
+    <CommandId ID="348" Name="SET_ZONE_PED_INFO" Handled="false"/>
+    <CommandId ID="349" Name="SET_TIME_SCALE"/>
+    <CommandId ID="350" Name="IS_CAR_IN_AIR" Handled="false"/>
+    <CommandId ID="351" Name="SET_FIXED_CAMERA_POSITION"/>
+    <CommandId ID="352" Name="POINT_CAMERA_AT_POINT"/>
+    <CommandId ID="353" Name="ADD_BLIP_FOR_CAR_OLD"/>
+    <CommandId ID="354" Name="ADD_BLIP_FOR_CHAR_OLD" Handled="false"/>
+    <CommandId ID="355" Name="ADD_BLIP_FOR_OBJECT_OLD" Handled="false"/>
+    <CommandId ID="356" Name="REMOVE_BLIP"/>
+    <CommandId ID="357" Name="CHANGE_BLIP_COLOUR"/>
+    <CommandId ID="358" Name="DIM_BLIP" Handled="false"/>
+    <CommandId ID="359" Name="ADD_BLIP_FOR_COORD_OLD"/>
+    <CommandId ID="360" Name="CHANGE_BLIP_SCALE"/>
+    <CommandId ID="361" Name="SET_FADING_COLOUR"/>
+    <CommandId ID="362" Name="DO_FADE"/>
+    <CommandId ID="363" Name="GET_FADING_STATUS"/>
+    <CommandId ID="364" Name="ADD_HOSPITAL_RESTART"/>
+    <CommandId ID="365" Name="ADD_POLICE_RESTART"/>
+    <CommandId ID="366" Name="OVERRIDE_NEXT_RESTART"/>
+    <CommandId ID="367" Name="DRAW_SHADOW"/>
+    <CommandId ID="368" Name="GET_PLAYER_HEADING" Handled="false"/>
+    <CommandId ID="369" Name="SET_PLAYER_HEADING" Handled="false"/>
+    <CommandId ID="370" Name="GET_CHAR_HEADING"/>
+    <CommandId ID="371" Name="SET_CHAR_HEADING"/>
+    <CommandId ID="372" Name="GET_CAR_HEADING"/>
+    <CommandId ID="373" Name="SET_CAR_HEADING"/>
+    <CommandId ID="374" Name="GET_OBJECT_HEADING"/>
+    <CommandId ID="375" Name="SET_OBJECT_HEADING"/>
+    <CommandId ID="376" Name="IS_PLAYER_TOUCHING_OBJECT" Handled="false"/>
+    <CommandId ID="377" Name="IS_CHAR_TOUCHING_OBJECT"/>
+    <CommandId ID="378" Name="SET_PLAYER_AMMO" Handled="false"/>
+    <CommandId ID="379" Name="SET_CHAR_AMMO"/>
+    <CommandId ID="380" Name="SET_CAR_AMMO" Handled="false"/>
+    <CommandId ID="381" Name="LOAD_CAMERA_SPLINE" Handled="false"/>
+    <CommandId ID="382" Name="MOVE_CAMERA_ALONG_SPLINE" Handled="false"/>
+    <CommandId ID="383" Name="GET_CAMERA_POSITION_ALONG_SPLINE" Handled="false"/>
+    <CommandId ID="384" Name="DECLARE_MISSION_FLAG"/>
+    <CommandId ID="385" Name="DECLARE_MISSION_FLAG_FOR_CONTACT" Handled="false"/>
+    <CommandId ID="386" Name="DECLARE_BASE_BRIEF_ID_FOR_CONTACT" Handled="false"/>
+    <CommandId ID="387" Name="IS_PLAYER_HEALTH_GREATER" Handled="false"/>
+    <CommandId ID="388" Name="IS_CHAR_HEALTH_GREATER"/>
+    <CommandId ID="389" Name="IS_CAR_HEALTH_GREATER"/>
+    <CommandId ID="390" Name="ADD_BLIP_FOR_CAR"/>
+    <CommandId ID="391" Name="ADD_BLIP_FOR_CHAR"/>
+    <CommandId ID="392" Name="ADD_BLIP_FOR_OBJECT"/>
+    <CommandId ID="393" Name="ADD_BLIP_FOR_CONTACT_POINT" Handled="false"/>
+    <CommandId ID="394" Name="ADD_BLIP_FOR_COORD"/>
+    <CommandId ID="395" Name="CHANGE_BLIP_DISPLAY"/>
+    <CommandId ID="396" Name="ADD_ONE_OFF_SOUND"/>
+    <CommandId ID="397" Name="ADD_CONTINUOUS_SOUND"/>
+    <CommandId ID="398" Name="REMOVE_SOUND"/>
+    <CommandId ID="399" Name="IS_CAR_STUCK_ON_ROOF"/>
+    <CommandId ID="400" Name="ADD_UPSIDEDOWN_CAR_CHECK"/>
+    <CommandId ID="401" Name="REMOVE_UPSIDEDOWN_CAR_CHECK"/>
+    <CommandId ID="402" Name="SET_CHAR_OBJ_WAIT_ON_FOOT" Handled="false"/>
+    <CommandId ID="403" Name="SET_CHAR_OBJ_FLEE_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="404" Name="SET_CHAR_OBJ_GUARD_SPOT" Handled="false"/>
+    <CommandId ID="405" Name="SET_CHAR_OBJ_GUARD_AREA" Handled="false"/>
+    <CommandId ID="406" Name="SET_CHAR_OBJ_WAIT_IN_CAR" Handled="false"/>
+    <CommandId ID="407" Name="IS_PLAYER_IN_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="408" Name="IS_PLAYER_IN_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="409" Name="IS_PLAYER_STOPPED_IN_AREA_2D" Handled="false"/>
+    <CommandId ID="410" Name="IS_PLAYER_STOPPED_IN_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="411" Name="IS_PLAYER_STOPPED_IN_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="412" Name="IS_PLAYER_IN_AREA_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="413" Name="IS_PLAYER_IN_AREA_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="414" Name="IS_PLAYER_STOPPED_IN_AREA_3D" Handled="false"/>
+    <CommandId ID="415" Name="IS_PLAYER_STOPPED_IN_AREA_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="416" Name="IS_PLAYER_STOPPED_IN_AREA_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="417" Name="IS_CHAR_IN_AREA_ON_FOOT_2D"/>
+    <CommandId ID="418" Name="IS_CHAR_IN_AREA_IN_CAR_2D"/>
+    <CommandId ID="419" Name="IS_CHAR_STOPPED_IN_AREA_2D"/>
+    <CommandId ID="420" Name="IS_CHAR_STOPPED_IN_AREA_ON_FOOT_2D"/>
+    <CommandId ID="421" Name="IS_CHAR_STOPPED_IN_AREA_IN_CAR_2D"/>
+    <CommandId ID="422" Name="IS_CHAR_IN_AREA_ON_FOOT_3D"/>
+    <CommandId ID="423" Name="IS_CHAR_IN_AREA_IN_CAR_3D"/>
+    <CommandId ID="424" Name="IS_CHAR_STOPPED_IN_AREA_3D"/>
+    <CommandId ID="425" Name="IS_CHAR_STOPPED_IN_AREA_ON_FOOT_3D"/>
+    <CommandId ID="426" Name="IS_CHAR_STOPPED_IN_AREA_IN_CAR_3D"/>
+    <CommandId ID="427" Name="IS_CAR_STOPPED_IN_AREA_2D"/>
+    <CommandId ID="428" Name="IS_CAR_STOPPED_IN_AREA_3D"/>
+    <CommandId ID="429" Name="LOCATE_CAR_2D"/>
+    <CommandId ID="430" Name="LOCATE_STOPPED_CAR_2D"/>
+    <CommandId ID="431" Name="LOCATE_CAR_3D"/>
+    <CommandId ID="432" Name="LOCATE_STOPPED_CAR_3D"/>
+    <CommandId ID="433" Name="GIVE_WEAPON_TO_PLAYER" Handled="false"/>
+    <CommandId ID="434" Name="GIVE_WEAPON_TO_CHAR"/>
+    <CommandId ID="435" Name="GIVE_WEAPON_TO_CAR" Handled="false"/>
+    <CommandId ID="436" Name="SET_PLAYER_CONTROL"/>
+    <CommandId ID="437" Name="FORCE_WEATHER"/>
+    <CommandId ID="438" Name="FORCE_WEATHER_NOW"/>
+    <CommandId ID="439" Name="RELEASE_WEATHER"/>
+    <CommandId ID="440" Name="SET_CURRENT_PLAYER_WEAPON" Handled="false"/>
+    <CommandId ID="441" Name="SET_CURRENT_CHAR_WEAPON"/>
+    <CommandId ID="442" Name="SET_CURRENT_CAR_WEAPON" Handled="false"/>
+    <CommandId ID="443" Name="GET_OBJECT_COORDINATES"/>
+    <CommandId ID="444" Name="SET_OBJECT_COORDINATES"/>
+    <CommandId ID="445" Name="GET_GAME_TIMER"/>
+    <CommandId ID="446" Name="TURN_CHAR_TO_FACE_COORD" Handled="false"/>
+    <CommandId ID="447" Name="TURN_PLAYER_TO_FACE_COORD" Handled="false"/>
+    <CommandId ID="448" Name="STORE_WANTED_LEVEL"/>
+    <CommandId ID="449" Name="IS_CAR_STOPPED"/>
+    <CommandId ID="450" Name="MARK_CHAR_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="451" Name="MARK_CAR_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="452" Name="MARK_OBJECT_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="453" Name="DONT_REMOVE_CHAR"/>
+    <CommandId ID="454" Name="DONT_REMOVE_CAR" Handled="false"/>
+    <CommandId ID="455" Name="DONT_REMOVE_OBJECT"/>
+    <CommandId ID="456" Name="CREATE_CHAR_AS_PASSENGER"/>
+    <CommandId ID="457" Name="SET_CHAR_OBJ_KILL_CHAR_ON_FOOT" Handled="false"/>
+    <CommandId ID="458" Name="SET_CHAR_OBJ_KILL_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="459" Name="SET_CHAR_OBJ_KILL_CHAR_ANY_MEANS" Handled="false"/>
+    <CommandId ID="460" Name="SET_CHAR_OBJ_KILL_PLAYER_ANY_MEANS" Handled="false"/>
+    <CommandId ID="461" Name="SET_CHAR_OBJ_FLEE_CHAR_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="462" Name="SET_CHAR_OBJ_FLEE_PLAYER_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="463" Name="SET_CHAR_OBJ_FLEE_CHAR_ON_FOOT_ALWAYS" Handled="false"/>
+    <CommandId ID="464" Name="SET_CHAR_OBJ_FLEE_PLAYER_ON_FOOT_ALWAYS" Handled="false"/>
+    <CommandId ID="465" Name="SET_CHAR_OBJ_GOTO_CHAR_ON_FOOT" Handled="false"/>
+    <CommandId ID="466" Name="SET_CHAR_OBJ_GOTO_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="467" Name="SET_CHAR_OBJ_LEAVE_CAR" Handled="false"/>
+    <CommandId ID="468" Name="SET_CHAR_OBJ_ENTER_CAR_AS_PASSENGER" Handled="false"/>
+    <CommandId ID="469" Name="SET_CHAR_OBJ_ENTER_CAR_AS_DRIVER" Handled="false"/>
+    <CommandId ID="470" Name="SET_CHAR_OBJ_FOLLOW_CAR_IN_CAR" Handled="false"/>
+    <CommandId ID="471" Name="SET_CHAR_OBJ_FIRE_AT_OBJECT_FROM_VEHICLE" Handled="false"/>
+    <CommandId ID="472" Name="SET_CHAR_OBJ_DESTROY_OBJECT" Handled="false"/>
+    <CommandId ID="473" Name="SET_CHAR_OBJ_DESTROY_CAR" Handled="false"/>
+    <CommandId ID="474" Name="SET_CHAR_OBJ_GOTO_AREA_ON_FOOT" Handled="false"/>
+    <CommandId ID="475" Name="SET_CHAR_OBJ_GOTO_AREA_IN_CAR" Handled="false"/>
+    <CommandId ID="476" Name="SET_CHAR_OBJ_FOLLOW_CAR_ON_FOOT_WITH_OFFSET" Handled="false"/>
+    <CommandId ID="477" Name="SET_CHAR_OBJ_GUARD_ATTACK" Handled="false"/>
+    <CommandId ID="478" Name="SET_CHAR_AS_LEADER" Handled="false"/>
+    <CommandId ID="479" Name="SET_PLAYER_AS_LEADER" Handled="false"/>
+    <CommandId ID="480" Name="LEAVE_GROUP" Handled="false"/>
+    <CommandId ID="481" Name="SET_CHAR_OBJ_FOLLOW_ROUTE" Handled="false"/>
+    <CommandId ID="482" Name="ADD_ROUTE_POINT" Handled="false"/>
+    <CommandId ID="483" Name="PRINT_WITH_NUMBER_BIG"/>
+    <CommandId ID="484" Name="PRINT_WITH_NUMBER"/>
+    <CommandId ID="485" Name="PRINT_WITH_NUMBER_NOW"/>
+    <CommandId ID="486" Name="PRINT_WITH_NUMBER_SOON" Handled="false"/>
+    <CommandId ID="487" Name="SWITCH_ROADS_ON"/>
+    <CommandId ID="488" Name="SWITCH_ROADS_OFF"/>
+    <CommandId ID="489" Name="GET_NUMBER_OF_PASSENGERS"/>
+    <CommandId ID="490" Name="GET_MAXIMUM_NUMBER_OF_PASSENGERS"/>
+    <CommandId ID="491" Name="SET_CAR_DENSITY_MULTIPLIER"/>
+    <CommandId ID="492" Name="SET_CAR_HEAVY"/>
+    <CommandId ID="493" Name="CLEAR_CHAR_THREAT_SEARCH" Handled="false"/>
+    <CommandId ID="494" Name="ACTIVATE_CRANE" Handled="false"/>
+    <CommandId ID="495" Name="DEACTIVATE_CRANE" Handled="false"/>
+    <CommandId ID="496" Name="SET_MAX_WANTED_LEVEL"/>
+    <CommandId ID="497" Name="SAVE_VAR_INT" Handled="false"/>
+    <CommandId ID="498" Name="SAVE_VAR_FLOAT" Handled="false"/>
+    <CommandId ID="499" Name="IS_CAR_IN_AIR_PROPER"/>
+    <CommandId ID="500" Name="IS_CAR_UPSIDEDOWN"/>
+    <CommandId ID="501" Name="GET_PLAYER_CHAR"/>
+    <CommandId ID="502" Name="CANCEL_OVERRIDE_RESTART"/>
+    <CommandId ID="503" Name="SET_POLICE_IGNORE_PLAYER"/>
+    <CommandId ID="504" Name="ADD_PAGER_MESSAGE_WITH_NUMBER" Handled="false"/>
+    <CommandId ID="505" Name="START_KILL_FRENZY"/>
+    <CommandId ID="506" Name="READ_KILL_FRENZY_STATUS"/>
+    <CommandId ID="507" Name="SQRT"/>
+    <CommandId ID="508" Name="LOCATE_PLAYER_ANY_MEANS_CAR_2D" Handled="false"/>
+    <CommandId ID="509" Name="LOCATE_PLAYER_ON_FOOT_CAR_2D" Handled="false"/>
+    <CommandId ID="510" Name="LOCATE_PLAYER_IN_CAR_CAR_2D" Handled="false"/>
+    <CommandId ID="511" Name="LOCATE_PLAYER_ANY_MEANS_CAR_3D" Handled="false"/>
+    <CommandId ID="512" Name="LOCATE_PLAYER_ON_FOOT_CAR_3D" Handled="false"/>
+    <CommandId ID="513" Name="LOCATE_PLAYER_IN_CAR_CAR_3D" Handled="false"/>
+    <CommandId ID="514" Name="LOCATE_CHAR_ANY_MEANS_CAR_2D"/>
+    <CommandId ID="515" Name="LOCATE_CHAR_ON_FOOT_CAR_2D"/>
+    <CommandId ID="516" Name="LOCATE_CHAR_IN_CAR_CAR_2D"/>
+    <CommandId ID="517" Name="LOCATE_CHAR_ANY_MEANS_CAR_3D"/>
+    <CommandId ID="518" Name="LOCATE_CHAR_ON_FOOT_CAR_3D"/>
+    <CommandId ID="519" Name="LOCATE_CHAR_IN_CAR_CAR_3D"/>
+    <CommandId ID="520" Name="GENERATE_RANDOM_FLOAT_IN_RANGE"/>
+    <CommandId ID="521" Name="GENERATE_RANDOM_INT_IN_RANGE"/>
+    <CommandId ID="522" Name="LOCK_CAR_DOORS"/>
+    <CommandId ID="523" Name="EXPLODE_CAR"/>
+    <CommandId ID="524" Name="ADD_EXPLOSION"/>
+    <CommandId ID="525" Name="IS_CAR_UPRIGHT"/>
+    <CommandId ID="526" Name="TURN_CHAR_TO_FACE_CHAR" Handled="false"/>
+    <CommandId ID="527" Name="TURN_CHAR_TO_FACE_PLAYER" Handled="false"/>
+    <CommandId ID="528" Name="TURN_PLAYER_TO_FACE_CHAR" Handled="false"/>
+    <CommandId ID="529" Name="SET_CHAR_OBJ_GOTO_COORD_ON_FOOT" Handled="false"/>
+    <CommandId ID="530" Name="SET_CHAR_OBJ_GOTO_COORD_IN_CAR" Handled="false"/>
+    <CommandId ID="531" Name="CREATE_PICKUP"/>
+    <CommandId ID="532" Name="HAS_PICKUP_BEEN_COLLECTED"/>
+    <CommandId ID="533" Name="REMOVE_PICKUP"/>
+    <CommandId ID="534" Name="SET_TAXI_LIGHTS"/>
+    <CommandId ID="535" Name="PRINT_BIG_Q"/>
+    <CommandId ID="536" Name="PRINT_WITH_NUMBER_BIG_Q" Handled="false"/>
+    <CommandId ID="537" Name="SET_GARAGE" Handled="false"/>
+    <CommandId ID="538" Name="SET_GARAGE_WITH_CAR_MODEL" Handled="false"/>
+    <CommandId ID="539" Name="SET_TARGET_CAR_FOR_MISSION_GARAGE"/>
+    <CommandId ID="540" Name="IS_CAR_IN_MISSION_GARAGE" Handled="false"/>
+    <CommandId ID="541" Name="SET_FREE_BOMBS" Handled="false"/>
+    <CommandId ID="542" Name="SET_POWERPOINT" Handled="false"/>
+    <CommandId ID="543" Name="SET_ALL_TAXI_LIGHTS" Handled="false"/>
+    <CommandId ID="544" Name="IS_CAR_ARMED_WITH_ANY_BOMB" Handled="false"/>
+    <CommandId ID="545" Name="APPLY_BRAKES_TO_PLAYERS_CAR"/>
+    <CommandId ID="546" Name="SET_PLAYER_HEALTH" Handled="false"/>
+    <CommandId ID="547" Name="SET_CHAR_HEALTH"/>
+    <CommandId ID="548" Name="SET_CAR_HEALTH"/>
+    <CommandId ID="549" Name="GET_PLAYER_HEALTH" Handled="false"/>
+    <CommandId ID="550" Name="GET_CHAR_HEALTH"/>
+    <CommandId ID="551" Name="GET_CAR_HEALTH"/>
+    <CommandId ID="552" Name="IS_CAR_ARMED_WITH_BOMB" Handled="false"/>
+    <CommandId ID="553" Name="CHANGE_CAR_COLOUR"/>
+    <CommandId ID="554" Name="SWITCH_PED_ROADS_ON"/>
+    <CommandId ID="555" Name="SWITCH_PED_ROADS_OFF"/>
+    <CommandId ID="556" Name="CHAR_LOOK_AT_CHAR_ALWAYS" Handled="false"/>
+    <CommandId ID="557" Name="CHAR_LOOK_AT_PLAYER_ALWAYS" Handled="false"/>
+    <CommandId ID="558" Name="PLAYER_LOOK_AT_CHAR_ALWAYS" Handled="false"/>
+    <CommandId ID="559" Name="STOP_CHAR_LOOKING" Handled="false"/>
+    <CommandId ID="560" Name="STOP_PLAYER_LOOKING" Handled="false"/>
+    <CommandId ID="561" Name="SET_SCRIPT_POLICE_HELI_TO_CHASE_CHAR" Handled="false"/>
+    <CommandId ID="562" Name="SET_GANG_ATTITUDE" Handled="false"/>
+    <CommandId ID="563" Name="SET_GANG_GANG_ATTITUDE" Handled="false"/>
+    <CommandId ID="564" Name="SET_GANG_PLAYER_ATTITUDE" Handled="false"/>
+    <CommandId ID="565" Name="SET_GANG_PED_MODELS" Handled="false"/>
+    <CommandId ID="566" Name="SET_GANG_CAR_MODEL" Handled="false"/>
+    <CommandId ID="567" Name="SET_GANG_WEAPONS"/>
+    <CommandId ID="568" Name="SET_CHAR_OBJ_RUN_TO_AREA" Handled="false"/>
+    <CommandId ID="569" Name="SET_CHAR_OBJ_RUN_TO_COORD" Handled="false"/>
+    <CommandId ID="570" Name="IS_PLAYER_TOUCHING_OBJECT_ON_FOOT" Handled="false"/>
+    <CommandId ID="571" Name="IS_CHAR_TOUCHING_OBJECT_ON_FOOT"/>
+    <CommandId ID="572" Name="LOAD_SPECIAL_CHARACTER"/>
+    <CommandId ID="573" Name="HAS_SPECIAL_CHARACTER_LOADED"/>
+    <CommandId ID="574" Name="FLASH_CAR" Handled="false"/>
+    <CommandId ID="575" Name="FLASH_CHAR" Handled="false"/>
+    <CommandId ID="576" Name="FLASH_OBJECT" Handled="false"/>
+    <CommandId ID="577" Name="IS_PLAYER_IN_REMOTE_MODE"/>
+    <CommandId ID="578" Name="ARM_CAR_WITH_BOMB" Handled="false"/>
+    <CommandId ID="579" Name="SET_CHAR_PERSONALITY" Handled="false"/>
+    <CommandId ID="580" Name="SET_CUTSCENE_OFFSET"/>
+    <CommandId ID="581" Name="SET_ANIM_GROUP_FOR_CHAR"/>
+    <CommandId ID="582" Name="SET_ANIM_GROUP_FOR_PLAYER" Handled="false"/>
+    <CommandId ID="583" Name="REQUEST_MODEL"/>
+    <CommandId ID="584" Name="HAS_MODEL_LOADED"/>
+    <CommandId ID="585" Name="MARK_MODEL_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="586" Name="GRAB_PHONE" Handled="false"/>
+    <CommandId ID="587" Name="SET_REPEATED_PHONE_MESSAGE" Handled="false"/>
+    <CommandId ID="588" Name="SET_PHONE_MESSAGE" Handled="false"/>
+    <CommandId ID="589" Name="HAS_PHONE_DISPLAYED_MESSAGE" Handled="false"/>
+    <CommandId ID="590" Name="TURN_PHONE_OFF" Handled="false"/>
+    <CommandId ID="591" Name="DRAW_CORONA"/>
+    <CommandId ID="592" Name="DRAW_LIGHT" Handled="false"/>
+    <CommandId ID="593" Name="STORE_WEATHER" Handled="false"/>
+    <CommandId ID="594" Name="RESTORE_WEATHER" Handled="false"/>
+    <CommandId ID="595" Name="STORE_CLOCK"/>
+    <CommandId ID="596" Name="RESTORE_CLOCK"/>
+    <CommandId ID="597" Name="RESTART_CRITICAL_MISSION" Handled="false"/>
+    <CommandId ID="598" Name="IS_PLAYER_PLAYING"/>
+    <CommandId ID="599" Name="SET_COLL_OBJ_NO_OBJ" Handled="false"/>
+    <CommandId ID="600" Name="SET_COLL_OBJ_WAIT_ON_FOOT" Handled="false"/>
+    <CommandId ID="601" Name="SET_COLL_OBJ_FLEE_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="602" Name="SET_COLL_OBJ_GUARD_SPOT" Handled="false"/>
+    <CommandId ID="603" Name="SET_COLL_OBJ_GUARD_AREA" Handled="false"/>
+    <CommandId ID="604" Name="SET_COLL_OBJ_WAIT_IN_CAR" Handled="false"/>
+    <CommandId ID="605" Name="SET_COLL_OBJ_KILL_CHAR_ON_FOOT" Handled="false"/>
+    <CommandId ID="606" Name="SET_COLL_OBJ_KILL_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="607" Name="SET_COLL_OBJ_KILL_CHAR_ANY_MEANS" Handled="false"/>
+    <CommandId ID="608" Name="SET_COLL_OBJ_KILL_PLAYER_ANY_MEANS" Handled="false"/>
+    <CommandId ID="609" Name="SET_COLL_OBJ_FLEE_CHAR_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="610" Name="SET_COLL_OBJ_FLEE_PLAYER_ON_FOOT_TILL_SAFE" Handled="false"/>
+    <CommandId ID="611" Name="SET_COLL_OBJ_FLEE_CHAR_ON_FOOT_ALWAYS" Handled="false"/>
+    <CommandId ID="612" Name="SET_COLL_OBJ_FLEE_PLAYER_ON_FOOT_ALWAYS" Handled="false"/>
+    <CommandId ID="613" Name="SET_COLL_OBJ_GOTO_CHAR_ON_FOOT" Handled="false"/>
+    <CommandId ID="614" Name="SET_COLL_OBJ_GOTO_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="615" Name="SET_COLL_OBJ_LEAVE_CAR" Handled="false"/>
+    <CommandId ID="616" Name="SET_COLL_OBJ_ENTER_CAR_AS_PASSENGER" Handled="false"/>
+    <CommandId ID="617" Name="SET_COLL_OBJ_ENTER_CAR_AS_DRIVER" Handled="false"/>
+    <CommandId ID="618" Name="SET_COLL_OBJ_FOLLOW_CAR_IN_CAR" Handled="false"/>
+    <CommandId ID="619" Name="SET_COLL_OBJ_FIRE_AT_OBJECT_FROM_VEHICLE" Handled="false"/>
+    <CommandId ID="620" Name="SET_COLL_OBJ_DESTROY_OBJECT" Handled="false"/>
+    <CommandId ID="621" Name="SET_COLL_OBJ_DESTROY_CAR" Handled="false"/>
+    <CommandId ID="622" Name="SET_COLL_OBJ_GOTO_AREA_ON_FOOT" Handled="false"/>
+    <CommandId ID="623" Name="SET_COLL_OBJ_GOTO_AREA_IN_CAR" Handled="false"/>
+    <CommandId ID="624" Name="SET_COLL_OBJ_FOLLOW_CAR_ON_FOOT_WITH_OFFSET" Handled="false"/>
+    <CommandId ID="625" Name="SET_COLL_OBJ_GUARD_ATTACK" Handled="false"/>
+    <CommandId ID="626" Name="SET_COLL_OBJ_FOLLOW_ROUTE" Handled="false"/>
+    <CommandId ID="627" Name="SET_COLL_OBJ_GOTO_COORD_ON_FOOT" Handled="false"/>
+    <CommandId ID="628" Name="SET_COLL_OBJ_GOTO_COORD_IN_CAR" Handled="false"/>
+    <CommandId ID="629" Name="SET_COLL_OBJ_RUN_TO_AREA" Handled="false"/>
+    <CommandId ID="630" Name="SET_COLL_OBJ_RUN_TO_COORD" Handled="false"/>
+    <CommandId ID="631" Name="ADD_PEDS_IN_AREA_TO_COLL" Handled="false"/>
+    <CommandId ID="632" Name="ADD_PEDS_IN_VEHICLE_TO_COLL" Handled="false"/>
+    <CommandId ID="633" Name="CLEAR_COLL" Handled="false"/>
+    <CommandId ID="634" Name="IS_COLL_IN_CARS" Handled="false"/>
+    <CommandId ID="635" Name="LOCATE_COLL_ANY_MEANS_2D" Handled="false"/>
+    <CommandId ID="636" Name="LOCATE_COLL_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="637" Name="LOCATE_COLL_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="638" Name="LOCATE_STOPPED_COLL_ANY_MEANS_2D" Handled="false"/>
+    <CommandId ID="639" Name="LOCATE_STOPPED_COLL_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="640" Name="LOCATE_STOPPED_COLL_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="641" Name="LOCATE_COLL_ANY_MEANS_CHAR_2D" Handled="false"/>
+    <CommandId ID="642" Name="LOCATE_COLL_ON_FOOT_CHAR_2D" Handled="false"/>
+    <CommandId ID="643" Name="LOCATE_COLL_IN_CAR_CHAR_2D" Handled="false"/>
+    <CommandId ID="644" Name="LOCATE_COLL_ANY_MEANS_CAR_2D" Handled="false"/>
+    <CommandId ID="645" Name="LOCATE_COLL_ON_FOOT_CAR_2D" Handled="false"/>
+    <CommandId ID="646" Name="LOCATE_COLL_IN_CAR_CAR_2D" Handled="false"/>
+    <CommandId ID="647" Name="LOCATE_COLL_ANY_MEANS_PLAYER_2D" Handled="false"/>
+    <CommandId ID="648" Name="LOCATE_COLL_ON_FOOT_PLAYER_2D" Handled="false"/>
+    <CommandId ID="649" Name="LOCATE_COLL_IN_CAR_PLAYER_2D" Handled="false"/>
+    <CommandId ID="650" Name="IS_COLL_IN_AREA_2D" Handled="false"/>
+    <CommandId ID="651" Name="IS_COLL_IN_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="652" Name="IS_COLL_IN_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="653" Name="IS_COLL_STOPPED_IN_AREA_2D" Handled="false"/>
+    <CommandId ID="654" Name="IS_COLL_STOPPED_IN_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="655" Name="IS_COLL_STOPPED_IN_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="656" Name="GET_NUMBER_OF_PEDS_IN_COLL" Handled="false"/>
+    <CommandId ID="657" Name="SET_CHAR_HEED_THREATS" Handled="false"/>
+    <CommandId ID="658" Name="SET_PLAYER_HEED_THREATS" Handled="false"/>
+    <CommandId ID="659" Name="GET_CONTROLLER_MODE"/>
+    <CommandId ID="660" Name="SET_CAN_RESPRAY_CAR"/>
+    <CommandId ID="661" Name="IS_TAXI" Handled="false"/>
+    <CommandId ID="662" Name="UNLOAD_SPECIAL_CHARACTER"/>
+    <CommandId ID="663" Name="RESET_NUM_OF_MODELS_KILLED_BY_PLAYER"/>
+    <CommandId ID="664" Name="GET_NUM_OF_MODELS_KILLED_BY_PLAYER"/>
+    <CommandId ID="665" Name="ACTIVATE_GARAGE"/>
+    <CommandId ID="666" Name="SWITCH_TAXI_TIMER" Handled="false"/>
+    <CommandId ID="667" Name="CREATE_OBJECT_NO_OFFSET"/>
+    <CommandId ID="668" Name="IS_BOAT" Handled="false"/>
+    <CommandId ID="669" Name="SET_CHAR_OBJ_GOTO_AREA_ANY_MEANS" Handled="false"/>
+    <CommandId ID="670" Name="SET_COLL_OBJ_GOTO_AREA_ANY_MEANS" Handled="false"/>
+    <CommandId ID="671" Name="IS_PLAYER_STOPPED" Handled="false"/>
+    <CommandId ID="672" Name="IS_CHAR_STOPPED"/>
+    <CommandId ID="673" Name="MESSAGE_WAIT" Handled="false"/>
+    <CommandId ID="674" Name="ADD_PARTICLE_EFFECT" Handled="false"/>
+    <CommandId ID="675" Name="SWITCH_WIDESCREEN"/>
+    <CommandId ID="676" Name="ADD_SPRITE_BLIP_FOR_CAR" Handled="false"/>
+    <CommandId ID="677" Name="ADD_SPRITE_BLIP_FOR_CHAR" Handled="false"/>
+    <CommandId ID="678" Name="ADD_SPRITE_BLIP_FOR_OBJECT" Handled="false"/>
+    <CommandId ID="679" Name="ADD_SPRITE_BLIP_FOR_CONTACT_POINT"/>
+    <CommandId ID="680" Name="ADD_SPRITE_BLIP_FOR_COORD"/>
+    <CommandId ID="681" Name="SET_CHAR_ONLY_DAMAGED_BY_PLAYER"/>
+    <CommandId ID="682" Name="SET_CAR_ONLY_DAMAGED_BY_PLAYER"/>
+    <CommandId ID="683" Name="SET_CHAR_PROOFS"/>
+    <CommandId ID="684" Name="SET_CAR_PROOFS"/>
+    <CommandId ID="685" Name="IS_PLAYER_IN_ANGLED_AREA_2D" Handled="false"/>
+    <CommandId ID="686" Name="IS_PLAYER_IN_ANGLED_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="687" Name="IS_PLAYER_IN_ANGLED_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="688" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_2D" Handled="false"/>
+    <CommandId ID="689" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_ON_FOOT_2D" Handled="false"/>
+    <CommandId ID="690" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_IN_CAR_2D" Handled="false"/>
+    <CommandId ID="691" Name="IS_PLAYER_IN_ANGLED_AREA_3D" Handled="false"/>
+    <CommandId ID="692" Name="IS_PLAYER_IN_ANGLED_AREA_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="693" Name="IS_PLAYER_IN_ANGLED_AREA_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="694" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_3D" Handled="false"/>
+    <CommandId ID="695" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_ON_FOOT_3D" Handled="false"/>
+    <CommandId ID="696" Name="IS_PLAYER_STOPPED_IN_ANGLED_AREA_IN_CAR_3D" Handled="false"/>
+    <CommandId ID="697" Name="DEACTIVATE_GARAGE"/>
+    <CommandId ID="698" Name="GET_NUMBER_OF_CARS_COLLECTED_BY_GARAGE" Handled="false"/>
+    <CommandId ID="699" Name="HAS_CAR_BEEN_TAKEN_TO_GARAGE" Handled="false"/>
+    <CommandId ID="700" Name="SET_SWAT_REQUIRED" Handled="false"/>
+    <CommandId ID="701" Name="SET_FBI_REQUIRED" Handled="false"/>
+    <CommandId ID="702" Name="SET_ARMY_REQUIRED" Handled="false"/>
+    <CommandId ID="703" Name="IS_CAR_IN_WATER"/>
+    <CommandId ID="704" Name="GET_CLOSEST_CHAR_NODE"/>
+    <CommandId ID="705" Name="GET_CLOSEST_CAR_NODE"/>
+    <CommandId ID="706" Name="CAR_GOTO_COORDINATES_ACCURATE"/>
+    <CommandId ID="707" Name="START_PACMAN_RACE" Handled="false"/>
+    <CommandId ID="708" Name="START_PACMAN_RECORD" Handled="false"/>
+    <CommandId ID="709" Name="GET_NUMBER_OF_POWER_PILLS_EATEN" Handled="false"/>
+    <CommandId ID="710" Name="CLEAR_PACMAN" Handled="false"/>
+    <CommandId ID="711" Name="START_PACMAN_SCRAMBLE" Handled="false"/>
+    <CommandId ID="712" Name="GET_NUMBER_OF_POWER_PILLS_CARRIED" Handled="false"/>
+    <CommandId ID="713" Name="CLEAR_NUMBER_OF_POWER_PILLS_CARRIED" Handled="false"/>
+    <CommandId ID="714" Name="IS_CAR_ON_SCREEN"/>
+    <CommandId ID="715" Name="IS_CHAR_ON_SCREEN"/>
+    <CommandId ID="716" Name="IS_OBJECT_ON_SCREEN"/>
+    <CommandId ID="717" Name="GOSUB_FILE" Handled="false"/>
+    <CommandId ID="718" Name="GET_GROUND_Z_FOR_3D_COORD"/>
+    <CommandId ID="719" Name="START_SCRIPT_FIRE"/>
+    <CommandId ID="720" Name="IS_SCRIPT_FIRE_EXTINGUISHED"/>
+    <CommandId ID="721" Name="REMOVE_SCRIPT_FIRE"/>
+    <CommandId ID="722" Name="SET_COMEDY_CONTROLS" Handled="false"/>
+    <CommandId ID="723" Name="BOAT_GOTO_COORDS"/>
+    <CommandId ID="724" Name="BOAT_STOP"/>
+    <CommandId ID="725" Name="IS_PLAYER_SHOOTING_IN_AREA" Handled="false"/>
+    <CommandId ID="726" Name="IS_CHAR_SHOOTING_IN_AREA"/>
+    <CommandId ID="727" Name="IS_CURRENT_PLAYER_WEAPON" Handled="false"/>
+    <CommandId ID="728" Name="IS_CURRENT_CHAR_WEAPON"/>
+    <CommandId ID="729" Name="CLEAR_NUMBER_OF_POWER_PILLS_EATEN" Handled="false"/>
+    <CommandId ID="730" Name="ADD_POWER_PILL" Handled="false"/>
+    <CommandId ID="731" Name="SET_BOAT_CRUISE_SPEED"/>
+    <CommandId ID="732" Name="GET_RANDOM_CHAR_IN_AREA" Handled="false"/>
+    <CommandId ID="733" Name="GET_RANDOM_CHAR_IN_ZONE"/>
+    <CommandId ID="734" Name="IS_PLAYER_IN_TAXI" Handled="false"/>
+    <CommandId ID="735" Name="IS_PLAYER_SHOOTING" Handled="false"/>
+    <CommandId ID="736" Name="IS_CHAR_SHOOTING"/>
+    <CommandId ID="737" Name="CREATE_MONEY_PICKUP"/>
+    <CommandId ID="738" Name="SET_CHAR_ACCURACY"/>
+    <CommandId ID="739" Name="GET_CAR_SPEED"/>
+    <CommandId ID="740" Name="LOAD_CUTSCENE"/>
+    <CommandId ID="741" Name="CREATE_CUTSCENE_OBJECT" Handled="false"/>
+    <CommandId ID="742" Name="SET_CUTSCENE_ANIM" Handled="false"/>
+    <CommandId ID="743" Name="START_CUTSCENE"/>
+    <CommandId ID="744" Name="GET_CUTSCENE_TIME"/>
+    <CommandId ID="745" Name="HAS_CUTSCENE_FINISHED"/>
+    <CommandId ID="746" Name="CLEAR_CUTSCENE"/>
+    <CommandId ID="747" Name="RESTORE_CAMERA_JUMPCUT"/>
+    <CommandId ID="748" Name="CREATE_COLLECTABLE1"/>
+    <CommandId ID="749" Name="SET_COLLECTABLE1_TOTAL"/>
+    <CommandId ID="750" Name="IS_PROJECTILE_IN_AREA"/>
+    <CommandId ID="751" Name="DESTROY_PROJECTILES_IN_AREA" Handled="false"/>
+    <CommandId ID="752" Name="DROP_MINE" Handled="false"/>
+    <CommandId ID="753" Name="DROP_NAUTICAL_MINE" Handled="false"/>
+    <CommandId ID="754" Name="IS_CHAR_MODEL"/>
+    <CommandId ID="755" Name="LOAD_SPECIAL_MODEL" Handled="false"/>
+    <CommandId ID="756" Name="CREATE_CUTSCENE_HEAD" Handled="false"/>
+    <CommandId ID="757" Name="SET_CUTSCENE_HEAD_ANIM" Handled="false"/>
+    <CommandId ID="758" Name="SIN"/>
+    <CommandId ID="759" Name="COS"/>
+    <CommandId ID="760" Name="GET_CAR_FORWARD_X"/>
+    <CommandId ID="761" Name="GET_CAR_FORWARD_Y"/>
+    <CommandId ID="762" Name="CHANGE_GARAGE_TYPE"/>
+    <CommandId ID="763" Name="ACTIVATE_CRUSHER_CRANE" Handled="false"/>
+    <CommandId ID="764" Name="PRINT_WITH_2_NUMBERS" Handled="false"/>
+    <CommandId ID="765" Name="PRINT_WITH_2_NUMBERS_NOW"/>
+    <CommandId ID="766" Name="PRINT_WITH_2_NUMBERS_SOON" Handled="false"/>
+    <CommandId ID="767" Name="PRINT_WITH_3_NUMBERS"/>
+    <CommandId ID="768" Name="PRINT_WITH_3_NUMBERS_NOW" Handled="false"/>
+    <CommandId ID="769" Name="PRINT_WITH_3_NUMBERS_SOON" Handled="false"/>
+    <CommandId ID="770" Name="PRINT_WITH_4_NUMBERS"/>
+    <CommandId ID="771" Name="PRINT_WITH_4_NUMBERS_NOW"/>
+    <CommandId ID="772" Name="PRINT_WITH_4_NUMBERS_SOON" Handled="false"/>
+    <CommandId ID="773" Name="PRINT_WITH_5_NUMBERS" Handled="false"/>
+    <CommandId ID="774" Name="PRINT_WITH_5_NUMBERS_NOW" Handled="false"/>
+    <CommandId ID="775" Name="PRINT_WITH_5_NUMBERS_SOON" Handled="false"/>
+    <CommandId ID="776" Name="PRINT_WITH_6_NUMBERS"/>
+    <CommandId ID="777" Name="PRINT_WITH_6_NUMBERS_NOW" Handled="false"/>
+    <CommandId ID="778" Name="PRINT_WITH_6_NUMBERS_SOON" Handled="false"/>
+    <CommandId ID="779" Name="SET_CHAR_OBJ_FOLLOW_CHAR_IN_FORMATION" Handled="false"/>
+    <CommandId ID="780" Name="PLAYER_MADE_PROGRESS"/>
+    <CommandId ID="781" Name="SET_PROGRESS_TOTAL"/>
+    <CommandId ID="782" Name="REGISTER_JUMP_DISTANCE" Handled="false"/>
+    <CommandId ID="783" Name="REGISTER_JUMP_HEIGHT" Handled="false"/>
+    <CommandId ID="784" Name="REGISTER_JUMP_FLIPS" Handled="false"/>
+    <CommandId ID="785" Name="REGISTER_JUMP_SPINS" Handled="false"/>
+    <CommandId ID="786" Name="REGISTER_JUMP_STUNT" Handled="false"/>
+    <CommandId ID="787" Name="REGISTER_UNIQUE_JUMP_FOUND" Handled="false"/>
+    <CommandId ID="788" Name="SET_UNIQUE_JUMPS_TOTAL" Handled="false"/>
+    <CommandId ID="789" Name="REGISTER_PASSENGER_DROPPED_OFF_TAXI" Handled="false"/>
+    <CommandId ID="790" Name="REGISTER_MONEY_MADE_TAXI" Handled="false"/>
+    <CommandId ID="791" Name="REGISTER_MISSION_GIVEN"/>
+    <CommandId ID="792" Name="REGISTER_MISSION_PASSED"/>
+    <CommandId ID="793" Name="SET_CHAR_RUNNING" Handled="false"/>
+    <CommandId ID="794" Name="REMOVE_ALL_SCRIPT_FIRES"/>
+    <CommandId ID="795" Name="IS_FIRST_CAR_COLOUR" Handled="false"/>
+    <CommandId ID="796" Name="IS_SECOND_CAR_COLOUR" Handled="false"/>
+    <CommandId ID="797" Name="HAS_CHAR_BEEN_DAMAGED_BY_WEAPON"/>
+    <CommandId ID="798" Name="HAS_CAR_BEEN_DAMAGED_BY_WEAPON"/>
+    <CommandId ID="799" Name="IS_CHAR_IN_CHARS_GROUP" Handled="false"/>
+    <CommandId ID="800" Name="IS_CHAR_IN_PLAYERS_GROUP" Handled="false"/>
+    <CommandId ID="801" Name="EXPLODE_CHAR_HEAD"/>
+    <CommandId ID="802" Name="EXPLODE_PLAYER_HEAD" Handled="false"/>
+    <CommandId ID="803" Name="ANCHOR_BOAT"/>
+    <CommandId ID="804" Name="SET_ZONE_GROUP" Handled="false"/>
+    <CommandId ID="805" Name="START_CAR_FIRE"/>
+    <CommandId ID="806" Name="START_CHAR_FIRE"/>
+    <CommandId ID="807" Name="GET_RANDOM_CAR_OF_TYPE_IN_AREA"/>
+    <CommandId ID="808" Name="GET_RANDOM_CAR_OF_TYPE_IN_ZONE" Handled="false"/>
+    <CommandId ID="809" Name="HAS_RESPRAY_HAPPENED" Handled="false"/>
+    <CommandId ID="810" Name="SET_CAMERA_ZOOM"/>
+    <CommandId ID="811" Name="CREATE_PICKUP_WITH_AMMO"/>
+    <CommandId ID="812" Name="SET_CAR_RAM_CAR" Handled="false"/>
+    <CommandId ID="813" Name="SET_CAR_BLOCK_CAR" Handled="false"/>
+    <CommandId ID="814" Name="SET_CHAR_OBJ_CATCH_TRAIN" Handled="false"/>
+    <CommandId ID="815" Name="SET_COLL_OBJ_CATCH_TRAIN" Handled="false"/>
+    <CommandId ID="816" Name="SET_PLAYER_NEVER_GETS_TIRED"/>
+    <CommandId ID="817" Name="SET_PLAYER_FAST_RELOAD"/>
+    <CommandId ID="818" Name="SET_CHAR_BLEEDING"/>
+    <CommandId ID="819" Name="SET_CAR_FUNNY_SUSPENSION" Handled="false"/>
+    <CommandId ID="820" Name="SET_CAR_BIG_WHEELS" Handled="false"/>
+    <CommandId ID="821" Name="SET_FREE_RESPRAYS"/>
+    <CommandId ID="822" Name="SET_PLAYER_VISIBLE" Handled="false"/>
+    <CommandId ID="823" Name="SET_CHAR_VISIBLE"/>
+    <CommandId ID="824" Name="SET_CAR_VISIBLE"/>
+    <CommandId ID="825" Name="IS_AREA_OCCUPIED"/>
+    <CommandId ID="826" Name="START_DRUG_RUN" Handled="false"/>
+    <CommandId ID="827" Name="HAS_DRUG_RUN_BEEN_COMPLETED" Handled="false"/>
+    <CommandId ID="828" Name="HAS_DRUG_PLANE_BEEN_SHOT_DOWN" Handled="false"/>
+    <CommandId ID="829" Name="SAVE_PLAYER_FROM_FIRES" Handled="false"/>
+    <CommandId ID="830" Name="DISPLAY_TEXT"/>
+    <CommandId ID="831" Name="SET_TEXT_SCALE"/>
+    <CommandId ID="832" Name="SET_TEXT_COLOUR"/>
+    <CommandId ID="833" Name="SET_TEXT_JUSTIFY"/>
+    <CommandId ID="834" Name="SET_TEXT_CENTRE"/>
+    <CommandId ID="835" Name="SET_TEXT_WRAPX"/>
+    <CommandId ID="836" Name="SET_TEXT_CENTRE_SIZE"/>
+    <CommandId ID="837" Name="SET_TEXT_BACKGROUND"/>
+    <CommandId ID="838" Name="SET_TEXT_BACKGROUND_COLOUR" Handled="false"/>
+    <CommandId ID="839" Name="SET_TEXT_BACKGROUND_ONLY_TEXT" Handled="false"/>
+    <CommandId ID="840" Name="SET_TEXT_PROPORTIONAL"/>
+    <CommandId ID="841" Name="SET_TEXT_FONT"/>
+    <CommandId ID="842" Name="INDUSTRIAL_PASSED" Handled="false"/>
+    <CommandId ID="843" Name="COMMERCIAL_PASSED" Handled="false"/>
+    <CommandId ID="844" Name="SUBURBAN_PASSED" Handled="false"/>
+    <CommandId ID="845" Name="ROTATE_OBJECT"/>
+    <CommandId ID="846" Name="SLIDE_OBJECT"/>
+    <CommandId ID="847" Name="REMOVE_CHAR_ELEGANTLY"/>
+    <CommandId ID="848" Name="SET_CHAR_STAY_IN_SAME_PLACE"/>
+    <CommandId ID="849" Name="IS_NASTY_GAME" Handled="false"/>
+    <CommandId ID="850" Name="UNDRESS_CHAR" Handled="false"/>
+    <CommandId ID="851" Name="DRESS_CHAR" Handled="false"/>
+    <CommandId ID="852" Name="START_CHASE_SCENE" Handled="false"/>
+    <CommandId ID="853" Name="STOP_CHASE_SCENE" Handled="false"/>
+    <CommandId ID="854" Name="IS_EXPLOSION_IN_AREA"/>
+    <CommandId ID="855" Name="IS_EXPLOSION_IN_ZONE" Handled="false"/>
+    <CommandId ID="856" Name="START_DRUG_DROP_OFF" Handled="false"/>
+    <CommandId ID="857" Name="HAS_DROP_OFF_PLANE_BEEN_SHOT_DOWN" Handled="false"/>
+    <CommandId ID="858" Name="FIND_DROP_OFF_PLANE_COORDINATES" Handled="false"/>
+    <CommandId ID="859" Name="CREATE_FLOATING_PACKAGE" Handled="false"/>
+    <CommandId ID="860" Name="PLACE_OBJECT_RELATIVE_TO_CAR"/>
+    <CommandId ID="861" Name="MAKE_OBJECT_TARGETTABLE"/>
+    <CommandId ID="862" Name="ADD_ARMOUR_TO_PLAYER" Handled="false"/>
+    <CommandId ID="863" Name="ADD_ARMOUR_TO_CHAR"/>
+    <CommandId ID="864" Name="OPEN_GARAGE"/>
+    <CommandId ID="865" Name="CLOSE_GARAGE"/>
+    <CommandId ID="866" Name="WARP_CHAR_FROM_CAR_TO_COORD"/>
+    <CommandId ID="867" Name="SET_VISIBILITY_OF_CLOSEST_OBJECT_OF_TYPE"/>
+    <CommandId ID="868" Name="HAS_CHAR_SPOTTED_CHAR"/>
+    <CommandId ID="869" Name="SET_CHAR_OBJ_HAIL_TAXI" Handled="false"/>
+    <CommandId ID="870" Name="HAS_OBJECT_BEEN_DAMAGED"/>
+    <CommandId ID="871" Name="START_KILL_FRENZY_HEADSHOT" Handled="false"/>
+    <CommandId ID="872" Name="ACTIVATE_MILITARY_CRANE" Handled="false"/>
+    <CommandId ID="873" Name="WARP_PLAYER_INTO_CAR" Handled="false"/>
+    <CommandId ID="874" Name="WARP_CHAR_INTO_CAR"/>
+    <CommandId ID="875" Name="SWITCH_CAR_RADIO" Handled="false"/>
+    <CommandId ID="876" Name="SET_AUDIO_STREAM" Handled="false"/>
+    <CommandId ID="877" Name="PRINT_WITH_2_NUMBERS_BIG"/>
+    <CommandId ID="878" Name="PRINT_WITH_3_NUMBERS_BIG" Handled="false"/>
+    <CommandId ID="879" Name="PRINT_WITH_4_NUMBERS_BIG" Handled="false"/>
+    <CommandId ID="880" Name="PRINT_WITH_5_NUMBERS_BIG" Handled="false"/>
+    <CommandId ID="881" Name="PRINT_WITH_6_NUMBERS_BIG" Handled="false"/>
+    <CommandId ID="882" Name="SET_CHAR_WAIT_STATE" Handled="false"/>
+    <CommandId ID="883" Name="SET_CAMERA_BEHIND_PLAYER"/>
+    <CommandId ID="884" Name="SET_MOTION_BLUR" Handled="false"/>
+    <CommandId ID="885" Name="PRINT_STRING_IN_STRING" Handled="false"/>
+    <CommandId ID="886" Name="CREATE_RANDOM_CHAR"/>
+    <CommandId ID="887" Name="SET_CHAR_OBJ_STEAL_ANY_CAR" Handled="false"/>
+    <CommandId ID="888" Name="SET_2_REPEATED_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="889" Name="SET_2_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="890" Name="SET_3_REPEATED_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="891" Name="SET_3_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="892" Name="SET_4_REPEATED_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="893" Name="SET_4_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="894" Name="IS_SNIPER_BULLET_IN_AREA" Handled="false"/>
+    <CommandId ID="895" Name="GIVE_PLAYER_DETONATOR" Handled="false"/>
+    <CommandId ID="896" Name="SET_COLL_OBJ_STEAL_ANY_CAR" Handled="false"/>
+    <CommandId ID="897" Name="SET_OBJECT_VELOCITY"/>
+    <CommandId ID="898" Name="SET_OBJECT_COLLISION"/>
+    <CommandId ID="899" Name="IS_ICECREAM_JINGLE_ON" Handled="false"/>
+    <CommandId ID="900" Name="PRINT_STRING_IN_STRING_NOW"/>
+    <CommandId ID="901" Name="PRINT_STRING_IN_STRING_SOON" Handled="false"/>
+    <CommandId ID="902" Name="SET_5_REPEATED_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="903" Name="SET_5_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="904" Name="SET_6_REPEATED_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="905" Name="SET_6_PHONE_MESSAGES" Handled="false"/>
+    <CommandId ID="906" Name="IS_POINT_OBSCURED_BY_A_MISSION_ENTITY"/>
+    <CommandId ID="907" Name="LOAD_ALL_MODELS_NOW"/>
+    <CommandId ID="908" Name="ADD_TO_OBJECT_VELOCITY"/>
+    <CommandId ID="909" Name="DRAW_SPRITE"/>
+    <CommandId ID="910" Name="DRAW_RECT"/>
+    <CommandId ID="911" Name="LOAD_SPRITE"/>
+    <CommandId ID="912" Name="LOAD_TEXTURE_DICTIONARY"/>
+    <CommandId ID="913" Name="REMOVE_TEXTURE_DICTIONARY"/>
+    <CommandId ID="914" Name="SET_OBJECT_DYNAMIC"/>
+    <CommandId ID="915" Name="SET_CHAR_ANIM_SPEED"/>
+    <CommandId ID="916" Name="PLAY_MISSION_PASSED_TUNE"/>
+    <CommandId ID="917" Name="CLEAR_AREA"/>
+    <CommandId ID="918" Name="FREEZE_ONSCREEN_TIMER"/>
+    <CommandId ID="919" Name="SWITCH_CAR_SIREN"/>
+    <CommandId ID="920" Name="SWITCH_PED_ROADS_ON_ANGLED" Handled="false"/>
+    <CommandId ID="921" Name="SWITCH_PED_ROADS_OFF_ANGLED" Handled="false"/>
+    <CommandId ID="922" Name="SWITCH_ROADS_ON_ANGLED" Handled="false"/>
+    <CommandId ID="923" Name="SWITCH_ROADS_OFF_ANGLED" Handled="false"/>
+    <CommandId ID="924" Name="SET_CAR_WATERTIGHT"/>
+    <CommandId ID="925" Name="ADD_MOVING_PARTICLE_EFFECT" Handled="false"/>
+    <CommandId ID="926" Name="SET_CHAR_CANT_BE_DRAGGED_OUT"/>
+    <CommandId ID="927" Name="TURN_CAR_TO_FACE_COORD"/>
+    <CommandId ID="928" Name="IS_CRANE_LIFTING_CAR" Handled="false"/>
+    <CommandId ID="929" Name="DRAW_SPHERE"/>
+    <CommandId ID="930" Name="SET_CAR_STATUS"/>
+    <CommandId ID="931" Name="IS_CHAR_MALE"/>
+    <CommandId ID="932" Name="SCRIPT_NAME"/>
+    <CommandId ID="933" Name="CHANGE_GARAGE_TYPE_WITH_CAR_MODEL" Handled="false"/>
+    <CommandId ID="934" Name="FIND_DRUG_PLANE_COORDINATES" Handled="false"/>
+    <CommandId ID="935" Name="SAVE_INT_TO_DEBUG_FILE"/>
+    <CommandId ID="936" Name="SAVE_FLOAT_TO_DEBUG_FILE"/>
+    <CommandId ID="937" Name="SAVE_NEWLINE_TO_DEBUG_FILE"/>
+    <CommandId ID="938" Name="POLICE_RADIO_MESSAGE"/>
+    <CommandId ID="939" Name="SET_CAR_STRONG"/>
+    <CommandId ID="940" Name="REMOVE_ROUTE" Handled="false"/>
+    <CommandId ID="941" Name="SWITCH_RUBBISH"/>
+    <CommandId ID="942" Name="REMOVE_PARTICLE_EFFECTS_IN_AREA" Handled="false"/>
+    <CommandId ID="943" Name="SWITCH_STREAMING"/>
+    <CommandId ID="944" Name="IS_GARAGE_OPEN"/>
+    <CommandId ID="945" Name="IS_GARAGE_CLOSED"/>
+    <CommandId ID="946" Name="START_CATALINA_HELI" Handled="false"/>
+    <CommandId ID="947" Name="CATALINA_HELI_TAKE_OFF" Handled="false"/>
+    <CommandId ID="948" Name="REMOVE_CATALINA_HELI" Handled="false"/>
+    <CommandId ID="949" Name="HAS_CATALINA_HELI_BEEN_SHOT_DOWN" Handled="false"/>
+    <CommandId ID="950" Name="SWAP_NEAREST_BUILDING_MODEL"/>
+    <CommandId ID="951" Name="SWITCH_WORLD_PROCESSING"/>
+    <CommandId ID="952" Name="REMOVE_ALL_PLAYER_WEAPONS" Handled="false"/>
+    <CommandId ID="953" Name="GRAB_CATALINA_HELI" Handled="false"/>
+    <CommandId ID="954" Name="CLEAR_AREA_OF_CARS"/>
+    <CommandId ID="955" Name="SET_ROTATING_GARAGE_DOOR" Handled="false"/>
+    <CommandId ID="956" Name="ADD_SPHERE"/>
+    <CommandId ID="957" Name="REMOVE_SPHERE"/>
+    <CommandId ID="958" Name="CATALINA_HELI_FLY_AWAY" Handled="false"/>
+    <CommandId ID="959" Name="SET_EVERYONE_IGNORE_PLAYER"/>
+    <CommandId ID="960" Name="STORE_CAR_CHAR_IS_IN_NO_SAVE"/>
+    <CommandId ID="961" Name="STORE_CAR_PLAYER_IS_IN_NO_SAVE" Handled="false"/>
+    <CommandId ID="962" Name="IS_PHONE_DISPLAYING_MESSAGE" Handled="false"/>
+    <CommandId ID="963" Name="DISPLAY_ONSCREEN_TIMER_WITH_STRING"/>
+    <CommandId ID="964" Name="DISPLAY_ONSCREEN_COUNTER_WITH_STRING"/>
+    <CommandId ID="965" Name="CREATE_RANDOM_CAR_FOR_CAR_PARK"/>
+    <CommandId ID="966" Name="IS_COLLISION_IN_MEMORY" Handled="false"/>
+    <CommandId ID="967" Name="SET_WANTED_MULTIPLIER"/>
+    <CommandId ID="968" Name="SET_CAMERA_IN_FRONT_OF_PLAYER"/>
+    <CommandId ID="969" Name="IS_CAR_VISIBLY_DAMAGED"/>
+    <CommandId ID="970" Name="DOES_OBJECT_EXIST"/>
+    <CommandId ID="971" Name="LOAD_SCENE"/>
+    <CommandId ID="972" Name="ADD_STUCK_CAR_CHECK"/>
+    <CommandId ID="973" Name="REMOVE_STUCK_CAR_CHECK"/>
+    <CommandId ID="974" Name="IS_CAR_STUCK"/>
+    <CommandId ID="975" Name="LOAD_MISSION_AUDIO"/>
+    <CommandId ID="976" Name="HAS_MISSION_AUDIO_LOADED"/>
+    <CommandId ID="977" Name="PLAY_MISSION_AUDIO"/>
+    <CommandId ID="978" Name="HAS_MISSION_AUDIO_FINISHED"/>
+    <CommandId ID="979" Name="GET_CLOSEST_CAR_NODE_WITH_HEADING"/>
+    <CommandId ID="980" Name="HAS_IMPORT_GARAGE_SLOT_BEEN_FILLED" Handled="false"/>
+    <CommandId ID="981" Name="CLEAR_THIS_PRINT"/>
+    <CommandId ID="982" Name="CLEAR_THIS_BIG_PRINT"/>
+    <CommandId ID="983" Name="SET_MISSION_AUDIO_POSITION"/>
+    <CommandId ID="984" Name="ACTIVATE_SAVE_MENU"/>
+    <CommandId ID="985" Name="HAS_SAVE_GAME_FINISHED"/>
+    <CommandId ID="986" Name="NO_SPECIAL_CAMERA_FOR_THIS_GARAGE" Handled="false"/>
+    <CommandId ID="987" Name="ADD_BLIP_FOR_PICKUP_OLD" Handled="false"/>
+    <CommandId ID="988" Name="ADD_BLIP_FOR_PICKUP"/>
+    <CommandId ID="989" Name="ADD_SPRITE_BLIP_FOR_PICKUP" Handled="false"/>
+    <CommandId ID="990" Name="SET_PED_DENSITY_MULTIPLIER"/>
+    <CommandId ID="991" Name="FORCE_RANDOM_PED_TYPE" Handled="false"/>
+    <CommandId ID="992" Name="SET_TEXT_DRAW_BEFORE_FADE"/>
+    <CommandId ID="993" Name="GET_COLLECTABLE1S_COLLECTED" Handled="false"/>
+    <CommandId ID="994" Name="SET_CHAR_OBJ_LEAVE_ANY_CAR" Handled="false"/>
+    <CommandId ID="995" Name="SET_SPRITES_DRAW_BEFORE_FADE"/>
+    <CommandId ID="996" Name="SET_TEXT_RIGHT_JUSTIFY"/>
+    <CommandId ID="997" Name="PRINT_HELP"/>
+    <CommandId ID="998" Name="CLEAR_HELP"/>
+    <CommandId ID="999" Name="FLASH_HUD_OBJECT"/>
+    <CommandId ID="1000" Name="FLASH_RADAR_BLIP" Handled="false"/>
+    <CommandId ID="1001" Name="IS_CHAR_IN_CONTROL" Handled="false"/>
+    <CommandId ID="1002" Name="SET_GENERATE_CARS_AROUND_CAMERA" Handled="false"/>
+    <CommandId ID="1003" Name="CLEAR_SMALL_PRINTS"/>
+    <CommandId ID="1004" Name="HAS_MILITARY_CRANE_COLLECTED_ALL_CARS" Handled="false"/>
+    <CommandId ID="1005" Name="SET_UPSIDEDOWN_CAR_NOT_DAMAGED"/>
+    <CommandId ID="1006" Name="CAN_PLAYER_START_MISSION"/>
+    <CommandId ID="1007" Name="MAKE_PLAYER_SAFE_FOR_CUTSCENE"/>
+    <CommandId ID="1008" Name="USE_TEXT_COMMANDS"/>
+    <CommandId ID="1009" Name="SET_THREAT_FOR_PED_TYPE" Handled="false"/>
+    <CommandId ID="1010" Name="CLEAR_THREAT_FOR_PED_TYPE" Handled="false"/>
+    <CommandId ID="1011" Name="GET_CAR_COLOURS"/>
+    <CommandId ID="1012" Name="SET_ALL_CARS_CAN_BE_DAMAGED"/>
+    <CommandId ID="1013" Name="SET_CAR_CAN_BE_DAMAGED"/>
+    <CommandId ID="1014" Name="MAKE_PLAYER_UNSAFE" Handled="false"/>
+    <CommandId ID="1015" Name="LOAD_COLLISION" Handled="false"/>
+    <CommandId ID="1016" Name="GET_BODY_CAST_HEALTH" Handled="false"/>
+    <CommandId ID="1017" Name="SET_CHARS_CHATTING" Handled="false"/>
+    <CommandId ID="1018" Name="MAKE_PLAYER_SAFE" Handled="false"/>
+    <CommandId ID="1019" Name="SET_CAR_STAYS_IN_CURRENT_LEVEL" Handled="false"/>
+    <CommandId ID="1020" Name="SET_CHAR_STAYS_IN_CURRENT_LEVEL" Handled="false"/>
+    <CommandId ID="1021" Name="SET_DRUNK_INPUT_DELAY"/>
+    <CommandId ID="1022" Name="SET_CHAR_MONEY"/>
+    <CommandId ID="1023" Name="INCREASE_CHAR_MONEY" Handled="false"/>
+    <CommandId ID="1024" Name="GET_OFFSET_FROM_OBJECT_IN_WORLD_COORDS"/>
+    <CommandId ID="1025" Name="REGISTER_LIFE_SAVED" Handled="false"/>
+    <CommandId ID="1026" Name="REGISTER_CRIMINAL_CAUGHT" Handled="false"/>
+    <CommandId ID="1027" Name="REGISTER_AMBULANCE_LEVEL" Handled="false"/>
+    <CommandId ID="1028" Name="REGISTER_FIRE_EXTINGUISHED" Handled="false"/>
+    <CommandId ID="1029" Name="TURN_PHONE_ON" Handled="false"/>
+    <CommandId ID="1030" Name="REGISTER_LONGEST_DODO_FLIGHT" Handled="false"/>
+    <CommandId ID="1031" Name="GET_OFFSET_FROM_CAR_IN_WORLD_COORDS"/>
+    <CommandId ID="1032" Name="SET_TOTAL_NUMBER_OF_KILL_FRENZIES" Handled="false"/>
+    <CommandId ID="1033" Name="BLOW_UP_RC_BUGGY" Handled="false"/>
+    <CommandId ID="1034" Name="REMOVE_CAR_FROM_CHASE" Handled="false"/>
+    <CommandId ID="1035" Name="IS_FRENCH_GAME" Handled="false"/>
+    <CommandId ID="1036" Name="IS_GERMAN_GAME"/>
+    <CommandId ID="1037" Name="CLEAR_MISSION_AUDIO"/>
+    <CommandId ID="1038" Name="SET_FADE_IN_AFTER_NEXT_ARREST" Handled="false"/>
+    <CommandId ID="1039" Name="SET_FADE_IN_AFTER_NEXT_DEATH" Handled="false"/>
+    <CommandId ID="1040" Name="SET_GANG_PED_MODEL_PREFERENCE" Handled="false"/>
+    <CommandId ID="1041" Name="SET_CHAR_USE_PEDNODE_SEEK" Handled="false"/>
+    <CommandId ID="1042" Name="SWITCH_VEHICLE_WEAPONS" Handled="false"/>
+    <CommandId ID="1043" Name="SET_GET_OUT_OF_JAIL_FREE" Handled="false"/>
+    <CommandId ID="1044" Name="SET_FREE_HEALTH_CARE"/>
+    <CommandId ID="1045" Name="IS_CAR_DOOR_CLOSED" Handled="false"/>
+    <CommandId ID="1046" Name="LOAD_AND_LAUNCH_MISSION"/>
+    <CommandId ID="1047" Name="LOAD_AND_LAUNCH_MISSION_INTERNAL"/>
+    <CommandId ID="1048" Name="SET_OBJECT_DRAW_LAST"/>
+    <CommandId ID="1049" Name="GET_AMMO_IN_PLAYER_WEAPON" Handled="false"/>
+    <CommandId ID="1050" Name="GET_AMMO_IN_CHAR_WEAPON"/>
+    <CommandId ID="1051" Name="REGISTER_KILL_FRENZY_PASSED" Handled="false"/>
+    <CommandId ID="1052" Name="SET_CHAR_SAY" Handled="false"/>
+    <CommandId ID="1053" Name="SET_NEAR_CLIP"/>
+    <CommandId ID="1054" Name="SET_RADIO_CHANNEL"/>
+    <CommandId ID="1055" Name="OVERRIDE_HOSPITAL_LEVEL" Handled="false"/>
+    <CommandId ID="1056" Name="OVERRIDE_POLICE_STATION_LEVEL" Handled="false"/>
+    <CommandId ID="1057" Name="FORCE_RAIN" Handled="false"/>
+    <CommandId ID="1058" Name="DOES_GARAGE_CONTAIN_CAR" Handled="false"/>
+    <CommandId ID="1059" Name="SET_CAR_TRACTION"/>
+    <CommandId ID="1060" Name="ARE_MEASUREMENTS_IN_METRES"/>
+    <CommandId ID="1061" Name="CONVERT_METRES_TO_FEET"/>
+    <CommandId ID="1062" Name="MARK_ROADS_BETWEEN_LEVELS" Handled="false"/>
+    <CommandId ID="1063" Name="MARK_PED_ROADS_BETWEEN_LEVELS" Handled="false"/>
+    <CommandId ID="1064" Name="SET_CAR_AVOID_LEVEL_TRANSITIONS"/>
+    <CommandId ID="1065" Name="SET_CHAR_AVOID_LEVEL_TRANSITIONS" Handled="false"/>
+    <CommandId ID="1066" Name="IS_THREAT_FOR_PED_TYPE" Handled="false"/>
+    <CommandId ID="1067" Name="CLEAR_AREA_OF_CHARS"/>
+    <CommandId ID="1068" Name="SET_TOTAL_NUMBER_OF_MISSIONS"/>
+    <CommandId ID="1069" Name="CONVERT_METRES_TO_FEET_INT"/>
+    <CommandId ID="1070" Name="REGISTER_FASTEST_TIME"/>
+    <CommandId ID="1071" Name="REGISTER_HIGHEST_SCORE" Handled="false"/>
+    <CommandId ID="1072" Name="WARP_CHAR_INTO_CAR_AS_PASSENGER"/>
+    <CommandId ID="1073" Name="IS_CAR_PASSENGER_SEAT_FREE"/>
+    <CommandId ID="1074" Name="GET_CHAR_IN_CAR_PASSENGER_SEAT"/>
+    <CommandId ID="1075" Name="SET_CHAR_IS_CHRIS_CRIMINAL"/>
+    <CommandId ID="1076" Name="START_CREDITS"/>
+    <CommandId ID="1077" Name="STOP_CREDITS"/>
+    <CommandId ID="1078" Name="ARE_CREDITS_FINISHED"/>
+    <CommandId ID="1079" Name="CREATE_SINGLE_PARTICLE" Handled="false"/>
+    <CommandId ID="1080" Name="SET_CHAR_IGNORE_LEVEL_TRANSITIONS" Handled="false"/>
+    <CommandId ID="1081" Name="GET_CHASE_CAR" Handled="false"/>
+    <CommandId ID="1082" Name="START_BOAT_FOAM_ANIMATION" Handled="false"/>
+    <CommandId ID="1083" Name="UPDATE_BOAT_FOAM_ANIMATION" Handled="false"/>
+    <CommandId ID="1084" Name="SET_MUSIC_DOES_FADE"/>
+    <CommandId ID="1085" Name="SET_INTRO_IS_PLAYING" Handled="false"/>
+    <CommandId ID="1086" Name="SET_PLAYER_HOOKER" Handled="false"/>
+    <CommandId ID="1087" Name="PLAY_END_OF_GAME_TUNE" Handled="false"/>
+    <CommandId ID="1088" Name="STOP_END_OF_GAME_TUNE" Handled="false"/>
+    <CommandId ID="1089" Name="GET_CAR_MODEL"/>
+    <CommandId ID="1090" Name="IS_PLAYER_SITTING_IN_CAR" Handled="false"/>
+    <CommandId ID="1091" Name="IS_PLAYER_SITTING_IN_ANY_CAR" Handled="false"/>
+    <CommandId ID="1092" Name="SET_SCRIPT_FIRE_AUDIO" Handled="false"/>
+    <CommandId ID="1093" Name="ARE_ANY_CAR_CHEATS_ACTIVATED"/>
+    <CommandId ID="1094" Name="SET_CHAR_SUFFERS_CRITICAL_HITS"/>
+    <CommandId ID="1095" Name="IS_PLAYER_LIFTING_A_PHONE" Handled="false"/>
+    <CommandId ID="1096" Name="IS_CHAR_SITTING_IN_CAR"/>
+    <CommandId ID="1097" Name="IS_CHAR_SITTING_IN_ANY_CAR"/>
+    <CommandId ID="1098" Name="IS_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="1099" Name="IS_CHAR_ON_FOOT"/>
+    <CommandId ID="1100" Name="LOAD_COLLISION_WITH_SCREEN" Handled="false"/>
+    <CommandId ID="1101" Name="LOAD_SPLASH_SCREEN" Handled="false"/>
+    <CommandId ID="1102" Name="SET_CAR_IGNORE_LEVEL_TRANSITIONS" Handled="false"/>
+    <CommandId ID="1103" Name="MAKE_CRAIGS_CAR_A_BIT_STRONGER" Handled="false"/>
+    <CommandId ID="1104" Name="SET_JAMES_CAR_ON_PATH_TO_PLAYER" Handled="false"/>
+    <CommandId ID="1105" Name="LOAD_END_OF_GAME_TUNE" Handled="false"/>
+    <CommandId ID="1106" Name="ENABLE_PLAYER_CONTROL_CAMERA" Handled="false"/>
+    <CommandId ID="1107" Name="SET_OBJECT_ROTATION"/>
+    <CommandId ID="1108" Name="GET_DEBUG_CAMERA_COORDINATES"/>
+    <CommandId ID="1109" Name="GET_DEBUG_CAMERA_FRONT_VECTOR" Handled="false"/>
+    <CommandId ID="1110" Name="IS_PLAYER_TARGETTING_ANY_CHAR" Handled="false"/>
+    <CommandId ID="1111" Name="IS_PLAYER_TARGETTING_CHAR"/>
+    <CommandId ID="1112" Name="IS_PLAYER_TARGETTING_OBJECT"/>
+    <CommandId ID="1113" Name="TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME"/>
+    <CommandId ID="1114" Name="DISPLAY_TEXT_WITH_NUMBER"/>
+    <CommandId ID="1115" Name="DISPLAY_TEXT_WITH_2_NUMBERS"/>
+    <CommandId ID="1116" Name="FAIL_CURRENT_MISSION"/>
+    <CommandId ID="1117" Name="GET_CLOSEST_OBJECT_OF_TYPE" Handled="false"/>
+    <CommandId ID="1118" Name="PLACE_OBJECT_RELATIVE_TO_OBJECT" Handled="false"/>
+    <CommandId ID="1119" Name="SET_ALL_OCCUPANTS_OF_CAR_LEAVE_CAR" Handled="false"/>
+    <CommandId ID="1120" Name="SET_INTERPOLATION_PARAMETERS"/>
+    <CommandId ID="1121" Name="GET_CLOSEST_CAR_NODE_WITH_HEADING_TOWARDS_POINT" Handled="false"/>
+    <CommandId ID="1122" Name="GET_CLOSEST_CAR_NODE_WITH_HEADING_AWAY_POINT" Handled="false"/>
+    <CommandId ID="1123" Name="GET_DEBUG_CAMERA_POINT_AT"/>
+    <CommandId ID="1124" Name="ATTACH_CHAR_TO_CAR"/>
+    <CommandId ID="1125" Name="DETACH_CHAR_FROM_CAR"/>
+    <CommandId ID="1126" Name="SET_CAR_STAY_IN_FAST_LANE"/>
+    <CommandId ID="1127" Name="CLEAR_CHAR_LAST_WEAPON_DAMAGE"/>
+    <CommandId ID="1128" Name="CLEAR_CAR_LAST_WEAPON_DAMAGE"/>
+    <CommandId ID="1129" Name="GET_RANDOM_COP_IN_AREA" Handled="false"/>
+    <CommandId ID="1130" Name="GET_RANDOM_COP_IN_ZONE" Handled="false"/>
+    <CommandId ID="1131" Name="SET_CHAR_OBJ_FLEE_CAR" Handled="false"/>
+    <CommandId ID="1132" Name="GET_DRIVER_OF_CAR"/>
+    <CommandId ID="1133" Name="GET_NUMBER_OF_FOLLOWERS"/>
+    <CommandId ID="1134" Name="GIVE_REMOTE_CONTROLLED_MODEL_TO_PLAYER"/>
+    <CommandId ID="1135" Name="GET_CURRENT_PLAYER_WEAPON" Handled="false"/>
+    <CommandId ID="1136" Name="GET_CURRENT_CHAR_WEAPON"/>
+    <CommandId ID="1137" Name="LOCATE_CHAR_ANY_MEANS_OBJECT_2D"/>
+    <CommandId ID="1138" Name="LOCATE_CHAR_ON_FOOT_OBJECT_2D"/>
+    <CommandId ID="1139" Name="LOCATE_CHAR_IN_CAR_OBJECT_2D"/>
+    <CommandId ID="1140" Name="LOCATE_CHAR_ANY_MEANS_OBJECT_3D"/>
+    <CommandId ID="1141" Name="LOCATE_CHAR_ON_FOOT_OBJECT_3D"/>
+    <CommandId ID="1142" Name="LOCATE_CHAR_IN_CAR_OBJECT_3D"/>
+    <CommandId ID="1143" Name="SET_CAR_TEMP_ACTION"/>
+    <CommandId ID="1144" Name="SET_CAR_HANDBRAKE_TURN_RIGHT" Handled="false"/>
+    <CommandId ID="1145" Name="SET_CAR_HANDBRAKE_STOP" Handled="false"/>
+    <CommandId ID="1146" Name="IS_CHAR_ON_ANY_BIKE"/>
+    <CommandId ID="1147" Name="LOCATE_SNIPER_BULLET_2D" Handled="false"/>
+    <CommandId ID="1148" Name="LOCATE_SNIPER_BULLET_3D" Handled="false"/>
+    <CommandId ID="1149" Name="GET_NUMBER_OF_SEATS_IN_MODEL" Handled="false"/>
+    <CommandId ID="1150" Name="IS_PLAYER_ON_ANY_BIKE" Handled="false"/>
+    <CommandId ID="1151" Name="IS_CHAR_LYING_DOWN" Handled="false"/>
+    <CommandId ID="1152" Name="CAN_CHAR_SEE_DEAD_CHAR"/>
+    <CommandId ID="1153" Name="SET_ENTER_CAR_RANGE_MULTIPLIER" Handled="false"/>
+    <CommandId ID="1154" Name="SET_THREAT_REACTION_RANGE_MULTIPLIER" Handled="false"/>
+    <CommandId ID="1155" Name="SET_CHAR_CEASE_ATTACK_TIMER" Handled="false"/>
+    <CommandId ID="1156" Name="GET_REMOTE_CONTROLLED_CAR"/>
+    <CommandId ID="1157" Name="IS_PC_VERSION"/>
+    <CommandId ID="1158" Name="REPLAY" Handled="false"/>
+    <CommandId ID="1159" Name="IS_REPLAY_PLAYING" Handled="false"/>
+    <CommandId ID="1160" Name="IS_MODEL_AVAILABLE"/>
+    <CommandId ID="1161" Name="SHUT_CHAR_UP"/>
+    <CommandId ID="1162" Name="SET_ENABLE_RC_DETONATE"/>
+    <CommandId ID="1163" Name="SET_CAR_RANDOM_ROUTE_SEED"/>
+    <CommandId ID="1164" Name="IS_ANY_PICKUP_AT_COORDS"/>
+    <CommandId ID="1165" Name="GET_FIRST_PICKUP_COORDS" Handled="false"/>
+    <CommandId ID="1166" Name="GET_NEXT_PICKUP_COORDS" Handled="false"/>
+    <CommandId ID="1167" Name="REMOVE_ALL_CHAR_WEAPONS"/>
+    <CommandId ID="1168" Name="HAS_PLAYER_GOT_WEAPON" Handled="false"/>
+    <CommandId ID="1169" Name="HAS_CHAR_GOT_WEAPON"/>
+    <CommandId ID="1170" Name="IS_PLAYER_FACING_CHAR" Handled="false"/>
+    <CommandId ID="1171" Name="SET_TANK_DETONATE_CARS" Handled="false"/>
+    <CommandId ID="1172" Name="GET_POSITION_OF_ANALOGUE_STICKS"/>
+    <CommandId ID="1173" Name="IS_CAR_ON_FIRE"/>
+    <CommandId ID="1174" Name="IS_CAR_TYRE_BURST"/>
+    <CommandId ID="1175" Name="SET_CAR_DRIVE_STRAIGHT_AHEAD" Handled="false"/>
+    <CommandId ID="1176" Name="SET_CAR_WAIT" Handled="false"/>
+    <CommandId ID="1177" Name="IS_PLAYER_STANDING_ON_A_VEHICLE" Handled="false"/>
+    <CommandId ID="1178" Name="IS_PLAYER_FOOT_DOWN" Handled="false"/>
+    <CommandId ID="1179" Name="IS_CHAR_FOOT_DOWN" Handled="false"/>
+    <CommandId ID="1180" Name="INITIALISE_OBJECT_PATH" Handled="false"/>
+    <CommandId ID="1181" Name="START_OBJECT_ON_PATH" Handled="false"/>
+    <CommandId ID="1182" Name="SET_OBJECT_PATH_SPEED" Handled="false"/>
+    <CommandId ID="1183" Name="SET_OBJECT_PATH_POSITION" Handled="false"/>
+    <CommandId ID="1184" Name="GET_OBJECT_DISTANCE_ALONG_PATH" Handled="false"/>
+    <CommandId ID="1185" Name="CLEAR_OBJECT_PATH" Handled="false"/>
+    <CommandId ID="1186" Name="HELI_GOTO_COORDS"/>
+    <CommandId ID="1187" Name="IS_INT_VAR_EQUAL_TO_CONSTANT"/>
+    <CommandId ID="1188" Name="IS_INT_LVAR_EQUAL_TO_CONSTANT"/>
+    <CommandId ID="1189" Name="GET_DEAD_CHAR_PICKUP_COORDS"/>
+    <CommandId ID="1190" Name="CREATE_PROTECTION_PICKUP"/>
+    <CommandId ID="1191" Name="IS_CHAR_IN_ANY_BOAT"/>
+    <CommandId ID="1192" Name="IS_PLAYER_IN_ANY_BOAT" Handled="false"/>
+    <CommandId ID="1193" Name="IS_CHAR_IN_ANY_HELI"/>
+    <CommandId ID="1194" Name="IS_PLAYER_IN_ANY_HELI" Handled="false"/>
+    <CommandId ID="1195" Name="IS_CHAR_IN_ANY_PLANE"/>
+    <CommandId ID="1196" Name="IS_PLAYER_IN_ANY_PLANE" Handled="false"/>
+    <CommandId ID="1197" Name="IS_CHAR_IN_WATER"/>
+    <CommandId ID="1198" Name="SET_VAR_INT_TO_CONSTANT"/>
+    <CommandId ID="1199" Name="SET_LVAR_INT_TO_CONSTANT"/>
+    <CommandId ID="1200" Name="IS_INT_VAR_GREATER_THAN_CONSTANT"/>
+    <CommandId ID="1201" Name="IS_INT_LVAR_GREATER_THAN_CONSTANT"/>
+    <CommandId ID="1202" Name="IS_CONSTANT_GREATER_THAN_INT_VAR"/>
+    <CommandId ID="1203" Name="IS_CONSTANT_GREATER_THAN_INT_LVAR"/>
+    <CommandId ID="1204" Name="IS_INT_VAR_GREATER_OR_EQUAL_TO_CONSTANT"/>
+    <CommandId ID="1205" Name="IS_INT_LVAR_GREATER_OR_EQUAL_TO_CONSTANT"/>
+    <CommandId ID="1206" Name="IS_CONSTANT_GREATER_OR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="1207" Name="IS_CONSTANT_GREATER_OR_EQUAL_TO_INT_LVAR"/>
+    <CommandId ID="1208" Name="GET_CHAR_WEAPON_IN_SLOT"/>
+    <CommandId ID="1209" Name="GET_CLOSEST_STRAIGHT_ROAD"/>
+    <CommandId ID="1210" Name="SET_CAR_FORWARD_SPEED"/>
+    <CommandId ID="1211" Name="SET_AREA_VISIBLE"/>
+    <CommandId ID="1212" Name="SET_CUTSCENE_ANIM_TO_LOOP" Handled="false"/>
+    <CommandId ID="1213" Name="MARK_CAR_AS_CONVOY_CAR"/>
+    <CommandId ID="1214" Name="RESET_HAVOC_CAUSED_BY_PLAYER" Handled="false"/>
+    <CommandId ID="1215" Name="GET_HAVOC_CAUSED_BY_PLAYER" Handled="false"/>
+    <CommandId ID="1216" Name="CREATE_SCRIPT_ROADBLOCK"/>
+    <CommandId ID="1217" Name="CLEAR_ALL_SCRIPT_ROADBLOCKS"/>
+    <CommandId ID="1218" Name="SET_CHAR_OBJ_WALK_TO_CHAR" Handled="false"/>
+    <CommandId ID="1219" Name="IS_PICKUP_IN_ZONE" Handled="false"/>
+    <CommandId ID="1220" Name="GET_OFFSET_FROM_CHAR_IN_WORLD_COORDS"/>
+    <CommandId ID="1221" Name="HAS_CHAR_BEEN_PHOTOGRAPHED"/>
+    <CommandId ID="1222" Name="SET_CHAR_OBJ_AIM_GUN_AT_CHAR" Handled="false"/>
+    <CommandId ID="1223" Name="SWITCH_SECURITY_CAMERA" Handled="false"/>
+    <CommandId ID="1224" Name="IS_CHAR_IN_FLYING_VEHICLE"/>
+    <CommandId ID="1225" Name="IS_PLAYER_IN_FLYING_VEHICLE" Handled="false"/>
+    <CommandId ID="1226" Name="HAS_SONY_CD_BEEN_READ" Handled="false"/>
+    <CommandId ID="1227" Name="GET_NUMBER_OF_SONY_CDS_READ" Handled="false"/>
+    <CommandId ID="1228" Name="ADD_SHORT_RANGE_BLIP_FOR_COORD_OLD" Handled="false"/>
+    <CommandId ID="1229" Name="ADD_SHORT_RANGE_BLIP_FOR_COORD" Handled="false"/>
+    <CommandId ID="1230" Name="ADD_SHORT_RANGE_SPRITE_BLIP_FOR_COORD"/>
+    <CommandId ID="1231" Name="ADD_MONEY_SPENT_ON_CLOTHES" Handled="false"/>
+    <CommandId ID="1232" Name="SET_HELI_ORIENTATION"/>
+    <CommandId ID="1233" Name="CLEAR_HELI_ORIENTATION"/>
+    <CommandId ID="1234" Name="PLANE_GOTO_COORDS"/>
+    <CommandId ID="1235" Name="GET_NTH_CLOSEST_CAR_NODE"/>
+    <CommandId ID="1236" Name="GET_NTH_CLOSEST_CHAR_NODE" Handled="false"/>
+    <CommandId ID="1237" Name="DRAW_WEAPONSHOP_CORONA"/>
+    <CommandId ID="1238" Name="SET_ENABLE_RC_DETONATE_ON_CONTACT"/>
+    <CommandId ID="1239" Name="FREEZE_CHAR_POSITION"/>
+    <CommandId ID="1240" Name="SET_CHAR_DROWNS_IN_WATER"/>
+    <CommandId ID="1241" Name="SET_OBJECT_RECORDS_COLLISIONS"/>
+    <CommandId ID="1242" Name="HAS_OBJECT_COLLIDED_WITH_ANYTHING"/>
+    <CommandId ID="1243" Name="REMOVE_RC_BUGGY"/>
+    <CommandId ID="1244" Name="HAS_PHOTOGRAPH_BEEN_TAKEN" Handled="false"/>
+    <CommandId ID="1245" Name="GET_CHAR_ARMOUR"/>
+    <CommandId ID="1246" Name="SET_CHAR_ARMOUR" Handled="false"/>
+    <CommandId ID="1247" Name="SET_HELI_STABILISER"/>
+    <CommandId ID="1248" Name="SET_CAR_STRAIGHT_LINE_DISTANCE"/>
+    <CommandId ID="1249" Name="POP_CAR_BOOT"/>
+    <CommandId ID="1250" Name="SHUT_PLAYER_UP"/>
+    <CommandId ID="1251" Name="SET_PLAYER_MOOD"/>
+    <CommandId ID="1252" Name="REQUEST_COLLISION"/>
+    <CommandId ID="1253" Name="LOCATE_OBJECT_2D"/>
+    <CommandId ID="1254" Name="LOCATE_OBJECT_3D"/>
+    <CommandId ID="1255" Name="IS_OBJECT_IN_WATER"/>
+    <CommandId ID="1256" Name="SET_CHAR_OBJ_STEAL_ANY_CAR_EVEN_MISSION_CAR" Handled="false"/>
+    <CommandId ID="1257" Name="IS_OBJECT_IN_AREA_2D"/>
+    <CommandId ID="1258" Name="IS_OBJECT_IN_AREA_3D"/>
+    <CommandId ID="1259" Name="TASK_TOGGLE_DUCK"/>
+    <CommandId ID="1260" Name="SET_ZONE_CIVILIAN_CAR_INFO" Handled="false"/>
+    <CommandId ID="1261" Name="REQUEST_ANIMATION"/>
+    <CommandId ID="1262" Name="HAS_ANIMATION_LOADED"/>
+    <CommandId ID="1263" Name="REMOVE_ANIMATION"/>
+    <CommandId ID="1264" Name="IS_CHAR_WAITING_FOR_WORLD_COLLISION"/>
+    <CommandId ID="1265" Name="IS_CAR_WAITING_FOR_WORLD_COLLISION"/>
+    <CommandId ID="1266" Name="IS_OBJECT_WAITING_FOR_WORLD_COLLISION" Handled="false"/>
+    <CommandId ID="1267" Name="SET_CHAR_SHUFFLE_INTO_DRIVERS_SEAT" Handled="false"/>
+    <CommandId ID="1268" Name="ATTACH_CHAR_TO_OBJECT"/>
+    <CommandId ID="1269" Name="SET_CHAR_AS_PLAYER_FRIEND" Handled="false"/>
+    <CommandId ID="1270" Name="DISPLAY_NTH_ONSCREEN_COUNTER" Handled="false"/>
+    <CommandId ID="1271" Name="DISPLAY_NTH_ONSCREEN_COUNTER_WITH_STRING"/>
+    <CommandId ID="1272" Name="ADD_SET_PIECE"/>
+    <CommandId ID="1273" Name="SET_EXTRA_COLOURS"/>
+    <CommandId ID="1274" Name="CLEAR_EXTRA_COLOURS"/>
+    <CommandId ID="1275" Name="CLOSE_CAR_BOOT" Handled="false"/>
+    <CommandId ID="1276" Name="GET_WHEELIE_STATS"/>
+    <CommandId ID="1277" Name="DISARM_CHAR" Handled="false"/>
+    <CommandId ID="1278" Name="BURST_CAR_TYRE"/>
+    <CommandId ID="1279" Name="IS_CHAR_OBJ_NO_OBJ" Handled="false"/>
+    <CommandId ID="1280" Name="IS_PLAYER_WEARING"/>
+    <CommandId ID="1281" Name="SET_PLAYER_CAN_DO_DRIVE_BY"/>
+    <CommandId ID="1282" Name="SET_CHAR_OBJ_SPRINT_TO_COORD" Handled="false"/>
+    <CommandId ID="1283" Name="CREATE_SWAT_ROPE"/>
+    <CommandId ID="1284" Name="SET_FIRST_PERSON_CONTROL_CAMERA" Handled="false"/>
+    <CommandId ID="1285" Name="GET_NEAREST_TYRE_TO_POINT" Handled="false"/>
+    <CommandId ID="1286" Name="SET_CAR_MODEL_COMPONENTS"/>
+    <CommandId ID="1287" Name="SWITCH_LIFT_CAMERA" Handled="false"/>
+    <CommandId ID="1288" Name="CLOSE_ALL_CAR_DOORS"/>
+    <CommandId ID="1289" Name="GET_DISTANCE_BETWEEN_COORDS_2D"/>
+    <CommandId ID="1290" Name="GET_DISTANCE_BETWEEN_COORDS_3D"/>
+    <CommandId ID="1291" Name="POP_CAR_BOOT_USING_PHYSICS" Handled="false"/>
+    <CommandId ID="1292" Name="SET_FIRST_PERSON_WEAPON_CAMERA" Handled="false"/>
+    <CommandId ID="1293" Name="IS_CHAR_LEAVING_VEHICLE_TO_DIE" Handled="false"/>
+    <CommandId ID="1294" Name="SORT_OUT_OBJECT_COLLISION_WITH_CAR"/>
+    <CommandId ID="1295" Name="GET_MAX_WANTED_LEVEL"/>
+    <CommandId ID="1296" Name="IS_CHAR_WANDER_PATH_CLEAR" Handled="false"/>
+    <CommandId ID="1297" Name="PRINT_HELP_WITH_NUMBER" Handled="false"/>
+    <CommandId ID="1298" Name="PRINT_HELP_FOREVER"/>
+    <CommandId ID="1299" Name="PRINT_HELP_FOREVER_WITH_NUMBER"/>
+    <CommandId ID="1300" Name="SET_CHAR_CAN_BE_DAMAGED_BY_MEMBERS_OF_GANG" Handled="false"/>
+    <CommandId ID="1301" Name="LOAD_AND_LAUNCH_MISSION_EXCLUSIVE" Handled="false"/>
+    <CommandId ID="1302" Name="IS_MISSION_AUDIO_PLAYING" Handled="false"/>
+    <CommandId ID="1303" Name="CREATE_LOCKED_PROPERTY_PICKUP"/>
+    <CommandId ID="1304" Name="CREATE_FORSALE_PROPERTY_PICKUP"/>
+    <CommandId ID="1305" Name="FREEZE_CAR_POSITION"/>
+    <CommandId ID="1306" Name="HAS_CHAR_BEEN_DAMAGED_BY_CHAR"/>
+    <CommandId ID="1307" Name="HAS_CHAR_BEEN_DAMAGED_BY_CAR"/>
+    <CommandId ID="1308" Name="HAS_CAR_BEEN_DAMAGED_BY_CHAR"/>
+    <CommandId ID="1309" Name="HAS_CAR_BEEN_DAMAGED_BY_CAR"/>
+    <CommandId ID="1310" Name="GET_RADIO_CHANNEL"/>
+    <CommandId ID="1311" Name="DISPLAY_TEXT_WITH_3_NUMBERS" Handled="false"/>
+    <CommandId ID="1312" Name="IS_CAR_DROWNING_IN_WATER" Handled="false"/>
+    <CommandId ID="1313" Name="IS_CHAR_DROWNING_IN_WATER" Handled="false"/>
+    <CommandId ID="1314" Name="DISABLE_CUTSCENE_SHADOWS" Handled="false"/>
+    <CommandId ID="1315" Name="HAS_GLASS_BEEN_SHATTERED_NEARBY" Handled="false"/>
+    <CommandId ID="1316" Name="ATTACH_CUTSCENE_OBJECT_TO_BONE" Handled="false"/>
+    <CommandId ID="1317" Name="ATTACH_CUTSCENE_OBJECT_TO_COMPONENT" Handled="false"/>
+    <CommandId ID="1318" Name="SET_CHAR_STAY_IN_CAR_WHEN_JACKED"/>
+    <CommandId ID="1319" Name="IS_MISSION_AUDIO_LOADING" Handled="false"/>
+    <CommandId ID="1320" Name="ADD_MONEY_SPENT_ON_WEAPONS" Handled="false"/>
+    <CommandId ID="1321" Name="ADD_MONEY_SPENT_ON_PROPERTY" Handled="false"/>
+    <CommandId ID="1322" Name="ADD_MONEY_SPENT_ON_AUTO_PAINTING" Handled="false"/>
+    <CommandId ID="1323" Name="SET_CHAR_ANSWERING_MOBILE" Handled="false"/>
+    <CommandId ID="1324" Name="SET_PLAYER_DRUNKENNESS"/>
+    <CommandId ID="1325" Name="GET_PLAYER_DRUNKENNESS" Handled="false"/>
+    <CommandId ID="1326" Name="SET_PLAYER_DRUG_LEVEL" Handled="false"/>
+    <CommandId ID="1327" Name="GET_PLAYER_DRUG_LEVEL" Handled="false"/>
+    <CommandId ID="1328" Name="ADD_LOAN_SHARK_VISITS" Handled="false"/>
+    <CommandId ID="1329" Name="ADD_STORES_KNOCKED_OFF" Handled="false"/>
+    <CommandId ID="1330" Name="ADD_MOVIE_STUNTS" Handled="false"/>
+    <CommandId ID="1331" Name="ADD_NUMBER_OF_ASSASSINATIONS" Handled="false"/>
+    <CommandId ID="1332" Name="ADD_PIZZAS_DELIVERED" Handled="false"/>
+    <CommandId ID="1333" Name="ADD_GARBAGE_PICKUPS" Handled="false"/>
+    <CommandId ID="1334" Name="ADD_ICE_CREAMS_SOLD" Handled="false"/>
+    <CommandId ID="1335" Name="SET_TOP_SHOOTING_RANGE_SCORE" Handled="false"/>
+    <CommandId ID="1336" Name="ADD_SHOOTING_RANGE_RANK" Handled="false"/>
+    <CommandId ID="1337" Name="ADD_MONEY_SPENT_ON_GAMBLING" Handled="false"/>
+    <CommandId ID="1338" Name="ADD_MONEY_WON_ON_GAMBLING" Handled="false"/>
+    <CommandId ID="1339" Name="SET_LARGEST_GAMBLING_WIN" Handled="false"/>
+    <CommandId ID="1340" Name="SET_CHAR_IN_PLAYERS_GROUP_CAN_FIGHT" Handled="false"/>
+    <CommandId ID="1341" Name="CLEAR_CHAR_WAIT_STATE" Handled="false"/>
+    <CommandId ID="1342" Name="GET_RANDOM_CAR_OF_TYPE_IN_AREA_NO_SAVE"/>
+    <CommandId ID="1343" Name="SET_CAN_BURST_CAR_TYRES"/>
+    <CommandId ID="1344" Name="SET_PLAYER_AUTO_AIM" Handled="false"/>
+    <CommandId ID="1345" Name="FIRE_HUNTER_GUN"/>
+    <CommandId ID="1346" Name="SET_PROPERTY_AS_OWNED" Handled="false"/>
+    <CommandId ID="1347" Name="ADD_BLOOD_RING_KILLS" Handled="false"/>
+    <CommandId ID="1348" Name="SET_LONGEST_TIME_IN_BLOOD_RING" Handled="false"/>
+    <CommandId ID="1349" Name="REMOVE_EVERYTHING_FOR_HUGE_CUTSCENE" Handled="false"/>
+    <CommandId ID="1350" Name="IS_PLAYER_TOUCHING_VEHICLE" Handled="false"/>
+    <CommandId ID="1351" Name="IS_CHAR_TOUCHING_VEHICLE"/>
+    <CommandId ID="1352" Name="CHECK_FOR_PED_MODEL_AROUND_PLAYER" Handled="false"/>
+    <CommandId ID="1353" Name="CLEAR_CHAR_FOLLOW_PATH" Handled="false"/>
+    <CommandId ID="1354" Name="SET_CHAR_CAN_BE_SHOT_IN_VEHICLE"/>
+    <CommandId ID="1355" Name="ATTACH_CUTSCENE_OBJECT_TO_VEHICLE" Handled="false"/>
+    <CommandId ID="1356" Name="LOAD_MISSION_TEXT"/>
+    <CommandId ID="1357" Name="SET_TONIGHTS_EVENT" Handled="false"/>
+    <CommandId ID="1358" Name="CLEAR_CHAR_LAST_DAMAGE_ENTITY"/>
+    <CommandId ID="1359" Name="CLEAR_CAR_LAST_DAMAGE_ENTITY"/>
+    <CommandId ID="1360" Name="FREEZE_OBJECT_POSITION"/>
+    <CommandId ID="1361" Name="SET_PLAYER_HAS_MET_DEBBIE_HARRY" Handled="false"/>
+    <CommandId ID="1362" Name="SET_RIOT_INTENSITY" Handled="false"/>
+    <CommandId ID="1363" Name="IS_CAR_IN_ANGLED_AREA_2D" Handled="false"/>
+    <CommandId ID="1364" Name="IS_CAR_IN_ANGLED_AREA_3D" Handled="false"/>
+    <CommandId ID="1365" Name="REMOVE_WEAPON_FROM_CHAR"/>
+    <CommandId ID="1366" Name="SET_UP_TAXI_SHORTCUT" Handled="false"/>
+    <CommandId ID="1367" Name="CLEAR_TAXI_SHORTCUT" Handled="false"/>
+    <CommandId ID="1368" Name="SET_CHAR_OBJ_GOTO_CAR_ON_FOOT" Handled="false"/>
+    <CommandId ID="1369" Name="GET_CLOSEST_WATER_NODE" Handled="false"/>
+    <CommandId ID="1370" Name="ADD_PORN_LEAFLET_TO_RUBBISH" Handled="false"/>
+    <CommandId ID="1371" Name="CREATE_CLOTHES_PICKUP" Handled="false"/>
+    <CommandId ID="1372" Name="CHANGE_BLIP_THRESHOLD" Handled="false"/>
+    <CommandId ID="1373" Name="MAKE_PLAYER_FIRE_PROOF"/>
+    <CommandId ID="1374" Name="INCREASE_PLAYER_MAX_HEALTH"/>
+    <CommandId ID="1375" Name="INCREASE_PLAYER_MAX_ARMOUR"/>
+    <CommandId ID="1376" Name="CREATE_RANDOM_CHAR_AS_DRIVER"/>
+    <CommandId ID="1377" Name="CREATE_RANDOM_CHAR_AS_PASSENGER"/>
+    <CommandId ID="1378" Name="SET_CHAR_IGNORE_THREATS_BEHIND_OBJECTS" Handled="false"/>
+    <CommandId ID="1379" Name="ENSURE_PLAYER_HAS_DRIVE_BY_WEAPON"/>
+    <CommandId ID="1380" Name="MAKE_HELI_COME_CRASHING_DOWN"/>
+    <CommandId ID="1381" Name="ADD_EXPLOSION_NO_SOUND"/>
+    <CommandId ID="1382" Name="SET_OBJECT_AREA_VISIBLE"/>
+    <CommandId ID="1383" Name="WAS_VEHICLE_EVER_POLICE" Handled="false"/>
+    <CommandId ID="1384" Name="SET_CHAR_NEVER_TARGETTED"/>
+    <CommandId ID="1385" Name="LOAD_UNCOMPRESSED_ANIM" Handled="false"/>
+    <CommandId ID="1386" Name="WAS_CUTSCENE_SKIPPED"/>
+    <CommandId ID="1387" Name="SET_CHAR_CROUCH_WHEN_THREATENED" Handled="false"/>
+    <CommandId ID="1388" Name="IS_CHAR_IN_ANY_POLICE_VEHICLE"/>
+    <CommandId ID="1389" Name="DOES_CHAR_EXIST"/>
+    <CommandId ID="1390" Name="DOES_VEHICLE_EXIST"/>
+    <CommandId ID="1391" Name="ADD_SHORT_RANGE_BLIP_FOR_CONTACT_POINT" Handled="false"/>
+    <CommandId ID="1392" Name="ADD_SHORT_RANGE_SPRITE_BLIP_FOR_CONTACT_POINT"/>
+    <CommandId ID="1393" Name="IS_CHAR_STUCK" Handled="false"/>
+    <CommandId ID="1394" Name="SET_ALL_TAXIS_HAVE_NITRO"/>
+    <CommandId ID="1395" Name="SET_CHAR_STOP_SHOOT_DONT_SEEK_ENTITY" Handled="false"/>
+    <CommandId ID="1396" Name="FREEZE_CAR_POSITION_AND_DONT_LOAD_COLLISION"/>
+    <CommandId ID="1397" Name="FREEZE_CHAR_POSITION_AND_DONT_LOAD_COLLISION"/>
+    <CommandId ID="1398" Name="FREEZE_OBJECT_POSITION_AND_DONT_LOAD_COLLISION" Handled="false"/>
+    <CommandId ID="1399" Name="SET_FADE_AND_JUMPCUT_AFTER_RC_EXPLOSION" Handled="false"/>
+    <CommandId ID="1400" Name="REGISTER_VIGILANTE_LEVEL" Handled="false"/>
+    <CommandId ID="1401" Name="CLEAR_ALL_CHAR_ANIMS" Handled="false"/>
+    <CommandId ID="1402" Name="SET_MAXIMUM_NUMBER_OF_CARS_IN_GARAGE" Handled="false"/>
+    <CommandId ID="1403" Name="WANTED_STARS_ARE_FLASHING" Handled="false"/>
+    <CommandId ID="1404" Name="SET_ALLOW_HURRICANES" Handled="false"/>
+    <CommandId ID="1405" Name="PLAY_ANNOUNCEMENT" Handled="false"/>
+    <CommandId ID="1406" Name="SET_PLAYER_IS_IN_STADIUM"/>
+    <CommandId ID="1407" Name="GET_BUS_FARES_COLLECTED_BY_PLAYER" Handled="false"/>
+    <CommandId ID="1408" Name="SET_CHAR_OBJ_BUY_ICE_CREAM" Handled="false"/>
+    <CommandId ID="1409" Name="DISPLAY_RADAR"/>
+    <CommandId ID="1410" Name="REGISTER_BEST_POSITION"/>
+    <CommandId ID="1411" Name="IS_PLAYER_IN_INFO_ZONE"/>
+    <CommandId ID="1412" Name="CLEAR_CHAR_ICE_CREAM_PURCHASE" Handled="false"/>
+    <CommandId ID="1413" Name="IS_IN_CAR_FIRE_BUTTON_PRESSED" Handled="false"/>
+    <CommandId ID="1414" Name="HAS_CHAR_ATTEMPTED_ATTRACTOR" Handled="false"/>
+    <CommandId ID="1415" Name="SET_LOAD_COLLISION_FOR_CAR_FLAG"/>
+    <CommandId ID="1416" Name="SET_LOAD_COLLISION_FOR_CHAR_FLAG"/>
+    <CommandId ID="1417" Name="SET_LOAD_COLLISION_FOR_OBJECT_FLAG" Handled="false"/>
+    <CommandId ID="1418" Name="ADD_BIG_GUN_FLASH"/>
+    <CommandId ID="1419" Name="HAS_CHAR_BOUGHT_ICE_CREAM" Handled="false"/>
+    <CommandId ID="1420" Name="GET_PROGRESS_PERCENTAGE"/>
+    <CommandId ID="1421" Name="SET_SHORTCUT_PICKUP_POINT" Handled="false"/>
+    <CommandId ID="1422" Name="SET_SHORTCUT_DROPOFF_POINT_FOR_MISSION" Handled="false"/>
+    <CommandId ID="1423" Name="GET_RANDOM_ICE_CREAM_CUSTOMER_IN_AREA" Handled="false"/>
+    <CommandId ID="1424" Name="GET_RANDOM_ICE_CREAM_CUSTOMER_IN_ZONE" Handled="false"/>
+    <CommandId ID="1425" Name="UNLOCK_ALL_CAR_DOORS_IN_AREA" Handled="false"/>
+    <CommandId ID="1426" Name="SET_GANG_ATTACK_PLAYER_WITH_COPS" Handled="false"/>
+    <CommandId ID="1427" Name="SET_CHAR_FRIGHTENED_IN_JACKED_CAR" Handled="false"/>
+    <CommandId ID="1428" Name="SET_VEHICLE_TO_FADE_IN"/>
+    <CommandId ID="1429" Name="REGISTER_ODDJOB_MISSION_PASSED"/>
+    <CommandId ID="1430" Name="IS_PLAYER_IN_SHORTCUT_TAXI"/>
+    <CommandId ID="1431" Name="IS_CHAR_DUCKING"/>
+    <CommandId ID="1432" Name="CREATE_DUST_EFFECT_FOR_CUTSCENE_HELI" Handled="false"/>
+    <CommandId ID="1433" Name="REGISTER_FIRE_LEVEL" Handled="false"/>
+    <CommandId ID="1434" Name="IS_AUSTRALIAN_GAME"/>
+    <CommandId ID="1435" Name="DISARM_CAR_BOMB" Handled="false"/>
+    <CommandId ID="1436" Name="SET_ONSCREEN_COUNTER_FLASH_WHEN_FIRST_DISPLAYED"/>
+    <CommandId ID="1437" Name="SHUFFLE_CARD_DECKS"/>
+    <CommandId ID="1438" Name="FETCH_NEXT_CARD"/>
+    <CommandId ID="1439" Name="GET_OBJECT_VELOCITY"/>
+    <CommandId ID="1440" Name="IS_DEBUG_CAMERA_ON"/>
+    <CommandId ID="1441" Name="ADD_TO_OBJECT_ROTATION_VELOCITY"/>
+    <CommandId ID="1442" Name="SET_OBJECT_ROTATION_VELOCITY"/>
+    <CommandId ID="1443" Name="IS_OBJECT_STATIC"/>
+    <CommandId ID="1444" Name="GET_ANGLE_BETWEEN_2D_VECTORS"/>
+    <CommandId ID="1445" Name="DO_2D_RECTANGLES_COLLIDE"/>
+    <CommandId ID="1446" Name="GET_OBJECT_ROTATION_VELOCITY"/>
+    <CommandId ID="1447" Name="ADD_VELOCITY_RELATIVE_TO_OBJECT_VELOCITY"/>
+    <CommandId ID="1448" Name="GET_OBJECT_SPEED"/>
+    <CommandId ID="1449" Name="SET_VAR_TEXT_LABEL"/>
+    <CommandId ID="1450" Name="SET_LVAR_TEXT_LABEL"/>
+    <CommandId ID="1451" Name="VAR_TEXT_LABEL"/>
+    <CommandId ID="1452" Name="LVAR_TEXT_LABEL"/>
+    <CommandId ID="1453" Name="IS_VAR_TEXT_LABEL_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="1454" Name="IS_LVAR_TEXT_LABEL_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="1455" Name="DO_2D_LINES_INTERSECT" Handled="false"/>
+    <CommandId ID="1456" Name="GET_2D_LINES_INTERSECT_POINT"/>
+    <CommandId ID="1457" Name="IS_2D_POINT_IN_TRIANGLE" Handled="false"/>
+    <CommandId ID="1458" Name="IS_2D_POINT_IN_RECTANGLE_ON_LEFT_SIDE_OF_LINE" Handled="false"/>
+    <CommandId ID="1459" Name="IS_2D_POINT_ON_LEFT_SIDE_OF_2D_LINE" Handled="false"/>
+    <CommandId ID="1460" Name="CHAR_LOOK_AT_OBJECT_ALWAYS" Handled="false"/>
+    <CommandId ID="1461" Name="APPLY_COLLISION_ON_OBJECT" Handled="false"/>
+    <CommandId ID="1462" Name="SAVE_STRING_TO_DEBUG_FILE"/>
+    <CommandId ID="1463" Name="TASK_PLAYER_ON_FOOT" Handled="false"/>
+    <CommandId ID="1464" Name="TASK_PLAYER_IN_CAR" Handled="false"/>
+    <CommandId ID="1465" Name="TASK_PAUSE"/>
+    <CommandId ID="1466" Name="TASK_STAND_STILL"/>
+    <CommandId ID="1467" Name="TASK_FALL_AND_GET_UP"/>
+    <CommandId ID="1468" Name="TASK_JUMP"/>
+    <CommandId ID="1469" Name="TASK_TIRED"/>
+    <CommandId ID="1470" Name="TASK_DIE"/>
+    <CommandId ID="1471" Name="TASK_LOOK_AT_CHAR"/>
+    <CommandId ID="1472" Name="TASK_LOOK_AT_VEHICLE"/>
+    <CommandId ID="1473" Name="TASK_SAY"/>
+    <CommandId ID="1474" Name="TASK_SHAKE_FIST"/>
+    <CommandId ID="1475" Name="TASK_COWER"/>
+    <CommandId ID="1476" Name="TASK_HANDS_UP"/>
+    <CommandId ID="1477" Name="TASK_DUCK"/>
+    <CommandId ID="1478" Name="TASK_DETONATE" Handled="false"/>
+    <CommandId ID="1479" Name="TASK_USE_ATM"/>
+    <CommandId ID="1480" Name="TASK_SCRATCH_HEAD"/>
+    <CommandId ID="1481" Name="TASK_LOOK_ABOUT"/>
+    <CommandId ID="1482" Name="TASK_ENTER_CAR_AS_PASSENGER"/>
+    <CommandId ID="1483" Name="TASK_ENTER_CAR_AS_DRIVER"/>
+    <CommandId ID="1484" Name="TASK_STEAL_CAR" Handled="false"/>
+    <CommandId ID="1485" Name="TASK_LEAVE_CAR"/>
+    <CommandId ID="1486" Name="TASK_LEAVE_CAR_AND_DIE" Handled="false"/>
+    <CommandId ID="1487" Name="TASK_LEAVE_CAR_AND_FLEE"/>
+    <CommandId ID="1488" Name="TASK_CAR_DRIVE" Handled="false"/>
+    <CommandId ID="1489" Name="TASK_CAR_DRIVE_TO_COORD"/>
+    <CommandId ID="1490" Name="TASK_CAR_DRIVE_WANDER"/>
+    <CommandId ID="1491" Name="TASK_GO_STRAIGHT_TO_COORD"/>
+    <CommandId ID="1492" Name="TASK_ACHIEVE_HEADING"/>
+    <CommandId ID="1493" Name="SET_CHAR_IN_DISGUISE" Handled="false"/>
+    <CommandId ID="1494" Name="FLUSH_ROUTE"/>
+    <CommandId ID="1495" Name="EXTEND_ROUTE"/>
+    <CommandId ID="1496" Name="TASK_FOLLOW_POINT_ROUTE"/>
+    <CommandId ID="1497" Name="TASK_GOTO_CHAR"/>
+    <CommandId ID="1498" Name="TASK_FLEE_POINT"/>
+    <CommandId ID="1499" Name="TASK_FLEE_CHAR"/>
+    <CommandId ID="1500" Name="TASK_SMART_FLEE_POINT"/>
+    <CommandId ID="1501" Name="TASK_SMART_FLEE_CHAR"/>
+    <CommandId ID="1502" Name="TASK_WANDER_STANDARD"/>
+    <CommandId ID="1503" Name="TASK_WANDER_COP" Handled="false"/>
+    <CommandId ID="1504" Name="TASK_WANDER_CRIMINAL" Handled="false"/>
+    <CommandId ID="1505" Name="TASK_FOLLOW_LEADER_IN_FORMATION" Handled="false"/>
+    <CommandId ID="1506" Name="TASK_KILL_CHAR_ON_FOOT"/>
+    <CommandId ID="1507" Name="START_ADDING_STUNT_POINTS" Handled="false"/>
+    <CommandId ID="1508" Name="ADD_STUNT_POINT" Handled="false"/>
+    <CommandId ID="1509" Name="START_PLAYING_STUNT" Handled="false"/>
+    <CommandId ID="1510" Name="HAS_STUNT_ENDED" Handled="false"/>
+    <CommandId ID="1511" Name="HAS_STUNT_FAILED" Handled="false"/>
+    <CommandId ID="1512" Name="START_RECORDING_STUNT" Handled="false"/>
+    <CommandId ID="1513" Name="START_RECORDING_CAR"/>
+    <CommandId ID="1514" Name="STOP_RECORDING_CARS" Handled="false"/>
+    <CommandId ID="1515" Name="START_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1516" Name="STOP_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1517" Name="PAUSE_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1518" Name="UNPAUSE_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1519" Name="SET_CAR_PROTECT_CAR_REAR" Handled="false"/>
+    <CommandId ID="1520" Name="SET_CAR_PROTECT_CAR_FRONT" Handled="false"/>
+    <CommandId ID="1521" Name="SET_CAR_ESCORT_CAR_LEFT"/>
+    <CommandId ID="1522" Name="SET_CAR_ESCORT_CAR_RIGHT"/>
+    <CommandId ID="1523" Name="SET_CAR_ESCORT_CAR_REAR"/>
+    <CommandId ID="1524" Name="SET_CAR_ESCORT_CAR_FRONT"/>
+    <CommandId ID="1525" Name="TASK_FOLLOW_PATH_NODES_TO_COORD"/>
+    <CommandId ID="1526" Name="IS_CHAR_IN_ANGLED_AREA_2D"/>
+    <CommandId ID="1527" Name="IS_CHAR_IN_ANGLED_AREA_ON_FOOT_2D"/>
+    <CommandId ID="1528" Name="IS_CHAR_IN_ANGLED_AREA_IN_CAR_2D"/>
+    <CommandId ID="1529" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_2D"/>
+    <CommandId ID="1530" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_ON_FOOT_2D"/>
+    <CommandId ID="1531" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_IN_CAR_2D"/>
+    <CommandId ID="1532" Name="IS_CHAR_IN_ANGLED_AREA_3D"/>
+    <CommandId ID="1533" Name="IS_CHAR_IN_ANGLED_AREA_ON_FOOT_3D"/>
+    <CommandId ID="1534" Name="IS_CHAR_IN_ANGLED_AREA_IN_CAR_3D"/>
+    <CommandId ID="1535" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_3D"/>
+    <CommandId ID="1536" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_ON_FOOT_3D"/>
+    <CommandId ID="1537" Name="IS_CHAR_STOPPED_IN_ANGLED_AREA_IN_CAR_3D"/>
+    <CommandId ID="1538" Name="IS_CHAR_IN_TAXI"/>
+    <CommandId ID="1539" Name="TASK_GO_TO_COORD_ANY_MEANS"/>
+    <CommandId ID="1540" Name="GET_HEADING_FROM_VECTOR_2D"/>
+    <CommandId ID="1541" Name="TASK_PLAY_ANIM"/>
+    <CommandId ID="1542" Name="LOAD_PATH_NODES_IN_AREA"/>
+    <CommandId ID="1543" Name="RELEASE_PATH_NODES"/>
+    <CommandId ID="1544" Name="HAVE_PATH_NODES_BEEN_LOADED" Handled="false"/>
+    <CommandId ID="1545" Name="LOAD_ALL_PATH_NODES_FOR_DEBUG" Handled="false"/>
+    <CommandId ID="1546" Name="LOAD_CHAR_DECISION_MAKER"/>
+    <CommandId ID="1547" Name="SET_CHAR_DECISION_MAKER"/>
+    <CommandId ID="1548" Name="CLEAR_ALL_DECISION_MAKERS" Handled="false"/>
+    <CommandId ID="1549" Name="SET_TEXT_DROPSHADOW"/>
+    <CommandId ID="1550" Name="IS_PLAYBACK_GOING_ON_FOR_CAR"/>
+    <CommandId ID="1551" Name="SET_SENSE_RANGE"/>
+    <CommandId ID="1552" Name="SET_HEARING_RANGE" Handled="false"/>
+    <CommandId ID="1553" Name="IS_CHAR_PLAYING_ANIM"/>
+    <CommandId ID="1554" Name="SET_CHAR_ANIM_PLAYING_FLAG"/>
+    <CommandId ID="1555" Name="GET_CHAR_ANIM_CURRENT_TIME"/>
+    <CommandId ID="1556" Name="SET_CHAR_ANIM_CURRENT_TIME"/>
+    <CommandId ID="1557" Name="OPEN_SEQUENCE_TASK"/>
+    <CommandId ID="1558" Name="CLOSE_SEQUENCE_TASK"/>
+    <CommandId ID="1559" Name="SCRIPT_EVENT" Handled="false"/>
+    <CommandId ID="1560" Name="PERFORM_SEQUENCE_TASK"/>
+    <CommandId ID="1561" Name="SET_CHAR_COLLISION"/>
+    <CommandId ID="1562" Name="GET_CHAR_ANIM_TOTAL_TIME"/>
+    <CommandId ID="1563" Name="CLEAR_SEQUENCE_TASK"/>
+    <CommandId ID="1564" Name="CLEAR_ALL_SEQUENCE_TASKS" Handled="false"/>
+    <CommandId ID="1565" Name="ADD_ATTRACTOR"/>
+    <CommandId ID="1566" Name="CLEAR_ATTRACTOR"/>
+    <CommandId ID="1567" Name="CLEAR_ALL_ATTRACTORS" Handled="false"/>
+    <CommandId ID="1568" Name="TASK_PLAY_ANIM_FOR_TIME" Handled="false"/>
+    <CommandId ID="1569" Name="CREATE_CHAR_AT_ATTRACTOR"/>
+    <CommandId ID="1570" Name="TASK_LEAVE_CAR_IMMEDIATELY"/>
+    <CommandId ID="1571" Name="INCREMENT_INT_STAT"/>
+    <CommandId ID="1572" Name="INCREMENT_FLOAT_STAT"/>
+    <CommandId ID="1573" Name="DECREMENT_INT_STAT"/>
+    <CommandId ID="1574" Name="DECREMENT_FLOAT_STAT"/>
+    <CommandId ID="1575" Name="REGISTER_INT_STAT"/>
+    <CommandId ID="1576" Name="REGISTER_FLOAT_STAT"/>
+    <CommandId ID="1577" Name="SET_INT_STAT"/>
+    <CommandId ID="1578" Name="SET_FLOAT_STAT"/>
+    <CommandId ID="1579" Name="GET_ATTEMPTS_FOR_THIS_MISSION" Handled="false"/>
+    <CommandId ID="1580" Name="REGISTER_THIS_MISSION_HAS_BEEN_ATTEMPTED" Handled="false"/>
+    <CommandId ID="1581" Name="REGISTER_THIS_MISSION_HAS_BEEN_PASSED" Handled="false"/>
+    <CommandId ID="1582" Name="GET_SCRIPT_TASK_STATUS"/>
+    <CommandId ID="1583" Name="CREATE_GROUP"/>
+    <CommandId ID="1584" Name="SET_GROUP_LEADER"/>
+    <CommandId ID="1585" Name="SET_GROUP_MEMBER"/>
+    <CommandId ID="1586" Name="REMOVE_GROUP"/>
+    <CommandId ID="1587" Name="TASK_LEAVE_ANY_CAR"/>
+    <CommandId ID="1588" Name="TASK_KILL_CHAR_ON_FOOT_WHILE_DUCKING"/>
+    <CommandId ID="1589" Name="TASK_AIM_GUN_AT_CHAR"/>
+    <CommandId ID="1590" Name="TASK_SIDE_STEP_AND_SHOOT" Handled="false"/>
+    <CommandId ID="1591" Name="TASK_GO_TO_COORD_WHILE_SHOOTING"/>
+    <CommandId ID="1592" Name="TASK_STAY_IN_SAME_PLACE"/>
+    <CommandId ID="1593" Name="TASK_TURN_CHAR_TO_FACE_CHAR"/>
+    <CommandId ID="1594" Name="OPEN_THREAT_LIST" Handled="false"/>
+    <CommandId ID="1595" Name="CLOSE_THREAT_LIST" Handled="false"/>
+    <CommandId ID="1596" Name="SET_PEDMODEL_AS_THREAT" Handled="false"/>
+    <CommandId ID="1597" Name="SET_CHAR_THREAT_LIST" Handled="false"/>
+    <CommandId ID="1598" Name="REMOVE_THREAT_LIST" Handled="false"/>
+    <CommandId ID="1599" Name="PERFORM_SEQUENCE_TASK_REPEATEDLY" Handled="false"/>
+    <CommandId ID="1600" Name="SET_PEDTYPE_AS_THREAT" Handled="false"/>
+    <CommandId ID="1601" Name="CLEAR_CHAR_THREATS" Handled="false"/>
+    <CommandId ID="1602" Name="IS_CHAR_AT_SCRIPTED_ATTRACTOR"/>
+    <CommandId ID="1603" Name="SET_SEQUENCE_TO_REPEAT"/>
+    <CommandId ID="1604" Name="CREATE_PED_GENERATOR" Handled="false"/>
+    <CommandId ID="1605" Name="SWITCH_PED_GENERATOR" Handled="false"/>
+    <CommandId ID="1606" Name="GET_SEQUENCE_PROGRESS"/>
+    <CommandId ID="1607" Name="CLEAR_LOOK_AT"/>
+    <CommandId ID="1608" Name="SET_FOLLOW_NODE_THRESHOLD_DISTANCE"/>
+    <CommandId ID="1609" Name="SET_CHAR_ZONE_DISTANCE" Handled="false"/>
+    <CommandId ID="1610" Name="ADD_PEDMODEL_AS_ATTRACTOR_USER" Handled="false"/>
+    <CommandId ID="1611" Name="CREATE_FX_SYSTEM"/>
+    <CommandId ID="1612" Name="PLAY_FX_SYSTEM"/>
+    <CommandId ID="1613" Name="PAUSE_FX_SYSTEM" Handled="false"/>
+    <CommandId ID="1614" Name="STOP_FX_SYSTEM"/>
+    <CommandId ID="1615" Name="PLAY_AND_KILL_FX_SYSTEM"/>
+    <CommandId ID="1616" Name="KILL_FX_SYSTEM"/>
+    <CommandId ID="1617" Name="CREATE_FX_SYSTEM_WITH_DIRECTION" Handled="false"/>
+    <CommandId ID="1618" Name="GET_INT_STAT"/>
+    <CommandId ID="1619" Name="GET_FLOAT_STAT"/>
+    <CommandId ID="1620" Name="SET_OBJECT_RENDER_SCORCHED"/>
+    <CommandId ID="1621" Name="TASK_LOOK_AT_OBJECT"/>
+    <CommandId ID="1622" Name="LIMIT_ANGLE"/>
+    <CommandId ID="1623" Name="OPEN_CAR_DOOR"/>
+    <CommandId ID="1624" Name="SET_GROUP_DEFAULT_LEADER_TASK" Handled="false"/>
+    <CommandId ID="1625" Name="SET_ATTRACTOR_PAIR" Handled="false"/>
+    <CommandId ID="1626" Name="PLACE_CHAR_AT_ATTRACTOR" Handled="false"/>
+    <CommandId ID="1627" Name="GET_PICKUP_COORDINATES"/>
+    <CommandId ID="1628" Name="REMOVE_DECISION_MAKER"/>
+    <CommandId ID="1629" Name="VIEW_INTEGER_VARIABLE"/>
+    <CommandId ID="1630" Name="VIEW_FLOAT_VARIABLE"/>
+    <CommandId ID="1631" Name="WATCH_INTEGER_VARIABLE"/>
+    <CommandId ID="1632" Name="WATCH_FLOAT_VARIABLE"/>
+    <CommandId ID="1633" Name="BREAKPOINT"/>
+    <CommandId ID="1634" Name="WRITE_DEBUG"/>
+    <CommandId ID="1635" Name="WRITE_DEBUG_WITH_INT"/>
+    <CommandId ID="1636" Name="WRITE_DEBUG_WITH_FLOAT"/>
+    <CommandId ID="1637" Name="GET_CHAR_MODEL"/>
+    <CommandId ID="1638" Name="IS_CHAR_TOUCHING_ANY_OBJECT" Handled="false"/>
+    <CommandId ID="1639" Name="TASK_AIM_GUN_AT_COORD"/>
+    <CommandId ID="1640" Name="TASK_SHOOT_AT_COORD"/>
+    <CommandId ID="1641" Name="CREATE_FX_SYSTEM_ON_CHAR"/>
+    <CommandId ID="1642" Name="CREATE_FX_SYSTEM_ON_CHAR_WITH_DIRECTION"/>
+    <CommandId ID="1643" Name="CREATE_FX_SYSTEM_ON_CAR"/>
+    <CommandId ID="1644" Name="CREATE_FX_SYSTEM_ON_CAR_WITH_DIRECTION"/>
+    <CommandId ID="1645" Name="CREATE_FX_SYSTEM_ON_OBJECT"/>
+    <CommandId ID="1646" Name="CREATE_FX_SYSTEM_ON_OBJECT_WITH_DIRECTION"/>
+    <CommandId ID="1647" Name="ADD_QUEUED_DIALOGUE" Handled="false"/>
+    <CommandId ID="1648" Name="IS_DIALOGUE_FINISHED" Handled="false"/>
+    <CommandId ID="1649" Name="IS_DIALOGUE_PLAYING" Handled="false"/>
+    <CommandId ID="1650" Name="TASK_DESTROY_CAR"/>
+    <CommandId ID="1651" Name="TASK_DIVE_AND_GET_UP"/>
+    <CommandId ID="1652" Name="CUSTOM_PLATE_FOR_NEXT_CAR"/>
+    <CommandId ID="1653" Name="CREATE_PED_GENERATOR_AT_ATTRACTOR" Handled="false"/>
+    <CommandId ID="1654" Name="TASK_SHUFFLE_TO_NEXT_CAR_SEAT"/>
+    <CommandId ID="1655" Name="TASK_CHAT_WITH_CHAR"/>
+    <CommandId ID="1656" Name="GET_CHAR_AT_SCRIPTED_ATTRACTOR" Handled="false"/>
+    <CommandId ID="1657" Name="ATTACH_CAMERA_TO_VEHICLE"/>
+    <CommandId ID="1658" Name="ATTACH_CAMERA_TO_VEHICLE_LOOK_AT_VEHICLE"/>
+    <CommandId ID="1659" Name="ATTACH_CAMERA_TO_VEHICLE_LOOK_AT_CHAR"/>
+    <CommandId ID="1660" Name="ATTACH_CAMERA_TO_CHAR"/>
+    <CommandId ID="1661" Name="ATTACH_CAMERA_TO_CHAR_LOOK_AT_VEHICLE" Handled="false"/>
+    <CommandId ID="1662" Name="ATTACH_CAMERA_TO_CHAR_LOOK_AT_CHAR"/>
+    <CommandId ID="1663" Name="FORCE_CAR_LIGHTS"/>
+    <CommandId ID="1664" Name="ADD_PEDTYPE_AS_ATTRACTOR_USER"/>
+    <CommandId ID="1665" Name="ATTACH_OBJECT_TO_CAR"/>
+    <CommandId ID="1666" Name="DETACH_OBJECT"/>
+    <CommandId ID="1667" Name="ATTACH_CAR_TO_CAR"/>
+    <CommandId ID="1668" Name="DETACH_CAR"/>
+    <CommandId ID="1669" Name="IS_OBJECT_ATTACHED"/>
+    <CommandId ID="1670" Name="IS_VEHICLE_ATTACHED"/>
+    <CommandId ID="1671" Name="CLEAR_CHAR_TASKS"/>
+    <CommandId ID="1672" Name="TASK_TOGGLE_PED_THREAT_SCANNER"/>
+    <CommandId ID="1673" Name="POP_CAR_DOOR"/>
+    <CommandId ID="1674" Name="FIX_CAR_DOOR"/>
+    <CommandId ID="1675" Name="TASK_EVERYONE_LEAVE_CAR"/>
+    <CommandId ID="1676" Name="IS_PLAYER_TARGETTING_ANYTHING"/>
+    <CommandId ID="1677" Name="GET_ACTIVE_CAMERA_COORDINATES"/>
+    <CommandId ID="1678" Name="GET_ACTIVE_CAMERA_POINT_AT"/>
+    <CommandId ID="1679" Name="GET_CLOSEST_BUYABLE_OBJECT_TO_PLAYER" Handled="false"/>
+    <CommandId ID="1680" Name="OPEN_FRIEND_LIST" Handled="false"/>
+    <CommandId ID="1681" Name="CLOSE_FRIEND_LIST" Handled="false"/>
+    <CommandId ID="1682" Name="REMOVE_FRIEND_LIST" Handled="false"/>
+    <CommandId ID="1683" Name="SET_PEDMODEL_AS_FRIEND" Handled="false"/>
+    <CommandId ID="1684" Name="SET_PEDTYPE_AS_FRIEND" Handled="false"/>
+    <CommandId ID="1685" Name="CLEAR_CHAR_FRIENDS" Handled="false"/>
+    <CommandId ID="1686" Name="SET_CHAR_FRIEND_LIST" Handled="false"/>
+    <CommandId ID="1687" Name="POP_CAR_PANEL"/>
+    <CommandId ID="1688" Name="FIX_CAR_PANEL"/>
+    <CommandId ID="1689" Name="FIX_CAR_TYRE"/>
+    <CommandId ID="1690" Name="ATTACH_OBJECT_TO_OBJECT"/>
+    <CommandId ID="1691" Name="ATTACH_OBJECT_TO_CHAR"/>
+    <CommandId ID="1692" Name="ATTACH_CAMERA_TO_OBJECT" Handled="false"/>
+    <CommandId ID="1693" Name="ATTACH_CAMERA_TO_OBJECT_LOOK_AT_VEHICLE" Handled="false"/>
+    <CommandId ID="1694" Name="ATTACH_CAMERA_TO_OBJECT_LOOK_AT_CHAR" Handled="false"/>
+    <CommandId ID="1695" Name="ATTACH_CAMERA_TO_OBJECT_LOOK_AT_OBJECT" Handled="false"/>
+    <CommandId ID="1696" Name="ATTACH_CAMERA_TO_CHAR_LOOK_AT_OBJECT" Handled="false"/>
+    <CommandId ID="1697" Name="ATTACH_CAMERA_TO_VEHICLE_LOOK_AT_OBJECT" Handled="false"/>
+    <CommandId ID="1698" Name="GET_CAR_SPEED_VECTOR"/>
+    <CommandId ID="1699" Name="GET_CAR_MASS"/>
+    <CommandId ID="1700" Name="TASK_KILL_THREATS_ON_FOOT_WHILE_DUCKING" Handled="false"/>
+    <CommandId ID="1701" Name="TASK_DIVE_FROM_ATTACHMENT_AND_GET_UP"/>
+    <CommandId ID="1702" Name="TASK_PLAY_ANIM_WITH_VELOCITY_EXTRACTION" Handled="false"/>
+    <CommandId ID="1703" Name="ATTACH_CHAR_TO_BIKE"/>
+    <CommandId ID="1704" Name="TASK_GOTO_CHAR_OFFSET"/>
+    <CommandId ID="1705" Name="TASK_LOOK_AT_COORD"/>
+    <CommandId ID="1706" Name="IS_RECORDING_GOING_ON_FOR_CAR"/>
+    <CommandId ID="1707" Name="HIDE_CHAR_WEAPON_FOR_SCRIPTED_CUTSCENE"/>
+    <CommandId ID="1708" Name="GET_CHAR_SPEED"/>
+    <CommandId ID="1709" Name="SET_GROUP_DECISION_MAKER"/>
+    <CommandId ID="1710" Name="LOAD_GROUP_DECISION_MAKER"/>
+    <CommandId ID="1711" Name="DISABLE_PLAYER_SPRINT"/>
+    <CommandId ID="1712" Name="TASK_SIT_DOWN"/>
+    <CommandId ID="1713" Name="CREATE_SEARCHLIGHT"/>
+    <CommandId ID="1714" Name="DELETE_SEARCHLIGHT"/>
+    <CommandId ID="1715" Name="DOES_SEARCHLIGHT_EXIST"/>
+    <CommandId ID="1716" Name="MOVE_SEARCHLIGHT_BETWEEN_COORDS"/>
+    <CommandId ID="1717" Name="POINT_SEARCHLIGHT_AT_COORD"/>
+    <CommandId ID="1718" Name="POINT_SEARCHLIGHT_AT_CHAR"/>
+    <CommandId ID="1719" Name="IS_CHAR_IN_SEARCHLIGHT"/>
+    <CommandId ID="1720" Name="SET_GROUP_DEFAULT_TASK" Handled="false"/>
+    <CommandId ID="1721" Name="HAS_CUTSCENE_LOADED"/>
+    <CommandId ID="1722" Name="TASK_TURN_CHAR_TO_FACE_COORD"/>
+    <CommandId ID="1723" Name="TASK_DRIVE_POINT_ROUTE"/>
+    <CommandId ID="1724" Name="FIRE_SINGLE_BULLET"/>
+    <CommandId ID="1725" Name="IS_LINE_OF_SIGHT_CLEAR"/>
+    <CommandId ID="1726" Name="GET_CAR_ROLL"/>
+    <CommandId ID="1727" Name="POINT_SEARCHLIGHT_AT_VEHICLE"/>
+    <CommandId ID="1728" Name="IS_VEHICLE_IN_SEARCHLIGHT"/>
+    <CommandId ID="1729" Name="CREATE_SEARCHLIGHT_ON_VEHICLE"/>
+    <CommandId ID="1730" Name="TASK_GO_TO_COORD_WHILE_AIMING"/>
+    <CommandId ID="1731" Name="GET_NUMBER_OF_FIRES_IN_RANGE"/>
+    <CommandId ID="1732" Name="ADD_BLIP_FOR_SEARCHLIGHT"/>
+    <CommandId ID="1733" Name="SKIP_TO_END_AND_STOP_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1734" Name="TASK_OPEN_DRIVER_DOOR" Handled="false"/>
+    <CommandId ID="1735" Name="TASK_CAR_TEMP_ACTION"/>
+    <CommandId ID="1736" Name="SET_LA_RIOTS"/>
+    <CommandId ID="1737" Name="REMOVE_CHAR_FROM_GROUP"/>
+    <CommandId ID="1738" Name="ATTACH_SEARCHLIGHT_TO_SEARCHLIGHT_OBJECT"/>
+    <CommandId ID="1739" Name="SET_VEHICLE_RECORDS_COLLISIONS" Handled="false"/>
+    <CommandId ID="1740" Name="DRAW_CROSS_IN_FRONT_OF_DEBUG_CAMERA" Handled="false"/>
+    <CommandId ID="1741" Name="DRAW_DEBUG_CUBE" Handled="false"/>
+    <CommandId ID="1742" Name="GET_CAR_LAST_ROUTE_COORDS" Handled="false"/>
+    <CommandId ID="1743" Name="DISPLAY_TIMER_BARS"/>
+    <CommandId ID="1744" Name="SWITCH_EMERGENCY_SERVICES"/>
+    <CommandId ID="1745" Name="SET_VAR_TEXT_LABEL16"/>
+    <CommandId ID="1746" Name="SET_LVAR_TEXT_LABEL16"/>
+    <CommandId ID="1747" Name="VAR_TEXT_LABEL16"/>
+    <CommandId ID="1748" Name="LVAR_TEXT_LABEL16"/>
+    <CommandId ID="1749" Name="CREATE_CHECKPOINT"/>
+    <CommandId ID="1750" Name="DELETE_CHECKPOINT"/>
+    <CommandId ID="1751" Name="SWITCH_RANDOM_TRAINS"/>
+    <CommandId ID="1752" Name="CREATE_MISSION_TRAIN"/>
+    <CommandId ID="1753" Name="DELETE_MISSION_TRAINS"/>
+    <CommandId ID="1754" Name="MARK_MISSION_TRAINS_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="1755" Name="DELETE_ALL_TRAINS"/>
+    <CommandId ID="1756" Name="SET_TRAIN_SPEED"/>
+    <CommandId ID="1757" Name="SET_TRAIN_CRUISE_SPEED"/>
+    <CommandId ID="1758" Name="GET_TRAIN_CABOOSE"/>
+    <CommandId ID="1759" Name="DELETE_PLAYER"/>
+    <CommandId ID="1760" Name="SET_TWO_PLAYER_CAMERA_MODE"/>
+    <CommandId ID="1761" Name="TASK_CAR_MISSION"/>
+    <CommandId ID="1762" Name="TASK_GO_TO_OBJECT"/>
+    <CommandId ID="1763" Name="TASK_WEAPON_ROLL"/>
+    <CommandId ID="1764" Name="TASK_CHAR_ARREST_CHAR"/>
+    <CommandId ID="1765" Name="GET_AVAILABLE_VEHICLE_MOD"/>
+    <CommandId ID="1766" Name="GET_VEHICLE_MOD_TYPE"/>
+    <CommandId ID="1767" Name="ADD_VEHICLE_MOD"/>
+    <CommandId ID="1768" Name="REMOVE_VEHICLE_MOD"/>
+    <CommandId ID="1769" Name="REQUEST_VEHICLE_MOD"/>
+    <CommandId ID="1770" Name="HAS_VEHICLE_MOD_LOADED"/>
+    <CommandId ID="1771" Name="MARK_VEHICLE_MOD_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="1772" Name="GET_NUM_AVAILABLE_PAINTJOBS"/>
+    <CommandId ID="1773" Name="GIVE_VEHICLE_PAINTJOB"/>
+    <CommandId ID="1774" Name="IS_GROUP_MEMBER"/>
+    <CommandId ID="1775" Name="IS_GROUP_LEADER"/>
+    <CommandId ID="1776" Name="SET_GROUP_SEPARATION_RANGE"/>
+    <CommandId ID="1777" Name="LIMIT_TWO_PLAYER_DISTANCE"/>
+    <CommandId ID="1778" Name="RELEASE_TWO_PLAYER_DISTANCE"/>
+    <CommandId ID="1779" Name="SET_PLAYER_PLAYER_TARGETTING"/>
+    <CommandId ID="1780" Name="CREATE_SCRIPT_GANG_ROADBLOCK" Handled="false"/>
+    <CommandId ID="1781" Name="GET_SCRIPT_FIRE_COORDS"/>
+    <CommandId ID="1782" Name="CLEAR_TWO_PLAYER_CAMERA_MODE" Handled="false"/>
+    <CommandId ID="1783" Name="SET_PLAYER_PASSENGER_CAN_SHOOT" Handled="false"/>
+    <CommandId ID="1784" Name="GET_NTH_CLOSEST_CAR_NODE_WITH_HEADING"/>
+    <CommandId ID="1785" Name="GET_HEIGHT_OF_CAR_WHEELS_FROM_GROUND" Handled="false"/>
+    <CommandId ID="1786" Name="SET_PLAYERS_CAN_BE_IN_SEPARATE_CARS"/>
+    <CommandId ID="1787" Name="SWITCH_PLAYER_CROSSHAIR" Handled="false"/>
+    <CommandId ID="1788" Name="DOES_CAR_HAVE_STUCK_CAR_CHECK"/>
+    <CommandId ID="1789" Name="SET_PLAYBACK_SPEED"/>
+    <CommandId ID="1790" Name="GET_CAR_VALUE" Handled="false"/>
+    <CommandId ID="1791" Name="ARE_ANY_CHARS_NEAR_CHAR"/>
+    <CommandId ID="1792" Name="SKIP_CUTSCENE_START"/>
+    <CommandId ID="1793" Name="SKIP_CUTSCENE_END"/>
+    <CommandId ID="1794" Name="GET_PERCENTAGE_TAGGED_IN_AREA"/>
+    <CommandId ID="1795" Name="SET_TAG_STATUS_IN_AREA"/>
+    <CommandId ID="1796" Name="CAR_GOTO_COORDINATES_RACING"/>
+    <CommandId ID="1797" Name="START_PLAYBACK_RECORDED_CAR_USING_AI"/>
+    <CommandId ID="1798" Name="SKIP_IN_PLAYBACK_RECORDED_CAR"/>
+    <CommandId ID="1799" Name="SKIP_CUTSCENE_START_INTERNAL"/>
+    <CommandId ID="1800" Name="CLEAR_CHAR_DECISION_MAKER_EVENT_RESPONSE"/>
+    <CommandId ID="1801" Name="ADD_CHAR_DECISION_MAKER_EVENT_RESPONSE"/>
+    <CommandId ID="1802" Name="TASK_PICK_UP_OBJECT"/>
+    <CommandId ID="1803" Name="DROP_OBJECT"/>
+    <CommandId ID="1804" Name="EXPLODE_CAR_IN_CUTSCENE"/>
+    <CommandId ID="1805" Name="BUILD_PLAYER_MODEL"/>
+    <CommandId ID="1806" Name="PLANE_ATTACK_PLAYER"/>
+    <CommandId ID="1807" Name="PLANE_FLY_IN_DIRECTION"/>
+    <CommandId ID="1808" Name="PLANE_FOLLOW_ENTITY"/>
+    <CommandId ID="1809" Name="ALLOCATE_SCRIPT_TO_PED_GENERATOR" Handled="false"/>
+    <CommandId ID="1810" Name="ALLOCATE_SCRIPT_TO_RANDOM_PED" Handled="false"/>
+    <CommandId ID="1811" Name="TASK_DRIVE_BY"/>
+    <CommandId ID="1812" Name="SET_CAR_STAY_IN_SLOW_LANE"/>
+    <CommandId ID="1813" Name="TAKE_REMOTE_CONTROL_OF_CAR"/>
+    <CommandId ID="1814" Name="IS_CLOSEST_OBJECT_OF_TYPE_SMASHED_OR_DAMAGED"/>
+    <CommandId ID="1815" Name="START_SETTING_UP_CONVERSATION"/>
+    <CommandId ID="1816" Name="SET_UP_CONVERSATION_NODE" Handled="false"/>
+    <CommandId ID="1817" Name="FINISH_SETTING_UP_CONVERSATION"/>
+    <CommandId ID="1818" Name="IS_CONVERSATION_AT_NODE"/>
+    <CommandId ID="1819" Name="CLEAR_ALL_CONVERSATIONS" Handled="false"/>
+    <CommandId ID="1820" Name="GET_CHAR_LIGHTING" Handled="false"/>
+    <CommandId ID="1821" Name="SET_CLOSEST_OBJECT_OF_TYPE_RENDER_SCORCHED" Handled="false"/>
+    <CommandId ID="1822" Name="GET_OBJECT_HEALTH"/>
+    <CommandId ID="1823" Name="SET_OBJECT_HEALTH"/>
+    <CommandId ID="1824" Name="GET_VEHICLE_WHEEL_UPGRADE_CLASS" Handled="false"/>
+    <CommandId ID="1825" Name="GET_NUM_WHEELS_IN_UPGRADE_CLASS" Handled="false"/>
+    <CommandId ID="1826" Name="GET_WHEEL_IN_UPGRADE_CLASS" Handled="false"/>
+    <CommandId ID="1827" Name="BREAK_OBJECT"/>
+    <CommandId ID="1828" Name="HELI_ATTACK_PLAYER"/>
+    <CommandId ID="1829" Name="HELI_FLY_IN_DIRECTION" Handled="false"/>
+    <CommandId ID="1830" Name="HELI_FOLLOW_ENTITY"/>
+    <CommandId ID="1831" Name="POLICE_HELI_CHASE_ENTITY"/>
+    <CommandId ID="1832" Name="SET_UP_CONVERSATION_END_NODE" Handled="false"/>
+    <CommandId ID="1833" Name="TASK_USE_MOBILE_PHONE"/>
+    <CommandId ID="1834" Name="TASK_WARP_CHAR_INTO_CAR_AS_DRIVER"/>
+    <CommandId ID="1835" Name="TASK_WARP_CHAR_INTO_CAR_AS_PASSENGER"/>
+    <CommandId ID="1836" Name="SWITCH_COPS_ON_BIKES"/>
+    <CommandId ID="1837" Name="IS_FLAME_IN_ANGLED_AREA_2D"/>
+    <CommandId ID="1838" Name="IS_FLAME_IN_ANGLED_AREA_3D"/>
+    <CommandId ID="1839" Name="ADD_STUCK_CAR_CHECK_WITH_WARP"/>
+    <CommandId ID="1840" Name="DAMAGE_CAR_PANEL"/>
+    <CommandId ID="1841" Name="SET_CAR_ROLL"/>
+    <CommandId ID="1842" Name="SUPPRESS_CAR_MODEL"/>
+    <CommandId ID="1843" Name="DONT_SUPPRESS_CAR_MODEL"/>
+    <CommandId ID="1844" Name="DONT_SUPPRESS_ANY_CAR_MODELS"/>
+    <CommandId ID="1845" Name="IS_PS2_KEYBOARD_KEY_PRESSED"/>
+    <CommandId ID="1846" Name="IS_PS2_KEYBOARD_KEY_JUST_PRESSED"/>
+    <CommandId ID="1847" Name="IS_CHAR_HOLDING_OBJECT"/>
+    <CommandId ID="1848" Name="SET_ZONE_RADAR_COLOURS" Handled="false"/>
+    <CommandId ID="1849" Name="GIVE_LOWRIDER_SUSPENSION_TO_CAR" Handled="false"/>
+    <CommandId ID="1850" Name="DOES_CAR_HAVE_LOWRIDER_SUSPENSION" Handled="false"/>
+    <CommandId ID="1851" Name="SET_CAR_CAN_GO_AGAINST_TRAFFIC"/>
+    <CommandId ID="1852" Name="DAMAGE_CAR_DOOR"/>
+    <CommandId ID="1853" Name="GET_RANDOM_CAR_IN_SPHERE" Handled="false"/>
+    <CommandId ID="1854" Name="GET_RANDOM_CAR_IN_SPHERE_NO_SAVE"/>
+    <CommandId ID="1855" Name="GET_RANDOM_CHAR_IN_SPHERE"/>
+    <CommandId ID="1856" Name="GET_COORDS_OF_CLOSEST_COLLECTABLE1" Handled="false"/>
+    <CommandId ID="1857" Name="HAS_CHAR_BEEN_ARRESTED"/>
+    <CommandId ID="1858" Name="SET_PLANE_THROTTLE"/>
+    <CommandId ID="1859" Name="HELI_LAND_AT_COORDS"/>
+    <CommandId ID="1860" Name="GET_STAT_CHANGE_AMOUNT" Handled="false"/>
+    <CommandId ID="1861" Name="PLANE_STARTS_IN_AIR"/>
+    <CommandId ID="1862" Name="SET_RELATIONSHIP"/>
+    <CommandId ID="1863" Name="CLEAR_RELATIONSHIP"/>
+    <CommandId ID="1864" Name="CLEAR_ALL_RELATIONSHIPS" Handled="false"/>
+    <CommandId ID="1865" Name="CLEAR_GROUP_DECISION_MAKER_EVENT_RESPONSE"/>
+    <CommandId ID="1866" Name="ADD_GROUP_DECISION_MAKER_EVENT_RESPONSE"/>
+    <CommandId ID="1867" Name="DRAW_SPRITE_WITH_ROTATION"/>
+    <CommandId ID="1868" Name="TASK_USE_ATTRACTOR"/>
+    <CommandId ID="1869" Name="TASK_SHOOT_AT_CHAR"/>
+    <CommandId ID="1870" Name="SET_INFORM_RESPECTED_FRIENDS"/>
+    <CommandId ID="1871" Name="IS_CHAR_RESPONDING_TO_EVENT"/>
+    <CommandId ID="1872" Name="SET_OBJECT_VISIBLE"/>
+    <CommandId ID="1873" Name="TASK_FLEE_CHAR_ANY_MEANS"/>
+    <CommandId ID="1874" Name="STOP_RECORDING_CAR"/>
+    <CommandId ID="1875" Name="SET_ALERTNESS" Handled="false"/>
+    <CommandId ID="1876" Name="FLUSH_PATROL_ROUTE"/>
+    <CommandId ID="1877" Name="EXTEND_PATROL_ROUTE"/>
+    <CommandId ID="1878" Name="TASK_GO_ON_PATROL" Handled="false"/>
+    <CommandId ID="1879" Name="GET_PATROL_ALERTNESS" Handled="false"/>
+    <CommandId ID="1880" Name="SET_CHAR_SPECIAL_EVENT" Handled="false"/>
+    <CommandId ID="1881" Name="SET_ATTRACTOR_AS_COVER_NODE" Handled="false"/>
+    <CommandId ID="1882" Name="PLAY_OBJECT_ANIM"/>
+    <CommandId ID="1883" Name="SET_RADAR_ZOOM"/>
+    <CommandId ID="1884" Name="DOES_BLIP_EXIST"/>
+    <CommandId ID="1885" Name="LOAD_PRICES"/>
+    <CommandId ID="1886" Name="LOAD_SHOP"/>
+    <CommandId ID="1887" Name="GET_NUMBER_OF_ITEMS_IN_SHOP"/>
+    <CommandId ID="1888" Name="GET_ITEM_IN_SHOP"/>
+    <CommandId ID="1889" Name="GET_PRICE_OF_ITEM"/>
+    <CommandId ID="1890" Name="TASK_DEAD"/>
+    <CommandId ID="1891" Name="SET_CAR_AS_MISSION_CAR"/>
+    <CommandId ID="1892" Name="IS_SEARCHLIGHT_IN_ANGLED_AREA_2D" Handled="false"/>
+    <CommandId ID="1893" Name="IS_SEARCHLIGHT_IN_ANGLED_AREA_3D" Handled="false"/>
+    <CommandId ID="1894" Name="SWITCH_SEARCHLIGHT_BULB" Handled="false"/>
+    <CommandId ID="1895" Name="SET_ZONE_POPULATION_TYPE"/>
+    <CommandId ID="1896" Name="SET_ZONE_GANG_CAP" Handled="false"/>
+    <CommandId ID="1897" Name="GET_ZONE_GANG_CAP" Handled="false"/>
+    <CommandId ID="1898" Name="SET_ZONE_DEALER_STRENGTH"/>
+    <CommandId ID="1899" Name="GET_ZONE_DEALER_STRENGTH"/>
+    <CommandId ID="1900" Name="SET_ZONE_GANG_STRENGTH"/>
+    <CommandId ID="1901" Name="GET_ZONE_GANG_STRENGTH"/>
+    <CommandId ID="1902" Name="SET_NO_POLICE_DURING_LA_RIOTS" Handled="false"/>
+    <CommandId ID="1903" Name="IS_MESSAGE_BEING_DISPLAYED"/>
+    <CommandId ID="1904" Name="SET_CHAR_IS_TARGET_PRIORITY"/>
+    <CommandId ID="1905" Name="CUSTOM_PLATE_DESIGN_FOR_NEXT_CAR"/>
+    <CommandId ID="1906" Name="TASK_GOTO_CAR"/>
+    <CommandId ID="1907" Name="CLEAR_HELP_WITH_THIS_LABEL" Handled="false"/>
+    <CommandId ID="1908" Name="IS_SEARCHLIGHT_BULB_ON" Handled="false"/>
+    <CommandId ID="1909" Name="CREATE_OIL_PUDDLE" Handled="false"/>
+    <CommandId ID="1910" Name="REQUEST_IPL"/>
+    <CommandId ID="1911" Name="REMOVE_IPL"/>
+    <CommandId ID="1912" Name="REMOVE_IPL_DISCREETLY"/>
+    <CommandId ID="1913" Name="TASK_OPEN_PASSENGER_DOOR" Handled="false"/>
+    <CommandId ID="1914" Name="SET_CHAR_RELATIONSHIP"/>
+    <CommandId ID="1915" Name="CLEAR_CHAR_RELATIONSHIP"/>
+    <CommandId ID="1916" Name="CLEAR_ALL_CHAR_RELATIONSHIPS"/>
+    <CommandId ID="1917" Name="GET_CAR_PITCH"/>
+    <CommandId ID="1918" Name="GET_AREA_VISIBLE"/>
+    <CommandId ID="1919" Name="ADD_INT_TO_VAR_CONSOLE" Handled="false"/>
+    <CommandId ID="1920" Name="HELI_KEEP_ENTITY_IN_VIEW"/>
+    <CommandId ID="1921" Name="GET_WEAPONTYPE_MODEL"/>
+    <CommandId ID="1922" Name="GET_WEAPONTYPE_SLOT"/>
+    <CommandId ID="1923" Name="GET_SHOPPING_EXTRA_INFO"/>
+    <CommandId ID="1924" Name="GIVE_PLAYER_CLOTHES"/>
+    <CommandId ID="1925" Name="GIVE_PLAYER_TATTOO" Handled="false"/>
+    <CommandId ID="1926" Name="GET_NUMBER_OF_FIRES_IN_AREA"/>
+    <CommandId ID="1927" Name="SET_CHAR_TYRES_CAN_BE_BURST" Handled="false"/>
+    <CommandId ID="1928" Name="ATTACH_WINCH_TO_HELI"/>
+    <CommandId ID="1929" Name="RELEASE_ENTITY_FROM_WINCH"/>
+    <CommandId ID="1930" Name="GET_TRAIN_CARRIAGE"/>
+    <CommandId ID="1931" Name="GRAB_ENTITY_ON_WINCH"/>
+    <CommandId ID="1932" Name="GET_NAME_OF_ITEM"/>
+    <CommandId ID="1933" Name="ADD_FLOAT_TO_VAR_CONSOLE" Handled="false"/>
+    <CommandId ID="1934" Name="TASK_DRAG_CHAR_FROM_CAR" Handled="false"/>
+    <CommandId ID="1935" Name="TASK_CLIMB"/>
+    <CommandId ID="1936" Name="BUY_ITEM"/>
+    <CommandId ID="1937" Name="BUY_TATTOO" Handled="false"/>
+    <CommandId ID="1938" Name="CLEAR_CHAR_TASKS_IMMEDIATELY"/>
+    <CommandId ID="1939" Name="STORE_CLOTHES_STATE"/>
+    <CommandId ID="1940" Name="RESTORE_CLOTHES_STATE"/>
+    <CommandId ID="1941" Name="DELETE_WINCH_FOR_HELI" Handled="false"/>
+    <CommandId ID="1942" Name="GET_ROPE_HEIGHT_FOR_OBJECT"/>
+    <CommandId ID="1943" Name="SET_ROPE_HEIGHT_FOR_OBJECT"/>
+    <CommandId ID="1944" Name="GRAB_ENTITY_ON_ROPE_FOR_OBJECT"/>
+    <CommandId ID="1945" Name="RELEASE_ENTITY_FROM_ROPE_FOR_OBJECT"/>
+    <CommandId ID="1946" Name="ATTACH_CAR_TO_ROPE_FOR_OBJECT" Handled="false"/>
+    <CommandId ID="1947" Name="ATTACH_CHAR_TO_ROPE_FOR_OBJECT" Handled="false"/>
+    <CommandId ID="1948" Name="ATTACH_OBJECT_TO_ROPE_FOR_OBJECT" Handled="false"/>
+    <CommandId ID="1949" Name="PLAYER_ENTERED_DOCK_CRANE"/>
+    <CommandId ID="1950" Name="PLAYER_ENTERED_BUILDINGSITE_CRANE"/>
+    <CommandId ID="1951" Name="PLAYER_LEFT_CRANE"/>
+    <CommandId ID="1952" Name="PERFORM_SEQUENCE_TASK_FROM_PROGRESS"/>
+    <CommandId ID="1953" Name="SET_NEXT_DESIRED_MOVE_STATE"/>
+    <CommandId ID="1954" Name="SET_NEXT_EVENT_RESPONSE_SEQUENCE" Handled="false"/>
+    <CommandId ID="1955" Name="TASK_GOTO_CHAR_AIMING"/>
+    <CommandId ID="1956" Name="GET_SEQUENCE_PROGRESS_RECURSIVE"/>
+    <CommandId ID="1957" Name="TASK_KILL_CHAR_ON_FOOT_TIMED"/>
+    <CommandId ID="1958" Name="GET_NEAREST_TAG_POSITION"/>
+    <CommandId ID="1959" Name="TASK_JETPACK"/>
+    <CommandId ID="1960" Name="SET_AREA51_SAM_SITE"/>
+    <CommandId ID="1961" Name="IS_CHAR_IN_ANY_SEARCHLIGHT"/>
+    <CommandId ID="1962" Name="GET_SEARCHLIGHT_COORDS" Handled="false"/>
+    <CommandId ID="1963" Name="IS_TRAILER_ATTACHED_TO_CAB"/>
+    <CommandId ID="1964" Name="DETACH_TRAILER_FROM_CAB"/>
+    <CommandId ID="1965" Name="GET_TRAILER_ATTACHED_TO_CAB" Handled="false"/>
+    <CommandId ID="1966" Name="GET_CAB_ATTACHED_TO_TRAILER" Handled="false"/>
+    <CommandId ID="1967" Name="GET_PLAYER_GROUP"/>
+    <CommandId ID="1968" Name="GET_LOADED_SHOP"/>
+    <CommandId ID="1969" Name="GET_BEAT_PROXIMITY"/>
+    <CommandId ID="1970" Name="SET_BEAT_ZONE_SIZE" Handled="false"/>
+    <CommandId ID="1971" Name="SET_GROUP_DEFAULT_TASK_ALLOCATOR"/>
+    <CommandId ID="1972" Name="SET_PLAYER_GROUP_RECRUITMENT"/>
+    <CommandId ID="1973" Name="DISPLAY_TWO_ONSCREEN_COUNTERS" Handled="false"/>
+    <CommandId ID="1974" Name="DISPLAY_TWO_ONSCREEN_COUNTERS_WITH_STRING" Handled="false"/>
+    <CommandId ID="1975" Name="DISPLAY_NTH_TWO_ONSCREEN_COUNTERS" Handled="false"/>
+    <CommandId ID="1976" Name="DISPLAY_NTH_TWO_ONSCREEN_COUNTERS_WITH_STRING" Handled="false"/>
+    <CommandId ID="1977" Name="TASK_KILL_CHAR_ON_FOOT_PATROL" Handled="false"/>
+    <CommandId ID="1978" Name="HELI_AIM_AHEAD_OF_TARGET_ENTITY" Handled="false"/>
+    <CommandId ID="1979" Name="ACTIVATE_HELI_SPEED_CHEAT"/>
+    <CommandId ID="1980" Name="TASK_SET_CHAR_DECISION_MAKER"/>
+    <CommandId ID="1981" Name="DELETE_MISSION_TRAIN"/>
+    <CommandId ID="1982" Name="MARK_MISSION_TRAIN_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="1983" Name="SET_BLIP_ALWAYS_DISPLAY_ON_ZOOMED_RADAR"/>
+    <CommandId ID="1984" Name="REQUEST_CAR_RECORDING"/>
+    <CommandId ID="1985" Name="HAS_CAR_RECORDING_BEEN_LOADED"/>
+    <CommandId ID="1986" Name="DISPLAY_PLAYBACK_RECORDED_CAR" Handled="false"/>
+    <CommandId ID="1987" Name="GET_OBJECT_QUATERNION"/>
+    <CommandId ID="1988" Name="SET_OBJECT_QUATERNION"/>
+    <CommandId ID="1989" Name="GET_VEHICLE_QUATERNION"/>
+    <CommandId ID="1990" Name="SET_VEHICLE_QUATERNION"/>
+    <CommandId ID="1991" Name="SET_MISSION_TRAIN_COORDINATES"/>
+    <CommandId ID="1992" Name="DISPLAY_DEBUG_MESSAGE" Handled="false"/>
+    <CommandId ID="1993" Name="TASK_COMPLEX_PICKUP_OBJECT"/>
+    <CommandId ID="1994" Name="TASK_SIMPLE_PUTDOWN_OBJECT" Handled="false"/>
+    <CommandId ID="1995" Name="LISTEN_TO_PLAYER_GROUP_COMMANDS"/>
+    <CommandId ID="1996" Name="SET_PLAYER_ENTER_CAR_BUTTON"/>
+    <CommandId ID="1997" Name="TASK_CHAR_SLIDE_TO_COORD"/>
+    <CommandId ID="1998" Name="SET_BULLET_WHIZZ_BY_DISTANCE" Handled="false"/>
+    <CommandId ID="1999" Name="SET_TWO_PLAYER_CAM_MODE_SEPARATE_CARS" Handled="false"/>
+    <CommandId ID="2000" Name="GET_CURRENT_DAY_OF_WEEK"/>
+    <CommandId ID="2001" Name="SET_CURRENT_DAY_OF_WEEK" Handled="false"/>
+    <CommandId ID="2002" Name="ACTIVATE_INTERIORS" Handled="false"/>
+    <CommandId ID="2003" Name="REGISTER_SCRIPT_BRAIN_FOR_CODE_USE"/>
+    <CommandId ID="2004" Name="REGISTER_OBJECT_SCRIPT_BRAIN_FOR_CODE_USE" Handled="false"/>
+    <CommandId ID="2005" Name="APPLY_FORCE_TO_CAR"/>
+    <CommandId ID="2006" Name="IS_INT_LVAR_EQUAL_TO_INT_VAR"/>
+    <CommandId ID="2007" Name="IS_FLOAT_LVAR_EQUAL_TO_FLOAT_VAR"/>
+    <CommandId ID="2008" Name="IS_INT_LVAR_NOT_EQUAL_TO_INT_VAR" Handled="false"/>
+    <CommandId ID="2009" Name="IS_FLOAT_LVAR_NOT_EQUAL_TO_FLOAT_VAR" Handled="false"/>
+    <CommandId ID="2010" Name="ADD_TO_CAR_ROTATION_VELOCITY"/>
+    <CommandId ID="2011" Name="SET_CAR_ROTATION_VELOCITY"/>
+    <CommandId ID="2012" Name="GET_CAR_ROTATION_VELOCITY" Handled="false"/>
+    <CommandId ID="2013" Name="SET_CHAR_SHOOT_RATE"/>
+    <CommandId ID="2014" Name="IS_MODEL_IN_CDIMAGE"/>
+    <CommandId ID="2015" Name="REMOVE_OIL_PUDDLES_IN_AREA"/>
+    <CommandId ID="2016" Name="SET_BLIP_AS_FRIENDLY"/>
+    <CommandId ID="2017" Name="TASK_SWIM_TO_COORD"/>
+    <CommandId ID="2018" Name="TASK_GO_STRAIGHT_TO_COORD_WITHOUT_STOPPING" Handled="false"/>
+    <CommandId ID="2019" Name="GET_BEAT_INFO_FOR_CURRENT_TRACK" Handled="false"/>
+    <CommandId ID="2020" Name="GET_MODEL_DIMENSIONS"/>
+    <CommandId ID="2021" Name="COPY_CHAR_DECISION_MAKER"/>
+    <CommandId ID="2022" Name="COPY_GROUP_DECISION_MAKER"/>
+    <CommandId ID="2023" Name="TASK_DRIVE_POINT_ROUTE_ADVANCED"/>
+    <CommandId ID="2024" Name="IS_RELATIONSHIP_SET"/>
+    <CommandId ID="2025" Name="HAS_CHAR_SPOTTED_CAR" Handled="false"/>
+    <CommandId ID="2026" Name="SET_ROPE_HEIGHT_FOR_HELI" Handled="false"/>
+    <CommandId ID="2027" Name="GET_ROPE_HEIGHT_FOR_HELI" Handled="false"/>
+    <CommandId ID="2028" Name="IS_CAR_LOWRIDER" Handled="false"/>
+    <CommandId ID="2029" Name="IS_PERFORMANCE_CAR" Handled="false"/>
+    <CommandId ID="2030" Name="SET_CAR_ALWAYS_CREATE_SKIDS"/>
+    <CommandId ID="2031" Name="GET_CITY_FROM_COORDS"/>
+    <CommandId ID="2032" Name="HAS_OBJECT_OF_TYPE_BEEN_SMASHED"/>
+    <CommandId ID="2033" Name="IS_PLAYER_PERFORMING_WHEELIE"/>
+    <CommandId ID="2034" Name="IS_PLAYER_PERFORMING_STOPPIE"/>
+    <CommandId ID="2035" Name="SET_CHECKPOINT_COORDS"/>
+    <CommandId ID="2036" Name="SET_ONSCREEN_TIMER_DISPLAY" Handled="false"/>
+    <CommandId ID="2037" Name="CONTROL_CAR_HYDRAULICS"/>
+    <CommandId ID="2038" Name="GET_GROUP_SIZE"/>
+    <CommandId ID="2039" Name="SET_OBJECT_COLLISION_DAMAGE_EFFECT"/>
+    <CommandId ID="2040" Name="SET_CAR_FOLLOW_CAR"/>
+    <CommandId ID="2041" Name="PLAYER_ENTERED_QUARRY_CRANE"/>
+    <CommandId ID="2042" Name="PLAYER_ENTERED_LAS_VEGAS_CRANE"/>
+    <CommandId ID="2043" Name="SWITCH_ENTRY_EXIT"/>
+    <CommandId ID="2044" Name="DISPLAY_TEXT_WITH_FLOAT"/>
+    <CommandId ID="2045" Name="DOES_GROUP_EXIST"/>
+    <CommandId ID="2046" Name="GIVE_MELEE_ATTACK_TO_CHAR"/>
+    <CommandId ID="2047" Name="SET_CAR_HYDRAULICS"/>
+    <CommandId ID="2048" Name="IS_2PLAYER_GAME_GOING_ON"/>
+    <CommandId ID="2049" Name="GET_CAMERA_FOV"/>
+    <CommandId ID="2050" Name="SET_GLOBAL_PED_SEARCH_PARAMS" Handled="false"/>
+    <CommandId ID="2051" Name="DOES_CAR_HAVE_HYDRAULICS"/>
+    <CommandId ID="2052" Name="TASK_CHAR_SLIDE_TO_COORD_AND_PLAY_ANIM"/>
+    <CommandId ID="2053" Name="ALLOCATE_SCRIPT_TO_OBJECT" Handled="false"/>
+    <CommandId ID="2054" Name="GET_TOTAL_NUMBER_OF_PEDS_KILLED_BY_PLAYER"/>
+    <CommandId ID="2055" Name="SET_TWO_PLAYER_CAM_MODE_SAME_CAR_SHOOTING" Handled="false"/>
+    <CommandId ID="2056" Name="SET_TWO_PLAYER_CAM_MODE_SAME_CAR_NO_SHOOTING" Handled="false"/>
+    <CommandId ID="2057" Name="SET_TWO_PLAYER_CAM_MODE_NOT_BOTH_IN_CAR" Handled="false"/>
+    <CommandId ID="2058" Name="GET_LEVEL_DESIGN_COORDS_FOR_OBJECT"/>
+    <CommandId ID="2059" Name="SAVE_TEXT_LABEL_TO_DEBUG_FILE"/>
+    <CommandId ID="2060" Name="GET_CHAR_BREATH" Handled="false"/>
+    <CommandId ID="2061" Name="SET_CHAR_BREATH" Handled="false"/>
+    <CommandId ID="2062" Name="GET_CHAR_HIGHEST_PRIORITY_EVENT"/>
+    <CommandId ID="2063" Name="ARE_PATHS_LOADED_FOR_CAR" Handled="false"/>
+    <CommandId ID="2064" Name="GET_PARKING_NODE_IN_AREA"/>
+    <CommandId ID="2065" Name="GET_CAR_CHAR_IS_USING"/>
+    <CommandId ID="2066" Name="TASK_PLAY_ANIM_NON_INTERRUPTABLE"/>
+    <CommandId ID="2067" Name="FORCE_NEXT_DIE_ANIM" Handled="false"/>
+    <CommandId ID="2068" Name="ADD_STUNT_JUMP"/>
+    <CommandId ID="2069" Name="SET_OBJECT_COORDINATES_AND_VELOCITY"/>
+    <CommandId ID="2070" Name="SET_CHAR_KINDA_STAY_IN_SAME_PLACE"/>
+    <CommandId ID="2071" Name="TASK_FOLLOW_PATROL_ROUTE"/>
+    <CommandId ID="2072" Name="IS_CHAR_IN_AIR"/>
+    <CommandId ID="2073" Name="GET_CHAR_HEIGHT_ABOVE_GROUND"/>
+    <CommandId ID="2074" Name="SET_CHAR_WEAPON_SKILL"/>
+    <CommandId ID="2075" Name="ARE_PATHS_LOADED_IN_AREA" Handled="false"/>
+    <CommandId ID="2076" Name="SET_TEXT_EDGE"/>
+    <CommandId ID="2077" Name="SET_CAR_ENGINE_BROKEN"/>
+    <CommandId ID="2078" Name="IS_THIS_MODEL_A_BOAT"/>
+    <CommandId ID="2079" Name="IS_THIS_MODEL_A_PLANE"/>
+    <CommandId ID="2080" Name="IS_THIS_MODEL_A_HELI"/>
+    <CommandId ID="2081" Name="IS_3D_COORD_IN_ZONE" Handled="false"/>
+    <CommandId ID="2082" Name="SET_FIRST_PERSON_IN_CAR_CAMERA_MODE"/>
+    <CommandId ID="2083" Name="TASK_GREET_PARTNER"/>
+    <CommandId ID="2084" Name="GET_CLOSEST_PICKUP_COORDS_TO_COORD" Handled="false"/>
+    <CommandId ID="2085" Name="SET_HELI_BLADES_FULL_SPEED"/>
+    <CommandId ID="2086" Name="DISPLAY_HUD"/>
+    <CommandId ID="2087" Name="CONNECT_LODS"/>
+    <CommandId ID="2088" Name="SET_MAX_FIRE_GENERATIONS"/>
+    <CommandId ID="2089" Name="TASK_DIE_NAMED_ANIM"/>
+    <CommandId ID="2090" Name="SET_PLAYER_DUCK_BUTTON"/>
+    <CommandId ID="2091" Name="FIND_NEAREST_MULTIBUILDING" Handled="false"/>
+    <CommandId ID="2092" Name="SET_MULTIBUILDING_MODEL" Handled="false"/>
+    <CommandId ID="2093" Name="GET_NUMBER_MULTIBUILDING_MODELS" Handled="false"/>
+    <CommandId ID="2094" Name="GET_MULTIBUILDING_MODEL_INDEX" Handled="false"/>
+    <CommandId ID="2095" Name="SET_CURRENT_BUYABLE_PROPERTY" Handled="false"/>
+    <CommandId ID="2096" Name="SET_POOL_TABLE_COORDS"/>
+    <CommandId ID="2097" Name="IS_AUDIO_BUILD" Handled="false"/>
+    <CommandId ID="2098" Name="CLEAR_QUEUED_DIALOGUE" Handled="false"/>
+    <CommandId ID="2099" Name="HAS_OBJECT_BEEN_PHOTOGRAPHED"/>
+    <CommandId ID="2100" Name="DO_CAMERA_BUMP"/>
+    <CommandId ID="2101" Name="GET_CURRENT_DATE"/>
+    <CommandId ID="2102" Name="SET_OBJECT_ANIM_SPEED"/>
+    <CommandId ID="2103" Name="IS_OBJECT_PLAYING_ANIM"/>
+    <CommandId ID="2104" Name="SET_OBJECT_ANIM_PLAYING_FLAG" Handled="false"/>
+    <CommandId ID="2105" Name="GET_OBJECT_ANIM_CURRENT_TIME"/>
+    <CommandId ID="2106" Name="SET_OBJECT_ANIM_CURRENT_TIME"/>
+    <CommandId ID="2107" Name="GET_OBJECT_ANIM_TOTAL_TIME" Handled="false"/>
+    <CommandId ID="2108" Name="SET_CHAR_VELOCITY"/>
+    <CommandId ID="2109" Name="GET_CHAR_VELOCITY"/>
+    <CommandId ID="2110" Name="SET_CHAR_ROTATION"/>
+    <CommandId ID="2111" Name="GET_CAR_UPRIGHT_VALUE"/>
+    <CommandId ID="2112" Name="SET_VEHICLE_AREA_VISIBLE"/>
+    <CommandId ID="2113" Name="SELECT_WEAPONS_FOR_VEHICLE"/>
+    <CommandId ID="2114" Name="GET_CITY_PLAYER_IS_IN"/>
+    <CommandId ID="2115" Name="GET_NAME_OF_ZONE"/>
+    <CommandId ID="2116" Name="IS_VAR_TEXT_LABEL_EMPTY"/>
+    <CommandId ID="2117" Name="IS_LVAR_TEXT_LABEL_EMPTY"/>
+    <CommandId ID="2118" Name="IS_VAR_TEXT_LABEL16_EMPTY"/>
+    <CommandId ID="2119" Name="IS_LVAR_TEXT_LABEL16_EMPTY"/>
+    <CommandId ID="2120" Name="SWITCH"/>
+    <CommandId ID="2121" Name="ENDSWITCH"/>
+    <CommandId ID="2122" Name="CASE"/>
+    <CommandId ID="2123" Name="DEFAULT"/>
+    <CommandId ID="2124" Name="BREAK"/>
+    <CommandId ID="2125" Name="ACTIVATE_INTERIOR_PEDS"/>
+    <CommandId ID="2126" Name="SET_VEHICLE_CAN_BE_TARGETTED"/>
+    <CommandId ID="2127" Name="GET_GROUP_LEADER" Handled="false"/>
+    <CommandId ID="2128" Name="TASK_FOLLOW_FOOTSTEPS"/>
+    <CommandId ID="2129" Name="DAMAGE_CHAR"/>
+    <CommandId ID="2130" Name="SET_CAR_CAN_BE_VISIBLY_DAMAGED"/>
+    <CommandId ID="2131" Name="SET_HELI_REACHED_TARGET_DISTANCE"/>
+    <CommandId ID="2132" Name="BLOCK_NODES_IN_AREA" Handled="false"/>
+    <CommandId ID="2133" Name="GET_SOUND_LEVEL_AT_COORDS"/>
+    <CommandId ID="2134" Name="SET_CHAR_ALLOWED_TO_DUCK"/>
+    <CommandId ID="2135" Name="SET_WATER_CONFIGURATION" Handled="false"/>
+    <CommandId ID="2136" Name="SET_HEADING_FOR_ATTACHED_PLAYER"/>
+    <CommandId ID="2137" Name="TASK_WALK_ALONGSIDE_CHAR"/>
+    <CommandId ID="2138" Name="CREATE_EMERGENCY_SERVICES_CAR"/>
+    <CommandId ID="2139" Name="TASK_KINDA_STAY_IN_SAME_PLACE"/>
+    <CommandId ID="2140" Name="TASK_USE_ATTRACTOR_ADVANCED" Handled="false"/>
+    <CommandId ID="2141" Name="TASK_FOLLOW_PATH_NODES_TO_COORD_SHOOTING" Handled="false"/>
+    <CommandId ID="2142" Name="START_PLAYBACK_RECORDED_CAR_LOOPED"/>
+    <CommandId ID="2143" Name="START_PLAYBACK_RECORDED_CAR_USING_AI_LOOPED" Handled="false"/>
+    <CommandId ID="2144" Name="SET_CHAR_AREA_VISIBLE"/>
+    <CommandId ID="2145" Name="IS_ATTACHED_PLAYER_HEADING_ACHIEVED"/>
+    <CommandId ID="2146" Name="GET_MODEL_NAME_FOR_DEBUG_ONLY" Handled="false"/>
+    <CommandId ID="2147" Name="TASK_USE_NEARBY_ENTRY_EXIT" Handled="false"/>
+    <CommandId ID="2148" Name="ENABLE_ENTRY_EXIT_PLAYER_GROUP_WARPING"/>
+    <CommandId ID="2149" Name="FREEZE_STATE_OF_INTERIORS" Handled="false"/>
+    <CommandId ID="2150" Name="GET_CLOSEST_STEALABLE_OBJECT"/>
+    <CommandId ID="2151" Name="IS_PROCEDURAL_INTERIOR_ACTIVE"/>
+    <CommandId ID="2152" Name="CLEAR_THIS_VIEW_INTEGER_VARIABLE"/>
+    <CommandId ID="2153" Name="CLEAR_THIS_VIEW_FLOAT_VARIABLE"/>
+    <CommandId ID="2154" Name="CLEAR_ALL_VIEW_VARIABLES"/>
+    <CommandId ID="2155" Name="CLEAR_THIS_INTEGER_WATCHPOINT"/>
+    <CommandId ID="2156" Name="CLEAR_THIS_FLOAT_WATCHPOINT"/>
+    <CommandId ID="2157" Name="CLEAR_ALL_BREAKPOINTS" Handled="false"/>
+    <CommandId ID="2158" Name="CLEAR_ALL_WATCHPOINTS" Handled="false"/>
+    <CommandId ID="2159" Name="IS_THIS_MODEL_A_TRAIN" Handled="false"/>
+    <CommandId ID="2160" Name="GET_VEHICLE_CHAR_IS_STANDING_ON" Handled="false"/>
+    <CommandId ID="2161" Name="SWITCH_START"/>
+    <CommandId ID="2162" Name="SWITCH_CONTINUED"/>
+    <CommandId ID="2163" Name="REMOVE_CAR_RECORDING"/>
+    <CommandId ID="2164" Name="SET_ZONE_POPULATION_RACE"/>
+    <CommandId ID="2165" Name="SET_OBJECT_ONLY_DAMAGED_BY_PLAYER"/>
+    <CommandId ID="2166" Name="CREATE_BIRDS"/>
+    <CommandId ID="2167" Name="GET_VEHICLE_DIRT_LEVEL" Handled="false"/>
+    <CommandId ID="2168" Name="SET_VEHICLE_DIRT_LEVEL"/>
+    <CommandId ID="2169" Name="SET_GANG_WARS_ACTIVE"/>
+    <CommandId ID="2170" Name="IS_GANG_WAR_GOING_ON"/>
+    <CommandId ID="2171" Name="GIVE_PLAYER_CLOTHES_OUTSIDE_SHOP"/>
+    <CommandId ID="2172" Name="CLEAR_LOADED_SHOP"/>
+    <CommandId ID="2173" Name="SET_GROUP_SEQUENCE"/>
+    <CommandId ID="2174" Name="SET_CHAR_DROPS_WEAPONS_WHEN_DEAD"/>
+    <CommandId ID="2175" Name="SET_CHAR_NEVER_LEAVES_GROUP"/>
+    <CommandId ID="2176" Name="DRAW_RECT_WITH_TITLE" Handled="false"/>
+    <CommandId ID="2177" Name="SET_PLAYER_FIRE_BUTTON"/>
+    <CommandId ID="2178" Name="SET_ATTRACTOR_RADIUS" Handled="false"/>
+    <CommandId ID="2179" Name="ATTACH_FX_SYSTEM_TO_CHAR_BONE"/>
+    <CommandId ID="2180" Name="REGISTER_ATTRACTOR_SCRIPT_BRAIN_FOR_CODE_USE"/>
+    <CommandId ID="2181" Name="CONST_INT"/>
+    <CommandId ID="2182" Name="CONST_FLOAT"/>
+    <CommandId ID="2183" Name="SET_HEADING_LIMIT_FOR_ATTACHED_CHAR"/>
+    <CommandId ID="2184" Name="ADD_BLIP_FOR_DEAD_CHAR"/>
+    <CommandId ID="2185" Name="GET_DEAD_CHAR_COORDINATES"/>
+    <CommandId ID="2186" Name="TASK_PLAY_ANIM_WITH_FLAGS"/>
+    <CommandId ID="2187" Name="SET_VEHICLE_AIR_RESISTANCE_MULTIPLIER"/>
+    <CommandId ID="2188" Name="SET_CAR_COORDINATES_NO_OFFSET"/>
+    <CommandId ID="2189" Name="SET_USES_COLLISION_OF_CLOSEST_OBJECT_OF_TYPE"/>
+    <CommandId ID="2190" Name="SET_TIME_ONE_DAY_FORWARD"/>
+    <CommandId ID="2191" Name="SET_TIME_ONE_DAY_BACK" Handled="false"/>
+    <CommandId ID="2192" Name="SET_TIMER_BEEP_COUNTDOWN_TIME"/>
+    <CommandId ID="2193" Name="TASK_SIT_IN_RESTAURANT" Handled="false"/>
+    <CommandId ID="2194" Name="GET_RANDOM_ATTRACTOR_ON_CLOSEST_OBJECT_OF_TYPE" Handled="false"/>
+    <CommandId ID="2195" Name="ATTACH_TRAILER_TO_CAB"/>
+    <CommandId ID="2196" Name="ADD_INTERESTING_ENTITY_FOR_CHAR" Handled="false"/>
+    <CommandId ID="2197" Name="CLEAR_INTERESTING_ENTITIES_FOR_CHAR" Handled="false"/>
+    <CommandId ID="2198" Name="GET_CLOSEST_ATTRACTOR" Handled="false"/>
+    <CommandId ID="2199" Name="IS_VEHICLE_TOUCHING_OBJECT"/>
+    <CommandId ID="2200" Name="ENABLE_CRANE_CONTROLS"/>
+    <CommandId ID="2201" Name="ALLOCATE_SCRIPT_TO_ATTRACTOR" Handled="false"/>
+    <CommandId ID="2202" Name="GET_CLOSEST_ATTRACTOR_WITH_THIS_SCRIPT" Handled="false"/>
+    <CommandId ID="2203" Name="IS_PLAYER_IN_POSITION_FOR_CONVERSATION"/>
+    <CommandId ID="2204" Name="ENABLE_CONVERSATION"/>
+    <CommandId ID="2205" Name="GET_CONVERSATION_STATUS" Handled="false"/>
+    <CommandId ID="2206" Name="GET_RANDOM_CHAR_IN_SPHERE_ONLY_DRUGS_BUYERS"/>
+    <CommandId ID="2207" Name="GET_PED_TYPE"/>
+    <CommandId ID="2208" Name="TASK_USE_CLOSEST_MAP_ATTRACTOR"/>
+    <CommandId ID="2209" Name="GET_CHAR_MAP_ATTRACTOR_STATUS" Handled="false"/>
+    <CommandId ID="2210" Name="PLANE_ATTACK_PLAYER_USING_DOG_FIGHT"/>
+    <CommandId ID="2211" Name="CAN_TRIGGER_GANG_WAR_WHEN_ON_A_MISSION"/>
+    <CommandId ID="2212" Name="CONTROL_MOVABLE_VEHICLE_PART"/>
+    <CommandId ID="2213" Name="WINCH_CAN_PICK_VEHICLE_UP"/>
+    <CommandId ID="2214" Name="OPEN_CAR_DOOR_A_BIT"/>
+    <CommandId ID="2215" Name="IS_CAR_DOOR_FULLY_OPEN"/>
+    <CommandId ID="2216" Name="SET_ALWAYS_DRAW_3D_MARKERS"/>
+    <CommandId ID="2217" Name="STREAM_SCRIPT"/>
+    <CommandId ID="2218" Name="STREAM_SCRIPT_INTERNAL" Handled="false"/>
+    <CommandId ID="2219" Name="HAS_STREAMED_SCRIPT_LOADED"/>
+    <CommandId ID="2220" Name="SET_GANG_WARS_TRAINING_MISSION"/>
+    <CommandId ID="2221" Name="SET_CHAR_HAS_USED_ENTRY_EXIT"/>
+    <CommandId ID="2222" Name="DRAW_WINDOW_TEXT" Handled="false"/>
+    <CommandId ID="2223" Name="SET_CHAR_MAX_HEALTH"/>
+    <CommandId ID="2224" Name="SET_CAR_PITCH" Handled="false"/>
+    <CommandId ID="2225" Name="SET_NIGHT_VISION"/>
+    <CommandId ID="2226" Name="SET_INFRARED_VISION"/>
+    <CommandId ID="2227" Name="SET_ZONE_FOR_GANG_WARS_TRAINING"/>
+    <CommandId ID="2228" Name="IS_GLOBAL_VAR_BIT_SET_CONST"/>
+    <CommandId ID="2229" Name="IS_GLOBAL_VAR_BIT_SET_VAR"/>
+    <CommandId ID="2230" Name="IS_GLOBAL_VAR_BIT_SET_LVAR"/>
+    <CommandId ID="2231" Name="IS_LOCAL_VAR_BIT_SET_CONST"/>
+    <CommandId ID="2232" Name="IS_LOCAL_VAR_BIT_SET_VAR"/>
+    <CommandId ID="2233" Name="IS_LOCAL_VAR_BIT_SET_LVAR"/>
+    <CommandId ID="2234" Name="SET_GLOBAL_VAR_BIT_CONST"/>
+    <CommandId ID="2235" Name="SET_GLOBAL_VAR_BIT_VAR"/>
+    <CommandId ID="2236" Name="SET_GLOBAL_VAR_BIT_LVAR"/>
+    <CommandId ID="2237" Name="SET_LOCAL_VAR_BIT_CONST"/>
+    <CommandId ID="2238" Name="SET_LOCAL_VAR_BIT_VAR"/>
+    <CommandId ID="2239" Name="SET_LOCAL_VAR_BIT_LVAR"/>
+    <CommandId ID="2240" Name="CLEAR_GLOBAL_VAR_BIT_CONST"/>
+    <CommandId ID="2241" Name="CLEAR_GLOBAL_VAR_BIT_VAR"/>
+    <CommandId ID="2242" Name="CLEAR_GLOBAL_VAR_BIT_LVAR"/>
+    <CommandId ID="2243" Name="CLEAR_LOCAL_VAR_BIT_CONST"/>
+    <CommandId ID="2244" Name="CLEAR_LOCAL_VAR_BIT_VAR"/>
+    <CommandId ID="2245" Name="CLEAR_LOCAL_VAR_BIT_LVAR"/>
+    <CommandId ID="2246" Name="SET_CHAR_CAN_BE_KNOCKED_OFF_BIKE"/>
+    <CommandId ID="2247" Name="SET_CHAR_COORDINATES_DONT_WARP_GANG"/>
+    <CommandId ID="2248" Name="ADD_PRICE_MODIFIER"/>
+    <CommandId ID="2249" Name="REMOVE_PRICE_MODIFIER"/>
+    <CommandId ID="2250" Name="INIT_ZONE_POPULATION_SETTINGS"/>
+    <CommandId ID="2251" Name="EXPLODE_CAR_IN_CUTSCENE_SHAKE_AND_BITS"/>
+    <CommandId ID="2252" Name="PICK_UP_OBJECT_WITH_WINCH" Handled="false"/>
+    <CommandId ID="2253" Name="PICK_UP_VEHICLE_WITH_WINCH" Handled="false"/>
+    <CommandId ID="2254" Name="PICK_UP_CHAR_WITH_WINCH" Handled="false"/>
+    <CommandId ID="2255" Name="STORE_CAR_IN_NEAREST_IMPOUNDING_GARAGE" Handled="false"/>
+    <CommandId ID="2256" Name="IS_SKIP_CUTSCENE_BUTTON_PRESSED"/>
+    <CommandId ID="2257" Name="GET_CUTSCENE_OFFSET"/>
+    <CommandId ID="2258" Name="SET_OBJECT_SCALE"/>
+    <CommandId ID="2259" Name="GET_CURRENT_POPULATION_ZONE_TYPE"/>
+    <CommandId ID="2260" Name="CREATE_MENU"/>
+    <CommandId ID="2261" Name="CONSTANT_INT" Handled="false"/>
+    <CommandId ID="2262" Name="SET_MENU_COLUMN_ORIENTATION"/>
+    <CommandId ID="2263" Name="GET_MENU_ITEM_SELECTED"/>
+    <CommandId ID="2264" Name="GET_MENU_ITEM_ACCEPTED"/>
+    <CommandId ID="2265" Name="ACTIVATE_MENU_ITEM"/>
+    <CommandId ID="2266" Name="DELETE_MENU"/>
+    <CommandId ID="2267" Name="SET_MENU_COLUMN"/>
+    <CommandId ID="2268" Name="SET_BLIP_ENTRY_EXIT"/>
+    <CommandId ID="2269" Name="SWITCH_DEATH_PENALTIES"/>
+    <CommandId ID="2270" Name="SWITCH_ARREST_PENALTIES"/>
+    <CommandId ID="2271" Name="SET_EXTRA_HOSPITAL_RESTART_POINT"/>
+    <CommandId ID="2272" Name="SET_EXTRA_POLICE_STATION_RESTART_POINT"/>
+    <CommandId ID="2273" Name="FIND_NUMBER_TAGS_TAGGED"/>
+    <CommandId ID="2274" Name="GET_TERRITORY_UNDER_CONTROL_PERCENTAGE"/>
+    <CommandId ID="2275" Name="IS_OBJECT_IN_ANGLED_AREA_2D"/>
+    <CommandId ID="2276" Name="IS_OBJECT_IN_ANGLED_AREA_3D"/>
+    <CommandId ID="2277" Name="GET_RANDOM_CHAR_IN_SPHERE_NO_BRAIN"/>
+    <CommandId ID="2278" Name="SET_PLANE_UNDERCARRIAGE_UP"/>
+    <CommandId ID="2279" Name="DISABLE_ALL_ENTRY_EXITS"/>
+    <CommandId ID="2280" Name="ATTACH_ANIMS_TO_MODEL"/>
+    <CommandId ID="2281" Name="SET_OBJECT_AS_STEALABLE"/>
+    <CommandId ID="2282" Name="SET_CREATE_RANDOM_GANG_MEMBERS"/>
+    <CommandId ID="2283" Name="ADD_SPARKS"/>
+    <CommandId ID="2284" Name="GET_VEHICLE_CLASS"/>
+    <CommandId ID="2285" Name="CLEAR_CONVERSATION_FOR_CHAR"/>
+    <CommandId ID="2286" Name="SET_MENU_ITEM_WITH_NUMBER"/>
+    <CommandId ID="2287" Name="SET_MENU_ITEM_WITH_2_NUMBERS"/>
+    <CommandId ID="2288" Name="APPEND_TO_NEXT_CUTSCENE"/>
+    <CommandId ID="2289" Name="GET_NAME_OF_INFO_ZONE"/>
+    <CommandId ID="2290" Name="VEHICLE_CAN_BE_TARGETTED_BY_HS_MISSILE"/>
+    <CommandId ID="2291" Name="SET_FREEBIES_IN_VEHICLE"/>
+    <CommandId ID="2292" Name="SET_SCRIPT_LIMIT_TO_GANG_SIZE"/>
+    <CommandId ID="2293" Name="MAKE_PLAYER_GANG_DISAPPEAR"/>
+    <CommandId ID="2294" Name="MAKE_PLAYER_GANG_REAPPEAR"/>
+    <CommandId ID="2295" Name="GET_CLOTHES_ITEM"/>
+    <CommandId ID="2296" Name="SHOW_UPDATE_STATS"/>
+    <CommandId ID="2297" Name="IS_VAR_TEXT_LABEL16_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="2298" Name="IS_LVAR_TEXT_LABEL16_EQUAL_TO_TEXT_LABEL"/>
+    <CommandId ID="2299" Name="SET_COORD_BLIP_APPEARANCE"/>
+    <CommandId ID="2300" Name="GET_MENU_POSITION" Handled="false"/>
+    <CommandId ID="2301" Name="SET_HEATHAZE_EFFECT"/>
+    <CommandId ID="2302" Name="IS_HELP_MESSAGE_BEING_DISPLAYED"/>
+    <CommandId ID="2303" Name="HAS_OBJECT_BEEN_DAMAGED_BY_WEAPON"/>
+    <CommandId ID="2304" Name="CLEAR_OBJECT_LAST_WEAPON_DAMAGE"/>
+    <CommandId ID="2305" Name="SET_PLAYER_JUMP_BUTTON"/>
+    <CommandId ID="2306" Name="SET_OBJECT_BEEN_PHOTOGRAPHED_FLAG" Handled="false"/>
+    <CommandId ID="2307" Name="SET_CHAR_BEEN_PHOTOGRAPHED_FLAG" Handled="false"/>
+    <CommandId ID="2308" Name="GET_HUD_COLOUR"/>
+    <CommandId ID="2309" Name="LOCK_DOOR"/>
+    <CommandId ID="2310" Name="SET_OBJECT_MASS"/>
+    <CommandId ID="2311" Name="GET_OBJECT_MASS"/>
+    <CommandId ID="2312" Name="SET_OBJECT_TURN_MASS"/>
+    <CommandId ID="2313" Name="GET_OBJECT_TURN_MASS"/>
+    <CommandId ID="2314" Name="IS_PLAYBACK_FOR_CAR_PAUSED" Handled="false"/>
+    <CommandId ID="2315" Name="TRIGGER_PED_BOUNCE" Handled="false"/>
+    <CommandId ID="2316" Name="SET_SPECIFIC_ZONE_TO_TRIGGER_GANG_WAR"/>
+    <CommandId ID="2317" Name="CLEAR_SPECIFIC_ZONES_TO_TRIGGER_GANG_WAR"/>
+    <CommandId ID="2318" Name="SET_ACTIVE_MENU_ITEM"/>
+    <CommandId ID="2319" Name="MARK_STREAMED_SCRIPT_AS_NO_LONGER_NEEDED"/>
+    <CommandId ID="2320" Name="REMOVE_STREAMED_SCRIPT"/>
+    <CommandId ID="2321" Name="REGISTER_STREAMED_SCRIPT"/>
+    <CommandId ID="2322" Name="SET_MESSAGE_FORMATTING"/>
+    <CommandId ID="2323" Name="START_NEW_STREAMED_SCRIPT"/>
+    <CommandId ID="2324" Name="REGISTER_STREAMED_SCRIPT_INTERNAL"/>
+    <CommandId ID="2325" Name="SET_WEATHER_TO_APPROPRIATE_TYPE_NOW"/>
+    <CommandId ID="2326" Name="WINCH_CAN_PICK_OBJECT_UP"/>
+    <CommandId ID="2327" Name="SWITCH_AUDIO_ZONE"/>
+    <CommandId ID="2328" Name="SET_CAR_ENGINE_ON"/>
+    <CommandId ID="2329" Name="SET_CAR_LIGHTS_ON"/>
+    <CommandId ID="2330" Name="GET_LATEST_CONSOLE_COMMAND"/>
+    <CommandId ID="2331" Name="RESET_LATEST_CONSOLE_COMMAND"/>
+    <CommandId ID="2332" Name="GET_USER_OF_CLOSEST_MAP_ATTRACTOR"/>
+    <CommandId ID="2333" Name="SWITCH_ROADS_BACK_TO_ORIGINAL"/>
+    <CommandId ID="2334" Name="SWITCH_PED_ROADS_BACK_TO_ORIGINAL"/>
+    <CommandId ID="2335" Name="GET_PLANE_UNDERCARRIAGE_POSITION"/>
+    <CommandId ID="2336" Name="CAMERA_SET_VECTOR_TRACK"/>
+    <CommandId ID="2337" Name="CAMERA_SET_SHAKE_SIMULATION" Handled="false"/>
+    <CommandId ID="2338" Name="CAMERA_SET_LERP_FOV"/>
+    <CommandId ID="2339" Name="SWITCH_AMBIENT_PLANES"/>
+    <CommandId ID="2340" Name="SET_DARKNESS_EFFECT"/>
+    <CommandId ID="2341" Name="CAMERA_RESET_NEW_SCRIPTABLES"/>
+    <CommandId ID="2342" Name="GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT"/>
+    <CommandId ID="2343" Name="ALLOCATE_STREAMED_SCRIPT_TO_PED_GENERATOR" Handled="false"/>
+    <CommandId ID="2344" Name="ALLOCATE_STREAMED_SCRIPT_TO_RANDOM_PED"/>
+    <CommandId ID="2345" Name="ALLOCATE_STREAMED_SCRIPT_TO_OBJECT"/>
+    <CommandId ID="2346" Name="SET_PLAYER_CAN_BE_DAMAGED" Handled="false"/>
+    <CommandId ID="2347" Name="GET_GROUP_MEMBER"/>
+    <CommandId ID="2348" Name="GET_PLAYERS_GANG_IN_CAR_ACTIVE" Handled="false"/>
+    <CommandId ID="2349" Name="SET_PLAYERS_GANG_IN_CAR_ACTIVE" Handled="false"/>
+    <CommandId ID="2350" Name="GET_WATER_HEIGHT_AT_COORDS"/>
+    <CommandId ID="2351" Name="CAMERA_PERSIST_TRACK"/>
+    <CommandId ID="2352" Name="CAMERA_PERSIST_POS"/>
+    <CommandId ID="2353" Name="CAMERA_PERSIST_FOV"/>
+    <CommandId ID="2354" Name="CAMERA_IS_FOV_RUNNING" Handled="false"/>
+    <CommandId ID="2355" Name="CAMERA_IS_VECTOR_MOVE_RUNNING"/>
+    <CommandId ID="2356" Name="CAMERA_IS_VECTOR_TRACK_RUNNING"/>
+    <CommandId ID="2357" Name="CAMERA_IS_SHAKE_RUNNING" Handled="false"/>
+    <CommandId ID="2358" Name="CAMERA_SET_VECTOR_MOVE"/>
+    <CommandId ID="2359" Name="DRAW_WINDOW"/>
+    <CommandId ID="2360" Name="CLEAR_ALL_QUEUED_DIALOGUE" Handled="false"/>
+    <CommandId ID="2361" Name="ATTACH_CAR_TO_OBJECT"/>
+    <CommandId ID="2362" Name="SET_GARAGE_RESPRAY_FREE"/>
+    <CommandId ID="2363" Name="SET_CHAR_BULLETPROOF_VEST"/>
+    <CommandId ID="2364" Name="SET_ONSCREEN_COUNTER_COLOUR" Handled="false"/>
+    <CommandId ID="2365" Name="SET_CINEMA_CAMERA"/>
+    <CommandId ID="2366" Name="SET_CHAR_FIRE_DAMAGE_MULTIPLIER"/>
+    <CommandId ID="2367" Name="IS_FIRE_BUTTON_PRESSED" Handled="false"/>
+    <CommandId ID="2368" Name="SET_GROUP_FOLLOW_STATUS"/>
+    <CommandId ID="2369" Name="SET_SEARCHLIGHT_CLIP_IF_COLLIDING"/>
+    <CommandId ID="2370" Name="HAS_PLAYER_BOUGHT_ITEM"/>
+    <CommandId ID="2371" Name="SET_CAMERA_BEHIND_CHAR" Handled="false"/>
+    <CommandId ID="2372" Name="SET_CAMERA_IN_FRONT_OF_CHAR"/>
+    <CommandId ID="2373" Name="GET_PLAYER_MAX_ARMOUR"/>
+    <CommandId ID="2374" Name="SET_CHAR_USES_UPPERBODY_DAMAGE_ANIMS_ONLY"/>
+    <CommandId ID="2375" Name="SET_CHAR_SAY_CONTEXT"/>
+    <CommandId ID="2376" Name="ADD_EXPLOSION_VARIABLE_SHAKE"/>
+    <CommandId ID="2377" Name="ATTACH_MISSION_AUDIO_TO_CHAR"/>
+    <CommandId ID="2378" Name="UPDATE_PICKUP_MONEY_PER_DAY"/>
+    <CommandId ID="2379" Name="GET_NAME_OF_ENTRY_EXIT_CHAR_USED"/>
+    <CommandId ID="2380" Name="GET_POSITION_OF_ENTRY_EXIT_CHAR_USED"/>
+    <CommandId ID="2381" Name="IS_CHAR_TALKING"/>
+    <CommandId ID="2382" Name="DISABLE_CHAR_SPEECH"/>
+    <CommandId ID="2383" Name="ENABLE_CHAR_SPEECH"/>
+    <CommandId ID="2384" Name="SET_UP_SKIP"/>
+    <CommandId ID="2385" Name="CLEAR_SKIP"/>
+    <CommandId ID="2386" Name="PRELOAD_BEAT_TRACK"/>
+    <CommandId ID="2387" Name="GET_BEAT_TRACK_STATUS"/>
+    <CommandId ID="2388" Name="PLAY_BEAT_TRACK"/>
+    <CommandId ID="2389" Name="STOP_BEAT_TRACK"/>
+    <CommandId ID="2390" Name="FIND_MAX_NUMBER_OF_GROUP_MEMBERS"/>
+    <CommandId ID="2391" Name="VEHICLE_DOES_PROVIDE_COVER"/>
+    <CommandId ID="2392" Name="CREATE_SNAPSHOT_PICKUP"/>
+    <CommandId ID="2393" Name="CREATE_HORSESHOE_PICKUP"/>
+    <CommandId ID="2394" Name="CREATE_OYSTER_PICKUP"/>
+    <CommandId ID="2395" Name="HAS_OBJECT_BEEN_UPROOTED"/>
+    <CommandId ID="2396" Name="ADD_SMOKE_PARTICLE"/>
+    <CommandId ID="2397" Name="IS_CHAR_STUCK_UNDER_CAR"/>
+    <CommandId ID="2398" Name="CONTROL_CAR_DOOR"/>
+    <CommandId ID="2399" Name="GET_DOOR_ANGLE_RATIO"/>
+    <CommandId ID="2400" Name="SET_PLAYER_DISPLAY_VITAL_STATS_BUTTON"/>
+    <CommandId ID="2401" Name="SET_CHAR_KEEP_TASK"/>
+    <CommandId ID="2402" Name="DOES_CAR_HAVE_ROOF" Handled="false"/>
+    <CommandId ID="2403" Name="SET_BLIP_FADE" Handled="false"/>
+    <CommandId ID="2404" Name="CREATE_MENU_GRID"/>
+    <CommandId ID="2405" Name="IS_CHAR_SWIMMING"/>
+    <CommandId ID="2406" Name="GET_CHAR_SWIM_STATE"/>
+    <CommandId ID="2407" Name="START_CHAR_FACIAL_TALK"/>
+    <CommandId ID="2408" Name="STOP_CHAR_FACIAL_TALK"/>
+    <CommandId ID="2409" Name="IS_BIG_VEHICLE"/>
+    <CommandId ID="2410" Name="SWITCH_POLICE_HELIS"/>
+    <CommandId ID="2411" Name="STORE_CAR_MOD_STATE"/>
+    <CommandId ID="2412" Name="RESTORE_CAR_MOD_STATE"/>
+    <CommandId ID="2413" Name="GET_CURRENT_CAR_MOD"/>
+    <CommandId ID="2414" Name="IS_CAR_LOW_RIDER"/>
+    <CommandId ID="2415" Name="IS_CAR_STREET_RACER"/>
+    <CommandId ID="2416" Name="FORCE_DEATH_RESTART"/>
+    <CommandId ID="2417" Name="SYNC_WATER"/>
+    <CommandId ID="2418" Name="SET_CHAR_COORDINATES_NO_OFFSET"/>
+    <CommandId ID="2419" Name="DOES_SCRIPT_FIRE_EXIST"/>
+    <CommandId ID="2420" Name="RESET_STUFF_UPON_RESURRECTION"/>
+    <CommandId ID="2421" Name="IS_EMERGENCY_SERVICES_VEHICLE"/>
+    <CommandId ID="2422" Name="KILL_FX_SYSTEM_NOW"/>
+    <CommandId ID="2423" Name="IS_OBJECT_WITHIN_BRAIN_ACTIVATION_RANGE"/>
+    <CommandId ID="2424" Name="COPY_SHARED_CHAR_DECISION_MAKER"/>
+    <CommandId ID="2425" Name="LOAD_SHARED_CHAR_DECISION_MAKER" Handled="false"/>
+    <CommandId ID="2426" Name="REPORT_MISSION_AUDIO_EVENT_AT_POSITION"/>
+    <CommandId ID="2427" Name="REPORT_MISSION_AUDIO_EVENT_AT_OBJECT"/>
+    <CommandId ID="2428" Name="ATTACH_MISSION_AUDIO_TO_OBJECT"/>
+    <CommandId ID="2429" Name="GET_NUM_CAR_COLOURS"/>
+    <CommandId ID="2430" Name="IS_POLICE_VEHICLE_IN_PURSUIT" Handled="false"/>
+    <CommandId ID="2431" Name="GET_CAR_COLOUR_FROM_MENU_INDEX" Handled="false"/>
+    <CommandId ID="2432" Name="EXTINGUISH_FIRE_AT_POINT"/>
+    <CommandId ID="2433" Name="HAS_TRAIN_DERAILED"/>
+    <CommandId ID="2434" Name="SET_CHAR_FORCE_DIE_IN_CAR"/>
+    <CommandId ID="2435" Name="SET_ONLY_CREATE_GANG_MEMBERS"/>
+    <CommandId ID="2436" Name="GET_OBJECT_MODEL"/>
+    <CommandId ID="2437" Name="SET_CHAR_USES_COLLISION_CLOSEST_OBJECT_OF_TYPE"/>
+    <CommandId ID="2438" Name="CLEAR_ALL_SCRIPT_FIRE_FLAGS"/>
+    <CommandId ID="2439" Name="GET_CAR_BLOCKING_CAR"/>
+    <CommandId ID="2440" Name="GET_CURRENT_VEHICLE_PAINTJOB"/>
+    <CommandId ID="2441" Name="SET_HELP_MESSAGE_BOX_SIZE"/>
+    <CommandId ID="2442" Name="SET_GUNSHOT_SENSE_RANGE_FOR_RIOT2"/>
+    <CommandId ID="2443" Name="STRING_CAT16"/>
+    <CommandId ID="2444" Name="STRING_CAT8"/>
+    <CommandId ID="2445" Name="GET_CAR_MOVING_COMPONENT_OFFSET"/>
+    <CommandId ID="2446" Name="SET_NAMED_ENTRY_EXIT_FLAG"/>
+    <CommandId ID="2447" Name="RADIANS_TO_DEGREES" Handled="false"/>
+    <CommandId ID="2448" Name="DEGREES_TO_RADIANS" Handled="false"/>
+    <CommandId ID="2449" Name="PAUSE_CURRENT_BEAT_TRACK"/>
+    <CommandId ID="2450" Name="SET_PLAYER_CYCLE_WEAPON_BUTTON"/>
+    <CommandId ID="2451" Name="SET_CHAR_AIR_RESISTANCE_MULTIPLIER" Handled="false"/>
+    <CommandId ID="2452" Name="MARK_ROAD_NODE_AS_DONT_WANDER"/>
+    <CommandId ID="2453" Name="UNMARK_ALL_ROAD_NODES_AS_DONT_WANDER"/>
+    <CommandId ID="2454" Name="SET_CHECKPOINT_HEADING"/>
+    <CommandId ID="2455" Name="SET_MISSION_RESPECT_TOTAL"/>
+    <CommandId ID="2456" Name="AWARD_PLAYER_MISSION_RESPECT"/>
+    <CommandId ID="2457" Name="SET_PLAYER_FIRE_WITH_SHOULDER_BUTTON" Handled="false"/>
+    <CommandId ID="2458" Name="SET_CAR_COLLISION"/>
+    <CommandId ID="2459" Name="CHANGE_PLAYBACK_TO_USE_AI"/>
+    <CommandId ID="2460" Name="CAMERA_SET_SHAKE_SIMULATION_SIMPLE"/>
+    <CommandId ID="2461" Name="IS_NIGHT_VISION_ACTIVE"/>
+    <CommandId ID="2462" Name="SET_CREATE_RANDOM_COPS"/>
+    <CommandId ID="2463" Name="TASK_SET_IGNORE_WEAPON_RANGE_FLAG"/>
+    <CommandId ID="2464" Name="TASK_PICK_UP_SECOND_OBJECT"/>
+    <CommandId ID="2465" Name="DROP_SECOND_OBJECT"/>
+    <CommandId ID="2466" Name="REMOVE_OBJECT_ELEGANTLY"/>
+    <CommandId ID="2467" Name="DRAW_CROSSHAIR"/>
+    <CommandId ID="2468" Name="SET_UP_CONVERSATION_NODE_WITH_SPEECH"/>
+    <CommandId ID="2469" Name="SET_CCTV_EFFECT" Handled="false"/>
+    <CommandId ID="2470" Name="SHOW_BLIPS_ON_ALL_LEVELS"/>
+    <CommandId ID="2471" Name="SET_CHAR_DRUGGED_UP"/>
+    <CommandId ID="2472" Name="IS_CHAR_HEAD_MISSING"/>
+    <CommandId ID="2473" Name="GET_HASH_KEY"/>
+    <CommandId ID="2474" Name="SET_UP_CONVERSATION_END_NODE_WITH_SPEECH"/>
+    <CommandId ID="2475" Name="RANDOM_PASSENGER_SAY"/>
+    <CommandId ID="2476" Name="HIDE_ALL_FRONTEND_BLIPS"/>
+    <CommandId ID="2477" Name="SET_PLAYER_IN_CAR_CAMERA_MODE"/>
+    <CommandId ID="2478" Name="IS_CHAR_IN_ANY_TRAIN"/>
+    <CommandId ID="2479" Name="SET_UP_SKIP_AFTER_MISSION"/>
+    <CommandId ID="2480" Name="SET_VEHICLE_IS_CONSIDERED_BY_PLAYER"/>
+    <CommandId ID="2481" Name="GET_CPU_LEVEL" Handled="false"/>
+    <CommandId ID="2482" Name="GET_RANDOM_CAR_MODEL_IN_MEMORY"/>
+    <CommandId ID="2483" Name="GET_CAR_DOOR_LOCK_STATUS"/>
+    <CommandId ID="2484" Name="SET_CLOSEST_ENTRY_EXIT_FLAG"/>
+    <CommandId ID="2485" Name="SET_CHAR_SIGNAL_AFTER_KILL"/>
+    <CommandId ID="2486" Name="SET_CHAR_WANTED_BY_POLICE"/>
+    <CommandId ID="2487" Name="SET_ZONE_NO_COPS"/>
+    <CommandId ID="2488" Name="ADD_BLOOD"/>
+    <CommandId ID="2489" Name="DISPLAY_CAR_NAMES"/>
+    <CommandId ID="2490" Name="DISPLAY_ZONE_NAMES"/>
+    <CommandId ID="2491" Name="IS_CAR_DOOR_DAMAGED"/>
+    <CommandId ID="2492" Name="SET_CHAR_COORDINATES_DONT_WARP_GANG_NO_OFFSET"/>
+    <CommandId ID="2493" Name="SET_MINIGAME_IN_PROGRESS"/>
+    <CommandId ID="2494" Name="IS_MINIGAME_IN_PROGRESS"/>
+    <CommandId ID="2495" Name="SET_FORCE_RANDOM_CAR_MODEL"/>
+    <CommandId ID="2496" Name="GET_RANDOM_CAR_OF_TYPE_IN_ANGLED_AREA_NO_SAVE"/>
+    <CommandId ID="2497" Name="ADD_NEXT_MESSAGE_TO_PREVIOUS_BRIEFS"/>
+    <CommandId ID="2498" Name="FAIL_KILL_FRENZY"/>
+    <CommandId ID="2499" Name="IS_COP_VEHICLE_IN_AREA_3D_NO_SAVE"/>
+    <CommandId ID="2500" Name="SET_PETROL_TANK_WEAKPOINT"/>
+    <CommandId ID="2501" Name="IS_CHAR_USING_MAP_ATTRACTOR"/>
+    <CommandId ID="2502" Name="SET_ALL_CARS_IN_AREA_VISIBLE" Handled="false"/>
+    <CommandId ID="2503" Name="SET_PLAYER_MODEL"/>
+    <CommandId ID="2504" Name="ARE_SUBTITLES_SWITCHED_ON"/>
+    <CommandId ID="2505" Name="REMOVE_CHAR_FROM_CAR_MAINTAIN_POSITION"/>
+    <CommandId ID="2506" Name="SET_OBJECT_PROOFS"/>
+    <CommandId ID="2507" Name="IS_CAR_TOUCHING_CAR"/>
+    <CommandId ID="2508" Name="DOES_OBJECT_HAVE_THIS_MODEL"/>
+    <CommandId ID="2509" Name="IS_ITALIAN_GAME" Handled="false"/>
+    <CommandId ID="2510" Name="IS_SPANISH_GAME" Handled="false"/>
+    <CommandId ID="2511" Name="SET_TRAIN_FORCED_TO_SLOW_DOWN"/>
+    <CommandId ID="2512" Name="IS_VEHICLE_ON_ALL_WHEELS"/>
+    <CommandId ID="2513" Name="DOES_PICKUP_EXIST"/>
+    <CommandId ID="2514" Name="ENABLE_AMBIENT_CRIME"/>
+    <CommandId ID="2515" Name="IS_AMBIENT_CRIME_ENABLED" Handled="false"/>
+    <CommandId ID="2516" Name="CLEAR_WANTED_LEVEL_IN_GARAGE"/>
+    <CommandId ID="2517" Name="SET_CHAR_SAY_CONTEXT_IMPORTANT"/>
+    <CommandId ID="2518" Name="SET_CHAR_SAY_SCRIPT"/>
+    <CommandId ID="2519" Name="FORCE_INTERIOR_LIGHTING_FOR_PLAYER"/>
+    <CommandId ID="2520" Name="DISABLE_2ND_PAD_FOR_DEBUG"/>
+    <CommandId ID="2521" Name="USE_DETONATOR"/>
+    <CommandId ID="2522" Name="IS_MONEY_PICKUP_AT_COORDS"/>
+    <CommandId ID="2523" Name="SET_MENU_COLUMN_WIDTH"/>
+    <CommandId ID="2524" Name="SET_CHAR_CAN_CLIMB_OUT_WATER" Handled="false"/>
+    <CommandId ID="2525" Name="MAKE_ROOM_IN_PLAYER_GANG_FOR_MISSION_PEDS"/>
+    <CommandId ID="2526" Name="IS_CHAR_GETTING_IN_TO_A_CAR"/>
+    <CommandId ID="2527" Name="RESTORE_PLAYER_AFTER_2P_GAME" Handled="false"/>
+    <CommandId ID="2528" Name="SET_UP_SKIP_FOR_SPECIFIC_VEHICLE"/>
+    <CommandId ID="2529" Name="GET_CAR_MODEL_VALUE"/>
+    <CommandId ID="2530" Name="CREATE_CAR_GENERATOR_WITH_PLATE"/>
+    <CommandId ID="2531" Name="FIND_TRAIN_DIRECTION"/>
+    <CommandId ID="2532" Name="SET_AIRCRAFT_CARRIER_SAM_SITE"/>
+    <CommandId ID="2533" Name="DRAW_LIGHT_WITH_RANGE"/>
+    <CommandId ID="2534" Name="ENABLE_BURGLARY_HOUSES"/>
+    <CommandId ID="2535" Name="IS_PLAYER_CONTROL_ON"/>
+    <CommandId ID="2536" Name="GET_CHAR_AREA_VISIBLE"/>
+    <CommandId ID="2537" Name="GIVE_NON_PLAYER_CAR_NITRO"/>
+    <CommandId ID="2538" Name="PLAYER_PUT_ON_GOGGLES" Handled="false"/>
+    <CommandId ID="2539" Name="PLAYER_TAKE_OFF_GOGGLES"/>
+    <CommandId ID="2540" Name="ALLOW_FIXED_CAMERA_COLLISION"/>
+    <CommandId ID="2541" Name="HAS_CHAR_SPOTTED_CHAR_IN_FRONT"/>
+    <CommandId ID="2542" Name="FORCE_BIG_MESSAGE_AND_COUNTER"/>
+    <CommandId ID="2543" Name="SET_VEHICLE_CAMERA_TWEAK"/>
+    <CommandId ID="2544" Name="RESET_VEHICLE_CAMERA_TWEAK"/>
+    <CommandId ID="2545" Name="REPORT_MISSION_AUDIO_EVENT_AT_CHAR"/>
+    <CommandId ID="2546" Name="DOES_DECISION_MAKER_EXIST"/>
+    <CommandId ID="2547" Name="GET_RANDOM_TRAIN_IN_SPHERE_NO_SAVE" Handled="false"/>
+    <CommandId ID="2548" Name="IGNORE_HEIGHT_DIFFERENCE_FOLLOWING_NODES"/>
+    <CommandId ID="2549" Name="SHUT_ALL_CHARS_UP"/>
+    <CommandId ID="2550" Name="SET_CHAR_GET_OUT_UPSIDE_DOWN_CAR"/>
+    <CommandId ID="2551" Name="REPORT_MISSION_AUDIO_EVENT_AT_CAR"/>
+    <CommandId ID="2552" Name="DO_WEAPON_STUFF_AT_START_OF_2P_GAME"/>
+    <CommandId ID="2553" Name="SET_MENU_HEADER_ORIENTATION" Handled="false"/>
+    <CommandId ID="2554" Name="HAS_GAME_JUST_RETURNED_FROM_FRONTEND"/>
+    <CommandId ID="2555" Name="GET_CURRENT_LANGUAGE"/>
+    <CommandId ID="2556" Name="IS_OBJECT_INTERSECTING_WORLD"/>
+    <CommandId ID="2557" Name="GET_STRING_WIDTH"/>
+    <CommandId ID="2558" Name="RESET_VEHICLE_HYDRAULICS"/>
+    <CommandId ID="2559" Name="SET_RESPAWN_POINT_FOR_DURATION_OF_MISSION"/>
+    <CommandId ID="2560" Name="IS_THIS_MODEL_A_BIKE" Handled="false"/>
+    <CommandId ID="2561" Name="IS_THIS_MODEL_A_CAR"/>
+    <CommandId ID="2562" Name="SWITCH_ON_GROUND_SEARCHLIGHT"/>
+    <CommandId ID="2563" Name="IS_GANG_WAR_FIGHTING_GOING_ON"/>
+    <CommandId ID="2564" Name="SET_VEHICLE_FIRING_RATE_MULTIPLIER" Handled="false"/>
+    <CommandId ID="2565" Name="GET_VEHICLE_FIRING_RATE_MULTIPLIER" Handled="false"/>
+    <CommandId ID="2566" Name="IS_NEXT_STATION_ALLOWED"/>
+    <CommandId ID="2567" Name="SKIP_TO_NEXT_ALLOWED_STATION"/>
+    <CommandId ID="2568" Name="GET_STRING_WIDTH_WITH_NUMBER"/>
+    <CommandId ID="2569" Name="SHUT_CHAR_UP_FOR_SCRIPTED_SPEECH"/>
+    <CommandId ID="2570" Name="ENABLE_DISABLED_ATTRACTORS_ON_OBJECT"/>
+    <CommandId ID="2571" Name="LOAD_SCENE_IN_DIRECTION"/>
+    <CommandId ID="2572" Name="IS_PLAYER_USING_JETPACK"/>
+    <CommandId ID="2573" Name="BLOCK_VEHICLE_MODEL" Handled="false"/>
+    <CommandId ID="2574" Name="CLEAR_THIS_PRINT_BIG_NOW"/>
+    <CommandId ID="2575" Name="HAS_LANGUAGE_CHANGED"/>
+    <CommandId ID="2576" Name="INCREMENT_INT_STAT_NO_MESSAGE"/>
+    <CommandId ID="2577" Name="SET_EXTRA_CAR_COLOURS"/>
+    <CommandId ID="2578" Name="GET_EXTRA_CAR_COLOURS"/>
+    <CommandId ID="2579" Name="MANAGE_ALL_POPULATION"/>
+    <CommandId ID="2580" Name="SET_NO_RESPRAYS"/>
+    <CommandId ID="2581" Name="HAS_CAR_BEEN_RESPRAYED"/>
+    <CommandId ID="2582" Name="ATTACH_MISSION_AUDIO_TO_CAR"/>
+    <CommandId ID="2583" Name="SET_HAS_BEEN_OWNED_FOR_CAR_GENERATOR"/>
+    <CommandId ID="2584" Name="SET_UP_CONVERSATION_NODE_WITH_SCRIPTED_SPEECH"/>
+    <CommandId ID="2585" Name="SET_AREA_NAME"/>
+    <CommandId ID="2586" Name="TASK_PLAY_ANIM_SECONDARY"/>
+    <CommandId ID="2587" Name="IS_CHAR_TOUCHING_CHAR"/>
+    <CommandId ID="2588" Name="DISABLE_HELI_AUDIO"/>
+    <CommandId ID="2589" Name="TASK_HAND_GESTURE"/>
+    <CommandId ID="2590" Name="TAKE_PHOTO"/>
+    <CommandId ID="2591" Name="INCREMENT_FLOAT_STAT_NO_MESSAGE"/>
+    <CommandId ID="2592" Name="SET_PLAYER_GROUP_TO_FOLLOW_ALWAYS"/>
+    <CommandId ID="2593" Name="IMPROVE_CAR_BY_CHEATING"/>
+    <CommandId ID="2594" Name="CHANGE_CAR_COLOUR_FROM_MENU"/>
+    <CommandId ID="2595" Name="HIGHLIGHT_MENU_ITEM"/>
+    <CommandId ID="2596" Name="SET_DISABLE_MILITARY_ZONES"/>
+    <CommandId ID="2597" Name="SET_CAMERA_POSITION_UNFIXED"/>
+    <CommandId ID="2598" Name="SET_RADIO_TO_PLAYERS_FAVOURITE_STATION"/>
+    <CommandId ID="2599" Name="SET_DEATH_WEAPONS_PERSIST"/>
+    <CommandId ID="2600" Name="SET_SWIM_SPEED"/>
+    <CommandId ID="2601" Name="IS_PLAYER_CLIMBING"/>
+    <CommandId ID="2602" Name="IS_THIS_HELP_MESSAGE_BEING_DISPLAYED"/>
+    <CommandId ID="2603" Name="IS_WIDESCREEN_ON_IN_OPTIONS"/>
+    <CommandId ID="2604" Name="DRAW_SUBTITLES_BEFORE_FADE"/>
+    <CommandId ID="2605" Name="DRAW_ODDJOB_TITLE_BEFORE_FADE"/>
+    <CommandId ID="2606" Name="TASK_FOLLOW_PATH_NODES_TO_COORD_WITH_RADIUS"/>
+    <CommandId ID="2607" Name="SET_PHOTO_CAMERA_EFFECT"/>
+    <CommandId ID="2608" Name="FIX_CAR"/>
+    <CommandId ID="2609" Name="SET_PLAYER_GROUP_TO_FOLLOW_NEVER"/>
+    <CommandId ID="2610" Name="IS_CHAR_ATTACHED_TO_ANY_CAR"/>
+    <CommandId ID="2611" Name="STORE_CAR_CHAR_IS_ATTACHED_TO_NO_SAVE"/>
+    <CommandId ID="2612" Name="SET_UP_SKIP_TO_BE_FINISHED_BY_SCRIPT"/>
+    <CommandId ID="2613" Name="SET_UP_SKIP_FOR_VEHICLE_FINISHED_BY_SCRIPT"/>
+    <CommandId ID="2614" Name="IS_SKIP_WAITING_FOR_SCRIPT_TO_FADE_IN"/>
+    <CommandId ID="2615" Name="FORCE_ALL_VEHICLE_LIGHTS_OFF"/>
+    <CommandId ID="2616" Name="SET_RENDER_PLAYER_WEAPON"/>
+    <CommandId ID="2617" Name="GET_PLAYER_IN_CAR_CAMERA_MODE"/>
+    <CommandId ID="2618" Name="IS_LAST_BUILDING_MODEL_SHOT_BY_PLAYER"/>
+    <CommandId ID="2619" Name="CLEAR_LAST_BUILDING_MODEL_SHOT_BY_PLAYER"/>
+    <CommandId ID="2620" Name="SET_UP_CONVERSATION_END_NODE_WITH_SCRIPTED_SPEECH"/>
+    <CommandId ID="2621" Name="ACTIVATE_PIMP_CHEAT"/>
+    <CommandId ID="2622" Name="GET_RANDOM_CHAR_IN_AREA_OFFSET_NO_SAVE"/>
+    <CommandId ID="2623" Name="SET_SCRIPT_COOP_GAME"/>
+    <CommandId ID="2624" Name="CREATE_USER_3D_MARKER"/>
+    <CommandId ID="2625" Name="REMOVE_USER_3D_MARKER"/>
+    <CommandId ID="2626" Name="REMOVE_ALLUSER_3D_MARKERS" Handled="false"/>
+    <CommandId ID="2627" Name="GET_RID_OF_PLAYER_PROSTITUTE"/>
+    <CommandId ID="2628" Name="DISPLAY_NON_MINIGAME_HELP_MESSAGES"/>
+    <CommandId ID="2629" Name="SET_RAILTRACK_RESISTANCE_MULT"/>
+    <CommandId ID="2630" Name="SWITCH_OBJECT_BRAINS"/>
+    <CommandId ID="2631" Name="FINISH_SETTING_UP_CONVERSATION_NO_SUBTITLES"/>
+    <CommandId ID="2632" Name="ALLOW_PAUSE_IN_WIDESCREEN"/>
+    <CommandId ID="2633" Name="IS_XBOX_VERSION"/>
+    <CommandId ID="2634" Name="GET_PC_MOUSE_MOVEMENT"/>
+    <CommandId ID="2635" Name="IS_PC_USING_JOYPAD"/>
+    <CommandId ID="2636" Name="IS_MOUSE_USING_VERTICAL_INVERSION"/>
+    <CommandId ID="2637" Name="IS_JAPANESE_VERSION"/>
+    <CommandId ID="2638" Name="IS_XBOX_PLAYER2_PRESSING_START"/>
+    <CommandId ID="2639" Name="FINISHED_WITH_XBOX_PLAYER2" Handled="false"/>
+    <CommandId ID="2640" Name="DO_DEBUG_STUFF" Handled="false"/>
+  </Commands>
+</GTA3Script>
