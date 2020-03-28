@@ -11,8 +11,9 @@ grammar {
         ## A GTA3script configuration file consists of commands, alternators
         ## and constants.
         ## 
-        ## Those can be given in any order, but the order on which they appear
-        ## matter (e.g. one may replace definitions from another).
+        ## Those can be given in any order, but the order on which the entries
+        ## in a section appear matter (e.g. one may replace definitions
+        ## from another).
         element GTA3Script {
             attribute Version { string "2.0" }
             & Import*
@@ -29,9 +30,16 @@ grammar {
         ##
         ## The maximum depth of imports is equal 1, that means only the 
         ## main configuration file (`config.xml`) can import other files.
+        ##
+        ## The depth is a design choice to
+        ## 1) Avoid too much memory usage.
+        ## 2) Avoid too much disk access.
+        ## 3) Avoid complexity in the parsing code (cycles, stacks, etc).
         element Import {
             ## Imports the configurations from the specified game config.
-            ## If not specified, imports from the current config directory.
+            ## If not specified, imports from the config directory of the
+            ## game being targeted. If equal "." imports from the
+            ## same directory as the configuration file being read.
             attribute From { string }?,
 
             ## Imports the specified filename.
@@ -94,6 +102,9 @@ grammar {
                 }?
             }*
             ## Associates a command to an identifier.
+            ##
+            ## A command association may appear before its command
+            ## definition appear in the config file.
             & element CommandId {
                 ## Name of the command to associate an id to.
                 ##
@@ -117,6 +128,8 @@ grammar {
 
     Alternators = 
         element Alternators {
+            ## An alternator definition may appear before its associated
+            ## commands appear in the config file.
             element Alternator {
                 ## The name of the alternator.
                 ##
@@ -160,6 +173,6 @@ grammar {
             }*
         }
 
-    hex16 = xsd:string { pattern = "0x[0-9a-fA-F]{1,4}" }
-    hex32 = xsd:string { pattern = "0x[0-9a-fA-F]{1,8}" }
+    hex16 = xsd:string { pattern = "0[xX][0-9a-fA-F]{1,4}" }
+    hex32 = xsd:string { pattern = "0[xX][0-9a-fA-F]{1,8}" }
 }
