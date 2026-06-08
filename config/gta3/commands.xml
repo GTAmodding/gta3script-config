@@ -3584,7 +3584,7 @@
         <Param Type="INPUT_FLOAT"/>
         <Param Type="INPUT_FLOAT"/>
         <Param Type="INPUT_FLOAT"/>
-        <Param Type="INPUT_INT"/>
+        <Param Type="INPUT_INT" Enum="GARAGE"/>
         <Param Type="OUTPUT_INT" Entity="GARAGE"/>
       </Params>
     </Command>
